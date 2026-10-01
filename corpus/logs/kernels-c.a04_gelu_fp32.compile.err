@@ -1,0 +1,5 @@
+<stdin>:15:11: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+      w = tanhf(w);
+          ^
+<stdin>:15:11: note: include the header <math.h> or explicitly provide a declaration for 'tanhf'
+fatal error: error in backend: SHAVE: unsupported condition code 20 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md

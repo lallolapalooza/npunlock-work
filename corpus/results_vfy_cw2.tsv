@@ -1,0 +1,7 @@
+kernel	compile	rc	asm	rc	link	rc	validate	text_bytes	class	first_message
+b01_int_arith	OK	0	OK	0	OK	0	OK	688	PASS	legalize: WARNING: line 33: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.L
+b03_casts_fp	OK	0	OK	0	OK	0	OK	144	PASS	legalize: 4 form rewrite(s) [LSU0.LDO.32 i2, i18, 0x0->LSU0.LD.32 i2, i18, LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+l01_silu_f32	OK	0	OK	0	OK	0	OK	976	PASS	legalize: WARNING: line 578: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 Â
+l02_rms_norm_f32	OK	0	OK	0	OK	0	OK	1168	PASS	legalize: WARNING: line 660: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 Â
+l03_softmax_f32	OK	0	OK	0	OK	0	OK	1552	PASS	legalize: WARNING: line 609: LSU0.LDO.32: load destination i21 is > i15 (i21 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (Vendor
+l06_scale_f32	OK	0	OK	0	OK	0	OK	528	PASS	legalize: 5 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i4, i4, LSU0.LDO.32 i2, i3, 0x0->LSU0.LD.32 i

@@ -1,0 +1,85 @@
+	.text
+	.globl	controlled_act
+	.type	controlled_act,@function
+controlled_act:
+	LSU0.LDIL i5, 0xBABE ; fmt=0
+	LSU1.LDIH i5, 0xCAFE
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i14, i18, 0x28
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.XOR i1, i1, i1
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	CMU.CMZ.I32 i1
+	BRU.BRA i1, Lbad
+	.byte 0x1b, 0x40
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDIL i5, 0x0001 ; fmt=0
+	LSU1.LDIH i5, 0x600D
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU1.ST.32 i5, i14
+	LSU0.LDIL i6, 0x04 ; fmt=0
+	IAU.ADD i14, i14, i6
+	LSU0.LDIL i5, 0x0002 ; fmt=0
+	LSU1.LDIH i5, 0x600D
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU1.ST.32 i5, i14
+	LSU0.LDIL i6, 0x04 ; fmt=0
+	IAU.ADD i14, i14, i6
+	BRU.JMP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+Lbad:
+	LSU0.LDIL i5, 0xBAD1 ; fmt=0
+	LSU1.LDIH i5, 0xBAD0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU1.ST.32 i5, i14
+	LSU0.LDIL i6, 0x04 ; fmt=0
+	IAU.ADD i14, i14, i6
+	BRU.JMP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+Lfunc_end0:
+	.size	controlled_act, Lfunc_end0-controlled_act

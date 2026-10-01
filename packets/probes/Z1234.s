@@ -1,0 +1,43 @@
+	.text
+	.section	.text.controlled_act,"ax",@progbits
+	.globl	controlled_act
+	.type	controlled_act,@function
+controlled_act:
+	LSU0.LDO.32 i20, i18, 0x28
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	.byte 0x82 0x73 0x34 0x12
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	LSU1.ST.32 i20, i20
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	.byte 0x82 0xaa 0x04 0x00
+	.byte 0x82 0xab 0x00 0x00
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i21, i20, i21
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	IAU.ADD i9, i9, i9
+	LSU1.ST.32 i14, i21
+	BRU.JMP i30

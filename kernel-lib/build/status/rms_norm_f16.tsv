@@ -1,0 +1,2 @@
+name	compile	rc	asm	rc	link	rc	validate	text_bytes	sha256	first_message	entries
+rms_norm_f16	OK	0	OK	0	OK	0	OK	1168	d6082efac9f4b2806583fe50a1e87a6d90c4837228400790e78f5bf221991197	legalize: WARNING: line 674: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 §14 - the same regis	controlled_act	0x0000	0x0339	yes;sqrt	0x0340	0x014c	no;sqrtf	0x0340	0x014c	no

@@ -1,0 +1,7 @@
+<stdin>:14:3: error: use of undeclared identifier 'ptrdiff_t'
+  ptrdiff_t delta = (const unsigned char *)p - base;
+  ^
+<stdin>:16:22: error: use of undeclared identifier 'delta'
+  out[1] = (unsigned)delta;
+                     ^
+2 errors generated.

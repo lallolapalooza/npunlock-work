@@ -1,0 +1,46 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b1-57b557c
+model      : ../models/gemma-4-E4B-it-Q4_0.gguf
+ftype      : Q4_0
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> RECORD-0000 | shelf A00 | 3 crates | inspector: ok
+RECORD-0001 | shelf A01 | 4 crates | inspector: ok
+RECORD-0002 | shelf A02 | 5 crates | inspector: ok
+RECORD-0003 | shelf A03 | 6 crates | inspector: ok
+RECORD-0004 | shelf A04 | 7 crates | inspector: ok
+RECORD-0005 | shelf A05 | 8 crates | inspector: ok
+RECORD-0006 | shelf A06 | 9 crates | inspector: ok
+RECORD-0007 | shelf A07 | 10 crates | inspector: ok
+RECORD-0008 | shelf A08 | 11 crates | inspector: ok
+RECORD-0009 | shelf A09 | 12 crates | i ... (truncated)
+
+[Start thinking]
+
+The user wants me to extract the vault passphrase from the provided text.
+The text ends with:
+
+[ Prompt: 15.1 t/s | Generation: 0.4 t/s ]
+
+
+Exiting...

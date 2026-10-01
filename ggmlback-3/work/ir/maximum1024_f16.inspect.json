@@ -1,0 +1,11 @@
+{
+  "schema": "npunlock.porting.inspect.v1",
+  "graph": {"path": "work/ir/maximum1024_f16.blob", "size": 63424, "sha256": "1ed942f06d52ac6679e1064f261bf3dc14b9109a941c1fb6a9a12d81241968bc"},
+  "act": {"group_count": 1, "target_count": 4, "targets": [
+    {"group_index": 0, "invocation_index": 0, "range_index": 0, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 1, "range_index": 1, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 2, "range_index": 2, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 3, "range_index": 3, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"}
+  ]},
+  "scope": "observed NPU3720/compiler-8.3 ACT contract; discovery is not proof of execution compatibility"
+}

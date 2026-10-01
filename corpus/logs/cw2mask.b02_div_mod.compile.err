@@ -1,0 +1,22 @@
+fatal error: error in backend: Cannot select: t87: i32,i32 = sdivrem t57, t58
+  t57: i32 = freeze t50
+    t50: i32 = or t49, Constant:i32<1>
+      t49: i32,ch = load<(load (s32) from %ir.5, !tbaa !5)> t0, t89, undef:i32
+        t89: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+          t1: i32 = Register $r18
+          t3: i32 = undef
+        t3: i32 = undef
+      t6: i32 = Constant<1>
+  t58: i32 = freeze t56
+    t56: i32 = add nuw nsw t55, Constant:i32<3>
+      t55: i32 = and t53, Constant:i32<31>
+        t53: i32,ch = load<(load (s32) from %ir.arrayidx2, !tbaa !5)> t0, t52, undef:i32
+          t52: i32 = add nuw t89, Constant:i32<4>
+            t89: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+              t1: i32 = Register $r18
+              t3: i32 = undef
+            t51: i32 = Constant<4>
+          t3: i32 = undef
+        t54: i32 = Constant<31>
+      t20: i32 = Constant<3>
+In function: controlled_act

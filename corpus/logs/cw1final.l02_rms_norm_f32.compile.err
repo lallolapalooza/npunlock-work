@@ -1,0 +1,4 @@
+fatal error: error in backend: Cannot select: t11: f32 = uint_to_fp t10
+  t10: i32,ch = CopyFromReg t0, Register:i32 %12
+    t9: i32 = Register %12
+In function: controlled_act

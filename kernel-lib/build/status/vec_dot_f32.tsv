@@ -1,0 +1,2 @@
+name	compile	rc	asm	rc	link	rc	validate	text_bytes	sha256	first_message	entries
+vec_dot_f32	OK	0	OK	0	OK	0	OK	528	2ec8d2d3b1b2897e53d3318eebedc721cb0060ed557fc73baabeaf0bd609fffb	legalize: 5 form rewrite(s) [LSU0.LDO.32 i3, i3, 0x0->LSU0.LD.32 i3, i3, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18, LSU0.LDO.32 i5, i5, 0x0->LSU0.LD.32 i5, i5, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i4, i4, LSU0.ST.32->L	controlled_act	0x0000	0x020e	yes

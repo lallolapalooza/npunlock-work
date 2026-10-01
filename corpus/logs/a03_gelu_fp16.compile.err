@@ -1,0 +1,5 @@
+<stdin>:15:11: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+      w = tanhf(w);
+          ^
+<stdin>:15:11: note: include the header <math.h> or explicitly provide a declaration for 'tanhf'
+fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee GlobalAddress); see TARGET_NOTES.md

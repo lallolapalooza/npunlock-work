@@ -1,0 +1,3 @@
+SAU.ADD.F32 i7, i7, i1
+SAU.ADD.F32 i2, i2, i4
+SAU.ADD.F32 i6, i4, i5

@@ -1,0 +1,7 @@
+kernel	compile	rc	asm	rc	link	rc	validate	text_bytes	class	first_message
+l01_silu_f32	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+l02_rms_norm_f32	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t11: f32 = uint_to_fp t10
+l03_softmax_f32	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: only i32 value-selects are supported in wave 1; see TARGET_NOTES.md
+l04_vec_dot_f32	OK	0	OK	0	OK	0	OK	496	PASS	legalize: WARNING: line 248: emitted the BRU.BRA delay descriptor 2b50 (backward->LBB0_9 (immediate, k=0))
+l05_rope_f32	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t7: f32 = fpow t26, t5
+l06_scale_f32	OK	0	OK	0	OK	0	OK	480	PASS	legalize: 5 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i4, i4, LSU0.LDO.32 i2, i3, 0x0->LSU0.LD.32 i

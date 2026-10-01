@@ -1,0 +1,2 @@
+name	compile	rc	asm	rc	link	rc	validate	text_bytes	sha256	first_message	entries
+rope_f16	OK	0	OK	0	FAIL	1	SKIP	-	-	ld.lld: error: output file too large: 18446744073692774968 bytes	-

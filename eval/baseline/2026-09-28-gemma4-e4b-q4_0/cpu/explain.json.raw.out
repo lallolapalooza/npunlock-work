@@ -1,0 +1,39 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b1-57b557c
+model      : ../models/gemma-4-E4B-it-Q4_0.gguf
+ftype      : Q4_0
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> In two sentences, explain why the sky appears blue. Mention light scattering.
+
+[Start thinking]
+
+1.  **Analyze the Request:** Explain why the sky is blue in exactly two sentences. Must mention "light scattering."
+2.  **Identify Key Concepts:** Sunlight contains all colors (wavelength spectrum). Earth's atmosphere has gases/particles. Blue light is scattered more effectively than other colors.
+3.  **Draft Sentence 1 (The Mechanism):** Sunlight enters the atmosphere and interacts with gas molecules.
+4.  **Draft Sentence 
+
+[ Prompt: 13.3 t/s | Generation: 5.4 t/s ]
+
+
+Exiting...

@@ -1,0 +1,5 @@
+<stdin>:48:21: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+    const float t = tanhf((float)w);          /* mlibm call, f32 in/out */
+                    ^
+<stdin>:48:21: note: include the header <math.h> or explicitly provide a declaration for 'tanhf'
+1 warning generated.

@@ -1,0 +1,2 @@
+error: SHAVE: unsupported fcmp in wave 1: t24: i32 = <<Unknown Node #370>> t8, t27, setule:ch
+fatal error: error in backend: SHAVE wave 1 does not support floating-point compares; see TARGET_NOTES.md

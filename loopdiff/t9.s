@@ -1,0 +1,2 @@
+LSU0.LDO.32 i2, i10, 0x1
+LSU0.LDO.32 i2, i10, 0x0

@@ -1,0 +1,339 @@
+ggml-shave-census "MUL_MAT q8_0/f32 ne=[262144,512,1,1] bytes=536870912 elements=134217728" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q8_0/i32 ne=[2560,512,1,1] bytes=5242880 elements=1310720" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q4_0/i32 ne=[10752,512,1,1] bytes=22020096 elements=5505024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT bf16/f32 ne=[10752,512,1,1] bytes=22020096 elements=5505024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[256,1,1,1] bytes=1024 elements=256" verdict=accept reason=offloaded
+ggml-shave-census "MUL f32/f32 ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2048,512,1,1] bytes=4194304 elements=1048576" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[512,512,1,1] bytes=1048576 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2560,512,1,1] bytes=5242880 elements=1310720" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[1,1,1,1] bytes=4 elements=1" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[10240,512,1,1] bytes=20971520 elements=5242880" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[256,512,1,1] bytes=524288 elements=131072" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[4096,512,1,1] bytes=8388608 elements=2097152" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[1024,512,1,1] bytes=2097152 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[512,1,1,1] bytes=2048 elements=512" verdict=accept reason=offloaded
+ggml-shave-census "ROPE f32/i32 ne=[256,8,512,1] bytes=4194304 elements=1048576" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,8,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,2,1,1] bytes=2048 elements=512" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,8,1,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,2,1,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "NONE -/- ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "NONE -/- ne=[256,1,1,1] bytes=1024 elements=256" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "NONE -/- ne=[512,1024,1,1] bytes=1048576 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "NONE -/- ne=[1,1,1,1] bytes=4 elements=1" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "NONE -/- ne=[512,1,1,1] bytes=2048 elements=512" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "NONE -/- ne=[1024,131072,1,1] bytes=268435456 elements=134217728" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q8_0/i32 ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q4_0/i32 ne=[10752,1,1,1] bytes=43008 elements=10752" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[256,8,1,1] bytes=8192 elements=2048" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,2,1,1] bytes=2048 elements=512" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "SET_ROWS f32/i64 ne=[512,1024,1,1] bytes=1048576 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "VIEW f16/- ne=[256,2,1024,1] bytes=1048576 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "PERMUTE f16/- ne=[256,1024,2,1] bytes=1048576 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT bf16/f32 ne=[10752,1,1,1] bytes=43008 elements=10752" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[256,42,1,1] bytes=43008 elements=10752" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,8,1,1] bytes=16384 elements=4096" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,2,1,1] bytes=4096 elements=1024" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "SET_ROWS f32/i64 ne=[1024,131072,1,1] bytes=268435456 elements=134217728" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "VIEW f16/- ne=[512,2,131072,1] bytes=268435456 elements=134217728" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "PERMUTE f16/- ne=[512,131072,2,1] bytes=268435456 elements=134217728" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q8_0/f32 ne=[262144,1,1,1] bytes=1048576 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=accept reason=offloaded
+ggml-shave-census "GET_ROWS f32/i32 ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[256,42,1,1] bytes=43008 elements=10752" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2048,1,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,8,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[512,1,1,1] bytes=2048 elements=512" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,2,1,1] bytes=2048 elements=512" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "FLASH_ATTN_EXT f32/f16 ne=[256,8,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2560,1,1,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[10240,1,1,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GLU f32/f32 ne=[10240,1,1,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[256,1,1,1] bytes=1024 elements=256" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[256,1,1,1] bytes=1024 elements=256" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[10752,1,1,1] bytes=43008 elements=10752" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,42,1,1] bytes=43008 elements=10752" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[256,42,1,1] bytes=43008 elements=10752" verdict=accept reason=offloaded
+ggml-shave-census "CONT f32/- ne=[256,1,42,1] bytes=43008 elements=10752" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[4096,1,1,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,8,1,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[1024,1,1,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,2,1,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "FLASH_ATTN_EXT f32/f16 ne=[512,8,1,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[262144,1,1,1] bytes=1048576 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[262144,1,1,1] bytes=1048576 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "TRANSPOSE f16/- ne=[1024,256,2,1] bytes=1048576 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "TRANSPOSE f16/- ne=[131072,512,2,1] bytes=268435456 elements=134217728" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f16/- ne=[1024,256,2,1] bytes=1048576 elements=524288" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT f16/f32 ne=[1024,1,8,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[1024,1,8,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[256,1,8,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[2048,1,1,1] bytes=8192 elements=2048" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "CONT f16/- ne=[131072,512,2,1] bytes=268435456 elements=134217728" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT f16/f32 ne=[131072,1,8,1] bytes=4194304 elements=1048576" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[131072,1,8,1] bytes=4194304 elements=1048576" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[512,1,8,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[4096,1,1,1] bytes=16384 elements=4096" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "RMS_NORM f32/- ne=[2560,512,1,1] bytes=5242880 elements=1310720" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,8,512,1] bytes=4194304 elements=1048576" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,2,512,1] bytes=1048576 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,8,512,1] bytes=8388608 elements=2097152" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,2,512,1] bytes=2097152 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[2560,512,1,1] bytes=5242880 elements=1310720" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,8,512,1] bytes=4194304 elements=1048576" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,2,512,1] bytes=1048576 elements=262144" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,42,512,1] bytes=22020096 elements=5505024" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,8,512,1] bytes=8388608 elements=2097152" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,2,512,1] bytes=2097152 elements=524288" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "SCALE f32/- ne=[256,42,512,1] bytes=22020096 elements=5505024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[2560,512,1,1] bytes=5242880 elements=1310720" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,2,512,1] bytes=1048576 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[1024,512,8,1] bytes=16777216 elements=4194304" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[1024,512,8,1] bytes=16777216 elements=4194304" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[256,512,8,1] bytes=4194304 elements=1048576" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[2048,512,1,1] bytes=4194304 elements=1048576" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "ADD f32/f32 ne=[2560,512,1,1] bytes=5242880 elements=1310720" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "GLU f32/f32 ne=[10240,512,1,1] bytes=20971520 elements=5242880" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[256,512,1,1] bytes=524288 elements=131072" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[10752,512,1,1] bytes=22020096 elements=5505024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,42,512,1] bytes=22020096 elements=5505024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[256,42,512,1] bytes=22020096 elements=5505024" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "CONT f32/- ne=[256,512,42,1] bytes=22020096 elements=5505024" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,512,1,1] bytes=524288 elements=131072" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "ROPE f32/i32 ne=[512,8,512,1] bytes=8388608 elements=2097152" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,2,512,1] bytes=2097152 elements=524288" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[131072,512,8,1] bytes=2147483648 elements=536870912" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[131072,512,8,1] bytes=2147483648 elements=536870912" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[512,512,8,1] bytes=8388608 elements=2097152" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[4096,512,1,1] bytes=8388608 elements=2097152" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "RMS_NORM f32/- ne=[2560,2,1,1] bytes=20480 elements=5120" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,8,2,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,2,2,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,8,2,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,2,2,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q8_0/i32 ne=[2560,2,1,1] bytes=20480 elements=5120" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q4_0/i32 ne=[10752,2,1,1] bytes=86016 elements=21504" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[2560,2,1,1] bytes=20480 elements=5120" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,8,2,1] bytes=16384 elements=4096" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,2,2,1] bytes=4096 elements=1024" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "VIEW f16/- ne=[256,2,256,1] bytes=262144 elements=131072" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "PERMUTE f16/- ne=[256,256,2,1] bytes=262144 elements=131072" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "TRANSPOSE f16/- ne=[256,256,2,1] bytes=262144 elements=131072" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT bf16/f32 ne=[10752,2,1,1] bytes=86016 elements=21504" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[256,42,2,1] bytes=86016 elements=21504" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,8,2,1] bytes=32768 elements=8192" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,2,2,1] bytes=8192 elements=2048" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "VIEW f16/- ne=[512,2,256,1] bytes=524288 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "PERMUTE f16/- ne=[512,256,2,1] bytes=524288 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "TRANSPOSE f16/- ne=[256,512,2,1] bytes=524288 elements=262144" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[256,42,2,1] bytes=86016 elements=21504" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[2560,2,1,1] bytes=20480 elements=5120" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2048,2,1,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,8,2,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[512,2,1,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,2,2,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f16/- ne=[256,256,2,1] bytes=262144 elements=131072" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT f16/f32 ne=[256,2,8,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[256,2,8,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[2048,2,1,1] bytes=16384 elements=4096" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2560,2,1,1] bytes=20480 elements=5120" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[2560,2,1,1] bytes=20480 elements=5120" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[10240,2,1,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GLU f32/f32 ne=[10240,2,1,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[256,2,1,1] bytes=2048 elements=512" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[256,2,1,1] bytes=2048 elements=512" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[10752,2,1,1] bytes=86016 elements=21504" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,42,2,1] bytes=86016 elements=21504" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[256,42,2,1] bytes=86016 elements=21504" verdict=accept reason=offloaded
+ggml-shave-census "CONT f32/- ne=[256,2,42,1] bytes=86016 elements=21504" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[4096,2,1,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,8,2,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[1024,2,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,2,2,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f16/- ne=[256,512,2,1] bytes=524288 elements=262144" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT f16/f32 ne=[512,2,8,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[4096,2,1,1] bytes=32768 elements=8192" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "RMS_NORM f32/- ne=[2560,8,1,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,8,8,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,2,8,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,8,8,1] bytes=131072 elements=32768" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,2,8,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q8_0/i32 ne=[2560,8,1,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q4_0/i32 ne=[10752,8,1,1] bytes=344064 elements=86016" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[2560,8,1,1] bytes=81920 elements=20480" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,8,8,1] bytes=65536 elements=16384" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,2,8,1] bytes=16384 elements=4096" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL_MAT bf16/f32 ne=[10752,8,1,1] bytes=344064 elements=86016" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[256,42,8,1] bytes=344064 elements=86016" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,8,8,1] bytes=131072 elements=32768" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,2,8,1] bytes=32768 elements=8192" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL_MAT q8_0/f32 ne=[262144,0,1,1] bytes=0 elements=0" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[256,42,8,1] bytes=344064 elements=86016" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[2560,8,1,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2048,8,1,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,8,8,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[512,8,1,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,2,8,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[256,8,8,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[256,8,8,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[2048,8,1,1] bytes=65536 elements=16384" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2560,8,1,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[2560,8,1,1] bytes=81920 elements=20480" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[10240,8,1,1] bytes=327680 elements=81920" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GLU f32/f32 ne=[10240,8,1,1] bytes=327680 elements=81920" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[256,8,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[256,8,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[10752,8,1,1] bytes=344064 elements=86016" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,42,8,1] bytes=344064 elements=86016" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[256,42,8,1] bytes=344064 elements=86016" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "CONT f32/- ne=[256,8,42,1] bytes=344064 elements=86016" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[4096,8,1,1] bytes=131072 elements=32768" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,8,8,1] bytes=131072 elements=32768" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[1024,8,1,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,2,8,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[512,8,8,1] bytes=131072 elements=32768" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[4096,8,1,1] bytes=131072 elements=32768" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "GET_ROWS f32/i32 ne=[2560,0,1,1] bytes=0 elements=0" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[262144,0,1,1] bytes=0 elements=0" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[262144,0,1,1] bytes=0 elements=0" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[2560,5,1,1] bytes=51200 elements=12800" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,8,5,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,2,5,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,8,5,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,2,5,1] bytes=20480 elements=5120" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q8_0/i32 ne=[2560,5,1,1] bytes=51200 elements=12800" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q4_0/i32 ne=[10752,5,1,1] bytes=215040 elements=53760" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[2560,5,1,1] bytes=51200 elements=12800" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,8,5,1] bytes=40960 elements=10240" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,2,5,1] bytes=10240 elements=2560" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL_MAT bf16/f32 ne=[10752,5,1,1] bytes=215040 elements=53760" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[256,42,5,1] bytes=215040 elements=53760" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,8,5,1] bytes=81920 elements=20480" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,2,5,1] bytes=20480 elements=5120" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "SCALE f32/- ne=[256,42,5,1] bytes=215040 elements=53760" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[2560,5,1,1] bytes=51200 elements=12800" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2048,5,1,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,8,5,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[512,5,1,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,2,5,1] bytes=10240 elements=2560" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[256,5,8,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[256,5,8,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[2048,5,1,1] bytes=40960 elements=10240" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2560,5,1,1] bytes=51200 elements=12800" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[2560,5,1,1] bytes=51200 elements=12800" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[10240,5,1,1] bytes=204800 elements=51200" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GLU f32/f32 ne=[10240,5,1,1] bytes=204800 elements=51200" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[256,5,1,1] bytes=5120 elements=1280" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[256,5,1,1] bytes=5120 elements=1280" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[10752,5,1,1] bytes=215040 elements=53760" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,42,5,1] bytes=215040 elements=53760" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[256,42,5,1] bytes=215040 elements=53760" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "CONT f32/- ne=[256,5,42,1] bytes=215040 elements=53760" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,5,1,1] bytes=5120 elements=1280" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[4096,5,1,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,8,5,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[1024,5,1,1] bytes=20480 elements=5120" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,2,5,1] bytes=20480 elements=5120" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[512,5,8,1] bytes=81920 elements=20480" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[4096,5,1,1] bytes=81920 elements=20480" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "RMS_NORM f32/- ne=[2560,4,1,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,8,4,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,2,4,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,8,4,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[512,2,4,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q8_0/i32 ne=[2560,4,1,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GET_ROWS q4_0/i32 ne=[10752,4,1,1] bytes=172032 elements=43008" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[2560,4,1,1] bytes=40960 elements=10240" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,8,4,1] bytes=32768 elements=8192" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,2,4,1] bytes=8192 elements=2048" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL_MAT bf16/f32 ne=[10752,4,1,1] bytes=172032 elements=43008" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL f32/f32 ne=[256,42,4,1] bytes=172032 elements=43008" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,8,4,1] bytes=65536 elements=16384" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[512,2,4,1] bytes=16384 elements=4096" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "SCALE f32/- ne=[256,42,4,1] bytes=172032 elements=43008" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[2560,4,1,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2048,4,1,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,8,4,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[512,4,1,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[256,2,4,1] bytes=8192 elements=2048" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[256,4,8,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SOFT_MAX f32/f32 ne=[256,4,8,1] bytes=32768 elements=8192" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[2048,4,1,1] bytes=32768 elements=8192" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[2560,4,1,1] bytes=40960 elements=10240" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[2560,4,1,1] bytes=40960 elements=10240" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[10240,4,1,1] bytes=163840 elements=40960" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "GLU f32/f32 ne=[10240,4,1,1] bytes=163840 elements=40960" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[256,4,1,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "UNARY f32/- ne=[256,4,1,1] bytes=4096 elements=1024" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "SCALE f32/- ne=[10752,4,1,1] bytes=172032 elements=43008" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "RMS_NORM f32/- ne=[256,42,4,1] bytes=172032 elements=43008" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ADD f32/f32 ne=[256,42,4,1] bytes=172032 elements=43008" verdict=decline reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census "CONT f32/- ne=[256,4,42,1] bytes=172032 elements=43008" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census "MUL f32/f32 ne=[256,4,1,1] bytes=4096 elements=1024" verdict=accept reason=offloaded
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[4096,4,1,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,8,4,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT q4_0/f32 ne=[1024,4,1,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "ROPE f32/i32 ne=[512,2,4,1] bytes=16384 elements=4096" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "MUL_MAT f16/f32 ne=[512,4,8,1] bytes=65536 elements=16384" verdict=decline reason=operation has no NPU kernel
+ggml-shave-census "CONT f32/- ne=[4096,4,1,1] bytes=65536 elements=16384" verdict=decline reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=5 verdict=accept "ADD f32/f32 ne=[256,42,1,1] bytes=43008 elements=10752" reason=offloaded
+ggml-shave-census-summary offered=1 verdict=accept "ADD f32/f32 ne=[256,42,2,1] bytes=86016 elements=21504" reason=offloaded
+ggml-shave-census-summary offered=2 verdict=decline "ADD f32/f32 ne=[256,42,4,1] bytes=172032 elements=43008" reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census-summary offered=2 verdict=decline "ADD f32/f32 ne=[256,42,5,1] bytes=215040 elements=53760" reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census-summary offered=4 verdict=decline "ADD f32/f32 ne=[256,42,512,1] bytes=22020096 elements=5505024" reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census-summary offered=2 verdict=decline "ADD f32/f32 ne=[256,42,8,1] bytes=344064 elements=86016" reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census-summary offered=630 verdict=accept "ADD f32/f32 ne=[2560,1,1,1] bytes=10240 elements=2560" reason=offloaded
+ggml-shave-census-summary offered=126 verdict=accept "ADD f32/f32 ne=[2560,2,1,1] bytes=20480 elements=5120" reason=offloaded
+ggml-shave-census-summary offered=126 verdict=accept "ADD f32/f32 ne=[2560,4,1,1] bytes=40960 elements=10240" reason=offloaded
+ggml-shave-census-summary offered=126 verdict=accept "ADD f32/f32 ne=[2560,5,1,1] bytes=51200 elements=12800" reason=offloaded
+ggml-shave-census-summary offered=504 verdict=decline "ADD f32/f32 ne=[2560,512,1,1] bytes=5242880 elements=1310720" reason=elementwise: not dense f32, broadcast, or larger than one tile
+ggml-shave-census-summary offered=126 verdict=accept "ADD f32/f32 ne=[2560,8,1,1] bytes=81920 elements=20480" reason=offloaded
+ggml-shave-census-summary offered=420 verdict=decline "CONT f16/- ne=[1024,256,2,1] bytes=1048576 elements=524288" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=84 verdict=decline "CONT f16/- ne=[131072,512,2,1] bytes=268435456 elements=134217728" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=280 verdict=decline "CONT f16/- ne=[256,256,2,1] bytes=262144 elements=131072" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=56 verdict=decline "CONT f16/- ne=[256,512,2,1] bytes=524288 elements=262144" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=280 verdict=decline "CONT f32/- ne=[2048,1,1,1] bytes=8192 elements=2048" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=70 verdict=decline "CONT f32/- ne=[2048,2,1,1] bytes=16384 elements=4096" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=70 verdict=decline "CONT f32/- ne=[2048,4,1,1] bytes=32768 elements=8192" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=70 verdict=decline "CONT f32/- ne=[2048,5,1,1] bytes=40960 elements=10240" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=140 verdict=decline "CONT f32/- ne=[2048,512,1,1] bytes=4194304 elements=1048576" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=70 verdict=decline "CONT f32/- ne=[2048,8,1,1] bytes=65536 elements=16384" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=10 verdict=decline "CONT f32/- ne=[256,1,42,1] bytes=43008 elements=10752" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=2 verdict=decline "CONT f32/- ne=[256,2,42,1] bytes=86016 elements=21504" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=2 verdict=decline "CONT f32/- ne=[256,4,42,1] bytes=172032 elements=43008" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=2 verdict=decline "CONT f32/- ne=[256,5,42,1] bytes=215040 elements=53760" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=4 verdict=decline "CONT f32/- ne=[256,512,42,1] bytes=22020096 elements=5505024" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=2 verdict=decline "CONT f32/- ne=[256,8,42,1] bytes=344064 elements=86016" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=56 verdict=decline "CONT f32/- ne=[4096,1,1,1] bytes=16384 elements=4096" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=14 verdict=decline "CONT f32/- ne=[4096,2,1,1] bytes=32768 elements=8192" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=14 verdict=decline "CONT f32/- ne=[4096,4,1,1] bytes=65536 elements=16384" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=14 verdict=decline "CONT f32/- ne=[4096,5,1,1] bytes=81920 elements=20480" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=28 verdict=decline "CONT f32/- ne=[4096,512,1,1] bytes=8388608 elements=2097152" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=14 verdict=decline "CONT f32/- ne=[4096,8,1,1] bytes=131072 elements=32768" reason=copy: layout/dtype not a dense byte copy or larger than one tile
+ggml-shave-census-summary offered=70 verdict=decline "FLASH_ATTN_EXT f32/f16 ne=[256,8,1,1] bytes=8192 elements=2048" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=14 verdict=decline "FLASH_ATTN_EXT f32/f16 ne=[512,8,1,1] bytes=16384 elements=4096" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS f32/i32 ne=[2560,0,1,1] bytes=0 elements=0" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=28 verdict=decline "GET_ROWS f32/i32 ne=[2560,1,1,1] bytes=10240 elements=2560" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=20 verdict=decline "GET_ROWS q4_0/i32 ne=[10752,1,1,1] bytes=43008 elements=10752" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q4_0/i32 ne=[10752,2,1,1] bytes=86016 elements=21504" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q4_0/i32 ne=[10752,4,1,1] bytes=172032 elements=43008" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q4_0/i32 ne=[10752,5,1,1] bytes=215040 elements=53760" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=10 verdict=decline "GET_ROWS q4_0/i32 ne=[10752,512,1,1] bytes=22020096 elements=5505024" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q4_0/i32 ne=[10752,8,1,1] bytes=344064 elements=86016" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=20 verdict=decline "GET_ROWS q8_0/i32 ne=[2560,1,1,1] bytes=10240 elements=2560" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q8_0/i32 ne=[2560,2,1,1] bytes=20480 elements=5120" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q8_0/i32 ne=[2560,4,1,1] bytes=40960 elements=10240" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q8_0/i32 ne=[2560,5,1,1] bytes=51200 elements=12800" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=10 verdict=decline "GET_ROWS q8_0/i32 ne=[2560,512,1,1] bytes=5242880 elements=1310720" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=4 verdict=decline "GET_ROWS q8_0/i32 ne=[2560,8,1,1] bytes=81920 elements=20480" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=420 verdict=decline "GLU f32/f32 ne=[10240,1,1,1] bytes=40960 elements=10240" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=84 verdict=decline "GLU f32/f32 ne=[10240,2,1,1] bytes=81920 elements=20480" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=84 verdict=decline "GLU f32/f32 ne=[10240,4,1,1] bytes=163840 elements=40960" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=84 verdict=decline "GLU f32/f32 ne=[10240,5,1,1] bytes=204800 elements=51200" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=168 verdict=decline "GLU f32/f32 ne=[10240,512,1,1] bytes=20971520 elements=5242880" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=84 verdict=decline "GLU f32/f32 ne=[10240,8,1,1] bytes=327680 elements=81920" reason=operation has no NPU kernel
+ggml-shave-census-summary offered=42 verdict=accept "MUL f32/f32 ne=[1,1,1,1] bytes=4 elements=1" reason=offloaded
+ggml-shave-census-summary offered=139191367676368 verdict=accept "êõ	ò~" reason=

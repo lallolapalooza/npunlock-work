@@ -1,0 +1,21 @@
+fatal error: error in backend: Cannot select: t58: i32 = fp_to_uint t57
+  t57: f32 = fadd t55, t76
+    t55: f32 = fmul t50, t54
+      t50: f32 = uint_to_fp t49
+        t49: i32,ch = load<(load (s32) from %ir.5, !tbaa !5)> t0, t74, undef:i32
+          t74: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+            t1: i32 = Register $r18
+            t3: i32 = undef
+          t3: i32 = undef
+      t54: f32 = uint_to_fp t53
+        t53: i32,ch = load<(load (s32) from %ir.arrayidx2, !tbaa !5)> t0, t52, undef:i32
+          t52: i32 = add nuw t74, Constant:i32<4>
+            t74: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+              t1: i32 = Register $r18
+              t3: i32 = undef
+            t51: i32 = Constant<4>
+          t3: i32 = undef
+    t76: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float 1.000000e+00> 0, undef:i32
+      t75: i32 = ConstantPool<float 1.000000e+00> 0
+      t3: i32 = undef
+In function: controlled_act

@@ -1,0 +1,2 @@
+fatal error: error in backend: Cannot select: t54: i32 = GlobalAddress<[4 x i32]* @g_table> 0
+In function: controlled_act

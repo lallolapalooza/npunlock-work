@@ -1,0 +1,9 @@
+ld.lld: error: output file too large: 18446744073692774968 bytes
+section sizes:
+.arg.data 0
+.text 0
+.comment 54
+.symtab 16
+.shstrtab 52
+.strtab 1
+

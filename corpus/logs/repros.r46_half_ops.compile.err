@@ -1,0 +1,12 @@
+fatal error: error in backend: Cannot select: t69: f32 = sint_to_fp t68
+  t68: i32 = shl nsw t67, Constant:i32<1>
+    t67: i32 = fp_to_sint t78
+      t78: f32,ch = load<(load (s16) from %ir.arrayidx4, !tbaa !5), anyext from f16> t81, t63, undef:i32
+        t63: i32 = add nuw t99, Constant:i32<4>
+          t99: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+            t1: i32 = Register $r18
+            t3: i32 = undef
+          t62: i32 = Constant<4>
+        t3: i32 = undef
+    t6: i32 = Constant<1>
+In function: controlled_act

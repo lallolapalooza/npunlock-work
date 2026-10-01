@@ -1,0 +1,19 @@
+fatal error: error in backend: Cannot select: t83: i32 = fp_to_uint t89
+  t89: f32 = fadd t80, t80
+    t80: f32 = bitcast t58
+      t58: i32,ch = load<(load (s32) from %ir.arrayidx22, !tbaa !5)> t0, t57, undef:i32
+        t57: i32 = add nuw t101, Constant:i32<8>
+          t101: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+            t1: i32 = Register $r18
+            t3: i32 = undef
+          t10: i32 = Constant<8>
+        t3: i32 = undef
+    t80: f32 = bitcast t58
+      t58: i32,ch = load<(load (s32) from %ir.arrayidx22, !tbaa !5)> t0, t57, undef:i32
+        t57: i32 = add nuw t101, Constant:i32<8>
+          t101: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+            t1: i32 = Register $r18
+            t3: i32 = undef
+          t10: i32 = Constant<8>
+        t3: i32 = undef
+In function: controlled_act

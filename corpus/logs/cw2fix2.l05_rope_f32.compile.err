@@ -1,0 +1,12 @@
+fatal error: error in backend: Cannot select: t7: f32 = fpow t26, t5
+  t26: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float 1.000000e+04> 0, undef:i32
+    t24: i32 = ConstantPool<float 1.000000e+04> 0
+    t25: i32 = undef
+  t5: f32 = fdiv t28, t3
+    t28: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float -2.000000e+00> 0, undef:i32
+      t27: i32 = ConstantPool<float -2.000000e+00> 0
+      t25: i32 = undef
+    t3: f32 = sint_to_fp t2
+      t2: i32,ch = CopyFromReg t0, Register:i32 %13
+        t1: i32 = Register %13
+In function: controlled_act

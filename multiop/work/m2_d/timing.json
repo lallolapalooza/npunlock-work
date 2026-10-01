@@ -1,0 +1,94 @@
+{
+ "actual": "ACTUAL  : (32 bytes) 00 c3 bc bd e0 b5 68 32 22 3a 55 3c 9a 3d de 3f 20 01 00 00 ff ff ff 00 00 00 80 3f 00 e0 dd be",
+ "bundle_create_ms": 94.1704050055705,
+ "bundle_verify_ms": 108.42242301441729,
+ "bundle_verify_ok": true,
+ "diagnostic": "",
+ "dump_probe_ms": 48.33266400964931,
+ "expect": "EXPECT  : 00 c3 bc bd e0 b5 68 32 22 3a 55 3c 9a 3d de 3f 11 42 1a 44 2b 45 9e 48 53 4c 2c 50 17 54 0c 58",
+ "linux_probe_exit": 1,
+ "linux_probe_ms": 48.22523400071077,
+ "patch": {
+  "append": {
+   "file_offset": 37152,
+   "image_base": 6144,
+   "image_size": 2192,
+   "inserted_size": 3056
+  },
+  "input_graph_sha256": "d4abc3c09cabdb14fd5090fa5d2e4d33f4aa755aad2bcad4f078acc891d26e07",
+  "output_graph_sha256": "38bfdb07291a65eef42b2793ffa537608163f2f87a72d73c6fec26d2e3c48a04",
+  "schema": "npunlock.patchblob.v1",
+  "section_table": {
+   "new_offset": 64,
+   "old_offset": 64
+  },
+  "shave_elf_sha256": "016995f41665d57e8fe34edd6cebb5574152beb6c1bdff40865845afb06113a8",
+  "targets": [
+   {
+    "code_relocation_addend": {
+     "file_offset": 44728,
+     "new": 6144,
+     "old": 0
+    },
+    "contract": [
+     "static",
+     "dense",
+     "fp16",
+     "cmx",
+     "disjoint_output"
+    ],
+    "element_count": 8,
+    "extent": {
+     "file_offset": 41340,
+     "new": 2192,
+     "old": 5280
+    },
+    "input_count": 1,
+    "invocation_index": 0,
+    "parameter_base": 0,
+    "range_index": 0,
+    "span_bytes": 16
+   },
+   {
+    "code_relocation_addend": {
+     "file_offset": 44752,
+     "new": 6144,
+     "old": 0
+    },
+    "contract": [
+     "static",
+     "dense",
+     "fp16",
+     "cmx",
+     "disjoint_output"
+    ],
+    "element_count": 8,
+    "extent": {
+     "file_offset": 41364,
+     "new": 2192,
+     "old": 5280
+    },
+    "input_count": 1,
+    "invocation_index": 1,
+    "parameter_base": 192,
+    "range_index": 1,
+    "span_bytes": 16
+   }
+  ],
+  "validation": {
+   "mutation_set_preserved": true,
+   "section_contents_preserved": true
+  }
+ },
+ "patchblob_ms": 4.296782019082457,
+ "stages": {
+  "device_selection": "passed",
+  "execution": "passed",
+  "graph_create": "passed",
+  "graph_extension": "passed",
+  "initialization": "passed",
+  "loader": "passed",
+  "oracle": "failed"
+ },
+ "status": "ok"
+}

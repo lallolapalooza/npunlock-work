@@ -1,0 +1,1 @@
+fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md

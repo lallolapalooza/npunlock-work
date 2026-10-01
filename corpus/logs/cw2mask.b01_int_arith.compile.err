@@ -1,0 +1,5 @@
+fatal error: error in backend: Cannot select: t39: i32 = mulhu t24, Constant:i32<-1431655765>
+  t24: i32,ch = CopyFromReg t0, Register:i32 %7
+    t23: i32 = Register %7
+  t37: i32 = Constant<-1431655765>
+In function: controlled_act

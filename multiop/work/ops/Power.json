@@ -1,0 +1,11 @@
+{
+  "schema": "npunlock.porting.inspect.v1",
+  "graph": {"path": "work/ops/Power.blob", "size": 60352, "sha256": "ec733a9c6b79deeffad7d21de6a17d0ba65f7ce78403d6253cbf82fef3837b42"},
+  "act": {"group_count": 1, "target_count": 4, "targets": [
+    {"group_index": 0, "invocation_index": 0, "range_index": 0, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 1, "range_index": 1, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 2, "range_index": 2, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 3, "range_index": 3, "input_count": 2, "element_count": 256, "span_bytes": 512, "contract_flags": 31, "precision": "fp16"}
+  ]},
+  "scope": "observed NPU3720/compiler-8.3 ACT contract; discovery is not proof of execution compatibility"
+}

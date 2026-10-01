@@ -1,0 +1,54 @@
+	.text
+	.globl	controlled_act
+	.type	controlled_act,@function
+controlled_act:
+	LSU0.LDO.32 i13, i18, 0x28
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i3, i18, 0x0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDIL i2, 0x3344 ; fmt=0
+	LSU1.LDIH i2, 0xAABB
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LD.32.F16.F32 i2, i3
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDIL i4, 0x00 ; fmt=0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU1.ST.32 i2, i13
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.JMP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+Lfunc_end0:
+	.size	controlled_act, Lfunc_end0-controlled_act

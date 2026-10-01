@@ -1,0 +1,1 @@
+legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i3, i3, 0x0->LSU0.LD.32 i3, i3, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18]

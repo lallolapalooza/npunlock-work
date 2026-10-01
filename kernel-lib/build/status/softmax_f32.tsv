@@ -1,0 +1,2 @@
+name	compile	rc	asm	rc	link	rc	validate	text_bytes	sha256	first_message	entries
+softmax_f32	OK	0	OK	0	OK	0	OK	1520	7fc793a5646c060b0955522a5b1a9a6622cfca74d8c31476e292121d11f8b7b2	legalize: WARNING: line 616: LSU0.LDO.32: load destination i21 is > i15 (i21 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 §14 - the same 	controlled_act	0x0000	0x0458	yes;floor	0x0460	0x0044	no;floorf	0x0460	0x0044	no;exp	0x04b0	0x0136	no;expf	0x04b0	0x0136	no

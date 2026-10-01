@@ -1,0 +1,12 @@
+/* verbatim kernel string from examples/example_mixed_precision_multi_custom.py (scale_f32_c) */
+#include <npunlock/npu3720_kernel.h>
+
+void controlled_act(unsigned layerParams) {
+    act_abi_invocation invocation;
+    ACT_ABI_LOAD_INVOCATION32_OR_RETURN(layerParams, invocation);
+    const float *in = ACT_ABI_INPUT_PTR32(const float, invocation, 0u);
+    float *out = ACT_ABI_OUTPUT_PTR32(float, invocation, 1u);
+    for (unsigned i = 0; i < invocation.element_count; ++i) {
+        out[i] = in[i] * 1.5f + 0.25f;
+    }
+}

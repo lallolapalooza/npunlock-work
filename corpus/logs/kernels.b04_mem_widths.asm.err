@@ -1,0 +1,2 @@
+legalize: WARNING: line 97: emitted the BRU.BRA delay descriptor 2b50 (backward->LBB0_2 (immediate, k=0))
+legalize: 10 form rewrite(s) [LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18, LSU0.ST.8->LSU1.ST.8, LSU0.ST.16->LSU1.ST.16, LSU0.ST.16->LSU1.ST.16, LSU0.ST.16->LSU1.ST.16, LSU0.ST.16->LSU1.ST.16, LSU0.ST.16->LSU1.ST.16, LSU0.ST.16->LSU1.ST.16, LSU0.ST.16->LSU1.ST.16, LSU0.ST.16->LSU1.ST.16]

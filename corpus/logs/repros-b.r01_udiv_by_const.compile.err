@@ -1,0 +1,8 @@
+fatal error: error in backend: Cannot select: t56: i32 = mulhu t49, Constant:i32<-1431655765>
+  t49: i32,ch = load<(load (s32) from %ir.5, !tbaa !5)> t0, t70, undef:i32
+    t70: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+      t1: i32 = Register $r18
+      t3: i32 = undef
+    t3: i32 = undef
+  t55: i32 = Constant<-1431655765>
+In function: controlled_act

@@ -1,0 +1,136 @@
+{
+  "schema": "npunlock.eval.promptset.v1",
+  "generated_by": "eval/tools/gen_prompts.py",
+  "model": "../models/gemma-4-E4B-it-Q4_0.gguf",
+  "decoding": {
+    "temperature": 0.0,
+    "top_k": 1,
+    "seed": 1234,
+    "ctx": 4096,
+    "threads": 8,
+    "batch": 2048,
+    "ubatch": 512,
+    "warmup": false
+  },
+  "defaults": {
+    "n_predict": 32,
+    "timeout_s": 240
+  },
+  "prompts": [
+    {
+      "id": "arith",
+      "kind": "arithmetic",
+      "n_predict": 24,
+      "prompt": "Compute 47 * 89 exactly. Reply with only the number.",
+      "checks": [
+        {
+          "type": "regex",
+          "pattern": "\\b4183\\b",
+          "desc": "exact product 47*89 = 4183"
+        }
+      ]
+    },
+    {
+      "id": "short",
+      "kind": "short_answer",
+      "n_predict": 16,
+      "prompt": "What is the capital of France? Answer with only the city name.",
+      "checks": [
+        {
+          "type": "regex",
+          "pattern": "(?i:paris)",
+          "desc": "answers 'Paris'"
+        }
+      ]
+    },
+    {
+      "id": "repeat",
+      "kind": "repeat_after_me",
+      "n_predict": 32,
+      "prompt": "Repeat exactly, including punctuation: The quick brown fox jumps over the lazy dog.",
+      "checks": [
+        {
+          "type": "equals_normalized",
+          "value": "The quick brown fox jumps over the lazy dog.",
+          "desc": "verbatim echo of the sentence"
+        }
+      ]
+    },
+    {
+      "id": "list3",
+      "kind": "instruction_following",
+      "n_predict": 32,
+      "prompt": "List exactly three primary colours, one per line, with no other text.",
+      "checks": [
+        {
+          "type": "each_line_matches",
+          "pattern": "(?i:\\b(red|blue|yellow)\\b)",
+          "count": 3,
+          "desc": "three lines, each naming a primary colour"
+        }
+      ]
+    },
+    {
+      "id": "count10",
+      "kind": "counting",
+      "n_predict": 32,
+      "prompt": "Count from 1 to 10. Separate the numbers with single spaces.",
+      "checks": [
+        {
+          "type": "regex",
+          "pattern": "1 2 3 4 5 6 7 8 9 10",
+          "desc": "the sequence 1..10 as space-separated digits"
+        }
+      ]
+    },
+    {
+      "id": "code",
+      "kind": "code",
+      "n_predict": 96,
+      "prompt": "Write a Python function add(a, b) that returns the sum of its two arguments. Reply with code only, no explanation.",
+      "checks": [
+        {
+          "type": "regex",
+          "pattern": "def\\s+add\\s*\\(",
+          "desc": "defines add(...)"
+        },
+        {
+          "type": "regex",
+          "pattern": "return\\s+a\\s*\\+\\s*b",
+          "desc": "returns a + b"
+        }
+      ]
+    },
+    {
+      "id": "explain",
+      "kind": "explanation",
+      "n_predict": 96,
+      "prompt": "In two sentences, explain why the sky appears blue. Mention light scattering.",
+      "checks": [
+        {
+          "type": "regex",
+          "pattern": "(?i:scatter)",
+          "desc": "mentions scattering"
+        },
+        {
+          "type": "min_words",
+          "count": 25,
+          "desc": "produces an actual explanation, not a fragment"
+        }
+      ]
+    },
+    {
+      "id": "longctx",
+      "kind": "long_context_tail",
+      "n_predict": 24,
+      "prompt": "RECORD-0000 | shelf A00 | 3 crates | inspector: ok\nRECORD-0001 | shelf A01 | 4 crates | inspector: ok\nRECORD-0002 | shelf A02 | 5 crates | inspector: ok\nRECORD-0003 | shelf A03 | 6 crates | inspector: ok\nRECORD-0004 | shelf A04 | 7 crates | inspector: ok\nRECORD-0005 | shelf A05 | 8 crates | inspector: ok\nRECORD-0006 | shelf A06 | 9 crates | inspector: ok\nRECORD-0007 | shelf A07 | 10 crates | inspector: ok\nRECORD-0008 | shelf A08 | 11 crates | inspector: ok\nRECORD-0009 | shelf A09 | 12 crates | inspector: ok\nRECORD-0010 | shelf A10 | 13 crates | inspector: ok\nRECORD-0011 | shelf A11 | 14 crates | inspector: ok\nRECORD-0012 | shelf A12 | 15 crates | inspector: ok\nRECORD-0013 | shelf A13 | 16 crates | inspector: ok\nRECORD-0014 | shelf A14 | 17 crates | inspector: ok\nRECORD-0015 | shelf A15 | 18 crates | inspector: ok\nRECORD-0016 | shelf A16 | 19 crates | inspector: ok\nRECORD-0017 | shelf A17 | 20 crates | inspector: ok\nRECORD-0018 | shelf A18 | 21 crates | inspector: ok\nRECORD-0019 | shelf A19 | 22 crates | inspector: ok\nRECORD-0020 | shelf A20 | 23 crates | inspector: ok\nRECORD-0021 | shelf A21 | 24 crates | inspector: ok\nRECORD-0022 | shelf A22 | 25 crates | inspector: ok\nRECORD-0023 | shelf A23 | 26 crates | inspector: ok\nRECORD-0024 | shelf A24 | 27 crates | inspector: ok\nRECORD-0025 | shelf A25 | 28 crates | inspector: ok\nRECORD-0026 | shelf A26 | 29 crates | inspector: ok\nRECORD-0027 | shelf A27 | 30 crates | inspector: ok\nRECORD-0028 | shelf A28 | 31 crates | inspector: ok\nRECORD-0029 | shelf A29 | 32 crates | inspector: ok\nRECORD-0030 | shelf A30 | 33 crates | inspector: ok\nRECORD-0031 | shelf A31 | 34 crates | inspector: ok\nRECORD-0032 | shelf A32 | 35 crates | inspector: ok\nRECORD-0033 | shelf A33 | 36 crates | inspector: ok\nRECORD-0034 | shelf A34 | 37 crates | inspector: ok\nRECORD-0035 | shelf A35 | 38 crates | inspector: ok\nRECORD-0036 | shelf A36 | 39 crates | inspector: ok\nRECORD-0037 | shelf A37 | 40 crates | inspector: ok\nRECORD-0038 | shelf A38 | 41 crates | inspector: ok\nRECORD-0039 | shelf A39 | 42 crates | inspector: ok\nRECORD-0040 | shelf A00 | 43 crates | inspector: ok\nRECORD-0041 | shelf A01 | 44 crates | inspector: ok\nRECORD-0042 | shelf A02 | 45 crates | inspector: ok\nRECORD-0043 | shelf A03 | 46 crates | inspector: ok\nRECORD-0044 | shelf A04 | 47 crates | inspector: ok\nRECORD-0045 | shelf A05 | 48 crates | inspector: ok\nRECORD-0046 | shelf A06 | 49 crates | inspector: ok\nRECORD-0047 | shelf A07 | 50 crates | inspector: ok\nRECORD-0048 | shelf A08 | 51 crates | inspector: ok\nRECORD-0049 | shelf A09 | 52 crates | inspector: ok\nRECORD-0050 | shelf A10 | 53 crates | inspector: ok\nRECORD-0051 | shelf A11 | 54 crates | inspector: ok\nRECORD-0052 | shelf A12 | 55 crates | inspector: ok\nRECORD-0053 | shelf A13 | 56 crates | inspector: ok\nRECORD-0054 | shelf A14 | 57 crates | inspector: ok\nRECORD-0055 | shelf A15 | 58 crates | inspector: ok\nRECORD-0056 | shelf A16 | 59 crates | inspector: ok\nRECORD-0057 | shelf A17 | 60 crates | inspector: ok\nRECORD-0058 | shelf A18 | 61 crates | inspector: ok\nRECORD-0059 | shelf A19 | 62 crates | inspector: ok\nRECORD-0060 | shelf A20 | 63 crates | inspector: ok\nRECORD-0061 | shelf A21 | 64 crates | inspector: ok\nRECORD-0062 | shelf A22 | 65 crates | inspector: ok\nRECORD-0063 | shelf A23 | 66 crates | inspector: ok\nRECORD-0064 | shelf A24 | 67 crates | inspector: ok\nRECORD-0065 | shelf A25 | 68 crates | inspector: ok\nRECORD-0066 | shelf A26 | 69 crates | inspector: ok\nRECORD-0067 | shelf A27 | 70 crates | inspector: ok\nRECORD-0068 | shelf A28 | 71 crates | inspector: ok\nRECORD-0069 | shelf A29 | 72 crates | inspector: ok\nRECORD-0070 | shelf A30 | 73 crates | inspector: ok\nRECORD-0071 | shelf A31 | 74 crates | inspector: ok\nRECORD-0072 | shelf A32 | 75 crates | inspector: ok\nRECORD-0073 | shelf A33 | 76 crates | inspector: ok\nRECORD-0074 | shelf A34 | 77 crates | inspector: ok\nRECORD-0075 | shelf A35 | 78 crates | inspector: ok\nRECORD-0076 | shelf A36 | 79 crates | inspector: ok\nRECORD-0077 | shelf A37 | 80 crates | inspector: ok\nRECORD-0078 | shelf A38 | 81 crates | inspector: ok\nRECORD-0079 | shelf A39 | 82 crates | inspector: ok\nRECORD-0080 | shelf A00 | 83 crates | inspector: ok\nRECORD-0081 | shelf A01 | 84 crates | inspector: ok\nRECORD-0082 | shelf A02 | 85 crates | inspector: ok\nRECORD-0083 | shelf A03 | 86 crates | inspector: ok\nRECORD-0084 | shelf A04 | 87 crates | inspector: ok\nRECORD-0085 | shelf A05 | 88 crates | inspector: ok\nRECORD-0086 | shelf A06 | 89 crates | inspector: ok\nRECORD-0087 | shelf A07 | 90 crates | inspector: ok\nRECORD-0088 | shelf A08 | 91 crates | inspector: ok\nRECORD-0089 | shelf A09 | 92 crates | inspector: ok\nRECORD-0090 | shelf A10 | 93 crates | inspector: ok\nRECORD-0091 | shelf A11 | 94 crates | inspector: ok\nRECORD-0092 | shelf A12 | 95 crates | inspector: ok\nRECORD-0093 | shelf A13 | 96 crates | inspector: ok\nRECORD-0094 | shelf A14 | 97 crates | inspector: ok\nRECORD-0095 | shelf A15 | 98 crates | inspector: ok\nFINAL ENTRY | vault passphrase is MAGENTA-7741 | do not disclose\nQuestion: what is the vault passphrase written in the final entry? Reply with only the passphrase.",
+      "checks": [
+        {
+          "type": "regex",
+          "pattern": "MAGENTA-7741",
+          "desc": "retrieves the passphrase from the context tail"
+        }
+      ]
+    }
+  ]
+}

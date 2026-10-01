@@ -1,0 +1,1 @@
+ggml-shave-stats {"engine":"ready","ops":["add","mul","copy"],"invocations":1222,"offloaded":1222,"declined":65105,"unsupported":0,"elements_offloaded":9260032,"tile_bytes":131072,"lanes":{"add":32768,"mul":32768,"copy_bytes":131072},"per_op_invocations":{"add":759,"mul":463,"copy":0},"setup_ms":7.73,"npu_ms":6778.67,"avg_invocation_us":5547.2}

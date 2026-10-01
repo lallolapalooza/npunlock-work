@@ -1,0 +1,7 @@
+# This kernel carries fp32 float literals (1.0f, 0.044715f, eps, pi ...) in its
+# arithmetic.  For those operands the compiler deliberately selects the
+# hardware-constant-selector encoding, which the ; fmt=2 register rewrite would
+# break (measured: silu_f16 is exact with FIXUP=off and wrong with FIXUP=on, see
+# reports/npu-evidence.json).  Runtime-operand kernels (add/copy/mul/scale/
+# vec_dot) keep the default FIXUP=on.
+FIXUP=off
