@@ -1,0 +1,2 @@
+fatal error: error in backend: Cannot select: t50: i32 = GlobalAddress<i32* @g_counter> 0
+In function: controlled_act

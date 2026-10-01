@@ -1,0 +1,32 @@
+#!/bin/sh
+# moviLLD — native SHAVE linker stage.
+#
+# Contract (npunlock src/shavecc/shavecc.c link_base + POSIX tail):
+#   moviLLD -flavor gnu -EL -e <entry> -z max-page-size=0x10 --gc-sections \
+#       [<lib/mlibm.a>] -T <script> <object> -o -
+# The linked ELF goes to stdout; diagnostics go to stderr; no stdin is read.
+# lld does not understand `-o -` (it would create a file named "-"), so the
+# trailing -o pair is rewritten to a private temp file, lld is run, the temp
+# file is copied to stdout, and it is removed on any exit.
+LLD=/home/asdf/projects/llvm-14/build/bin/ld.lld
+
+TMP=$(mktemp "${TMPDIR:-/tmp}/moviLLD-XXXXXX") || exit 1
+trap 'rm -f "$TMP"' 0
+trap 'exit 2' 1 2 3 15
+
+prev=""
+for arg do
+  shift
+  if [ "$arg" = "-" ] && [ "$prev" = "-o" ]; then
+    arg="$TMP"
+  fi
+  set -- "$@" "$arg"
+  prev="$arg"
+done
+
+"$LLD" "$@"
+status=$?
+if [ "$status" -eq 0 ]; then
+  cat "$TMP" || status=$?
+fi
+exit "$status"

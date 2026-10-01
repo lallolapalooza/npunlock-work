@@ -1,0 +1,8 @@
+run: 2026-09-28T16:22:22-05:00
+4a02b58530667f070b577b795afa5b951e52fc9a8587a1be9ac444faccc7c73d  /home/asdf/projects/npunlock-work/shave-toolchain-root/bin/moviCompile
+688aa99463b7b77dc470819245013514a85340f8b488497b928bb1ee9e94cc74  /home/asdf/projects/npunlock-work/shave-toolchain-root/bin/moviAsm
+d915d1f724c849cd23dbcd968a182845e76531b6267e16e14c971a6ad7efdc21  /home/asdf/projects/npunlock-work/shave-toolchain-root/bin/moviLLD
+bccaac0cd287745e00ec2c45b728abf90b5b1f1e7ed67a992be50e7cc6612a1b  /home/asdf/projects/npunlock-work/shave-isa/shave_asm.py
+5660b39341820ee9b15bc6b52ed4b0572c1d95b5a3edf4df8a1dbd852c9fe55a  /home/asdf/projects/npunlock-work/shave-isa/encodings.json
+shave_asm.py (/home/asdf/projects/npunlock-work/shave-isa/shave_asm.py): parses
+bccaac0cd287745e00ec2c45b728abf90b5b1f1e7ed67a992be50e7cc6612a1b  /home/asdf/projects/npunlock-work/shave-isa/shave_asm.py

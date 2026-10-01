@@ -1,0 +1,72 @@
+ROUND-2 PROBE LOG (agent VendorRE2, 2026-09-28)
+harness (raw, no auto-legalizer):
+  OUT=/tmp/pkr bash /home/asdf/projects/npunlock-work/packets/tools/runp3raw.sh \
+      /home/asdf/projects/npunlock-work/packets/probes/<name>.s
+observable: dump_probe ACTUAL 32-byte window (00 40 01 2e = the loaded out pointer = success;
+            no ACTUAL line = device fault).  Every row below repeated 2-3x.
+
+[K.1 compressed NOP == n slots]  skeleton: LDO.32 i0,i18,0x28 ; <one byte> ; LSU1.ST.32 i0,i0 ; JMP
+  q_00  1 slot  FAULT      q_30  4 slots FAULT
+  q_10  2 slots FAULT      q_40  5 slots FAULT (3/3)
+  q_20  3 slots FAULT      q_50  6 slots PASS  (3/3)  bytes c202645100 50 89090001 47f101
+  q_60..q_f0 (7..16) PASS
+  q_4f q_5f q_0f q_17 q_27 (low nibble != 0) FAULT ; q_57 -> STALE value written
+  additivity: ca_40_07 PASS, ca_20_070707 PASS, ca_00_x6 PASS, ca_20_0707 (5 slots) FAULT 3/3
+  control: n6 (6x IAU.ADD) PASS ; z_i0none (no fill) FAULT ; ca_5x07 (5x BRU.NOP) FAULT
+
+[K.2 branch marker + delay window]
+  t_none  (BRU.BRA + store)            FAULT 2/2
+  t_1b40  (BRU.BRA + 1b 40 + store)    TAKEN 2/2   (ACTUAL be ba fe ca)
+  t_1b50 / t_2b40 / t_eb30 / t_eb / t_2b / s0b / s4b / s8b / scb   TAKEN
+  t_40 / t_50 / t_1b / s3b / s5b / sdb / sfb                        FAULT
+  delay-window counter (i1=1, 8x IAU.ADD i1,i1,i1, target store shows 2^k):
+  dc_1b20 -> 08 (=2^3, 3 real slots)   dc_1b40 -> 02 (2^1, 1 real)
+  dc_1b50 -> 01 (0 real)               dc_1b60 / dc_1bf0 -> 01 (0 real)
+  dc_2b / dc_eb / dc_0b / dc_4b / dc_8b / dc_cb -> 00 01 00 00 (0x100 = 8 real, i.e. the
+        lone-marker forms behave differently: the byte after the marker is the next
+        instruction's opcode, not a fill; treat as unresolved)
+  not-taken path: x_false (CMU.CMZ.I32 i2, i2=2) + 1b 50 -> fall-through store ran (not
+        skipped); x_true (same skeleton, true flag, target = 16x 0xff) -> FAULT
+  nf (not-taken, IAU.ADD right after 1b 50) -> 02 00 00 00 (the ADD executed)
+
+[K.3 class byte, minimal kernel: verified LDO ptr into i0 ; 50 ; <X> 82 64 51 00 ; 50 ; ST i8,i0]
+  cls_c2 -> 00 40 01 2e (i8 = out pointer, correct)
+  cls_01 -> FAULT      cls_00 / cls_f0 / cls_b0 -> FAULT
+  cls_bb -> 0f 00 00 00 (executes, wrong value)
+
+[K.4 AU immediate + LDI pair]
+  im_imm IAU.ADD i1,i1,1 -> 02 (addend 1 ok)     im2 IAU.ADD i1,i1,4 -> 01 (addend 0)
+  im3 IAU.ADD i1,i0,4 -> 00 40 01 2e (= i0)      s4 IAU.ADD i4,i0,4; store i4 -> 00 40 01 2e
+  v_ldi2 LDIL+LDIH pair i1 = 0xDEADBEEF -> ef be ad de (pair path verified)
+  v_add / d_* (IAU.ADD-based address arithmetic) unreliable for the same reason
+
+[corpus scan, no hardware]
+  187 vendor *.3720xx.elf (1.37 MB .text): 4-byte payload `82 64 51 00` preceded by
+  c2(3) 01(2) f0(2) b0(2) bb(2) 00(1); no dependence on offset mod 16.
+
+[K.5 AU-immediate: obj-path corruption (root cause of the addend chaos)]
+  shave_asm.py asm --hex : c6202581 c6208480 c6200482   (correct; c6202581 == gold bytes)
+  shave_asm.py obj .text : c6202501 c6208400 c6200402   (bit 31 dropped)
+  correct bytes, hand-written, dst=src=i9, base 0x12340000 (2/2):
+    g9_1  c6 20 25 80 -> 0x12340000 (+0)
+    g9_2  c6 20 25 81 -> 0x12340002 (+2)
+    g9_8  c6 20 25 84 -> 0x12340008 (+8)
+  obj-path (mangled) addends, base i1 = 0x12340000, 2/2: imm 0 -> 0x40354000, 1 -> 2x base,
+    2 -> +0, 3 -> +3, 4 -> +0, 5 -> +2, 8 -> +15, 16 -> +2  (bug signature, not ISA data)
+  register form control: IAU.ADD i1,i1,i2 (i2=4) -> 0x00000104 (+4 correct)
+
+[K.6 branch descriptors, gold-shape confirmations]
+  t_1b50 / t_2b / t_1b40 transfer; t_none / t_40 / t_50 / t_1b fault (2-3x each)
+  dc counters: 1b20 -> 3 real slots, 1b40 -> 1, 1b50 -> 0 (2/2)
+
+[K.7 LSU destination/immediate traps are pattern-dependent (clean skeleton: out ptr -> i0,
+     6-slot compressed fills, fixed safe store 89 09 00 01; hand-written bytes; 2/2 each)]
+  LDIL/LDIH pair, imm 0xBEEF/0xDEAD:  FAULT r19 r21 r23 r24 r30 ; ok r16 r17 r18 r20 r22 r25..r29 r31
+  LDIL/LDIH pair, imm 0x0001/0x0000:  FAULT r19 r30 ; ok r21 r23 r24  <-- same registers, other imm
+  5-byte LDO.32 iR,i18,0x0 (imm 0):   FAULT r19 r21 r24 r30 ; ok r16-18 r20 r22 r23 r25-31
+  LDO.32 i25,i18,0x0 + ST.32 i25,i5:  40 43 01 2e = in pointer  (5th register bit is real;
+                                      "r16..r31 alias r0..r15" is refuted)
+  LD.32 iR,i18 (2-operand) r16..r31:  no trap ; but LD.32 i21 + ST i21 traps and
+                                      LD.32 i25 + ST i25 lands nothing
+  low registers r0..r15 via LDIL/LDIH: all ok (the earlier r5 FAULT was my skeleton: the probe
+                                      overwrote i5 which the store also used as its address)

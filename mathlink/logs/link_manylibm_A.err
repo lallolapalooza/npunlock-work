@@ -1,0 +1,8 @@
+ld.lld: error: undefined symbol: __fixsfdi
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win32\\common\\moviCompile\\include\\math.h
+>>>               math_lite.o:(llrintf) in archive /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win32\\common\\moviCompile\\include\\math.h
+>>>               math_lite.o:(llrintf) in archive /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win32\\common\\moviCompile\\include\\math.h
+>>>               math_lite.o:(llroundf) in archive /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a
+>>> referenced 1 more times

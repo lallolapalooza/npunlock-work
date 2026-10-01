@@ -1,0 +1,14 @@
+{
+	"InstallScripts" : 
+	[
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/cmake_install.cmake",
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/ggml/cmake_install.cmake",
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/ggml/src/cmake_install.cmake",
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/ggml/src/ggml-cpu/cmake_install.cmake",
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/thirdparty/cmake_install.cmake",
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/examples/cmake_install.cmake",
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/examples/cli/cmake_install.cmake",
+		"/home/asdf/projects/npunlock-work/sd-demo/build-stock/examples/server/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

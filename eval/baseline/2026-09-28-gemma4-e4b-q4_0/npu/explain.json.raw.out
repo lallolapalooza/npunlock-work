@@ -1,0 +1,41 @@
+
+
+Loading model... |-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/-\|/ 
+
+▄▄ ▄▄
+██ ██
+██ ██  ▀▀█▄ ███▄███▄  ▀▀█▄    ▄████ ████▄ ████▄
+██ ██ ▄█▀██ ██ ██ ██ ▄█▀██    ██    ██ ██ ██ ██
+██ ██ ▀█▄██ ██ ██ ██ ▀█▄██ ██ ▀████ ████▀ ████▀
+                                    ██    ██
+                                    ▀▀    ▀▀
+
+build      : b1-57b557c
+model      : ../models/gemma-4-E4B-it-Q4_0.gguf
+ftype      : Q4_0
+modalities : text
+
+available commands:
+  /exit or Ctrl+C     stop or exit
+  /regen              regenerate the last response
+  /clear              clear the chat history
+  /read <file>        add a text file
+  /glob <pattern>     add text files using globbing pattern
+
+
+
+> In two sentences, explain why the sky appears blue. Mention light scattering.
+
+[Start thinking]
+
+1.  **Analyze the Request:** The user wants a two-sentence explanation of why the sky is blue, specifically mentioning light scattering.
+2.  **Identify Key Concepts:**
+    *   Sky color (blue).
+    *   Mechanism (light scattering).
+    *   Specific type of scattering (Rayleigh scattering - though not strictly required, it's the scientific basis).
+    *   The role of the atmosphere (air molecules).
+
+[ Prompt: 6.9 t/s | Generation: 0.5 t/s ]
+
+
+Exiting...

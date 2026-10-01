@@ -1,0 +1,1 @@
+legalize: 3 form rewrite(s) [LSU0.LDO.32 i0, i18, 0x0->LSU0.LD.32 i0, i18, LSU0.LDO.32 i1, i0, 0x0->LSU0.LD.32 i1, i0, LSU0.ST.32->LSU1.ST.32]

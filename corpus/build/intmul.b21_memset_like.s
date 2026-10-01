@@ -1,0 +1,198 @@
+	.text
+	.file	"entry.c"
+	.section	.text.controlled_act,"ax",@progbits
+	.globl	controlled_act                  // -- Begin function controlled_act
+	.type	controlled_act,@function
+controlled_act:                         // @controlled_act
+.Lcontrolled_act$local:
+// %bb.0:                               // %entry
+	LSU0.LDO.32 i0, i18, 0x0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LD.8 i0, i0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.SHL i0, i0, 24 ; fmt=3
+	IAU.SHR.U32 i1, i0, 24 ; fmt=3
+	LSU0.LDO.32 i0, i18, 0x28
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDIL i2, 0x03 ; fmt=0
+	IAU.ADD i3, i0, i2
+	LSU0.LDIL i4, 0x00 ; fmt=0
+	LSU1.ST.8 i4, i3
+	IAU.ADD i2, i1, i2
+	LSU0.LDIL i3, 0x01 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x02 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x04 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x05 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x06 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x07 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x08 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x09 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x0A ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x0B ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x0C ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x0D ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x0E ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x0F ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x10 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x11 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x12 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x13 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x14 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x15 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x16 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x17 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x18 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x19 ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x1A ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x1B ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x1C ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x1D ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	LSU0.LDIL i3, 0x1E ; fmt=0
+	IAU.ADD i4, i1, i3
+	IAU.XOR i4, i4, i2
+	IAU.ADD i3, i0, i3
+	LSU1.ST.8 i4, i3
+	IAU.XOR i3, i2, i1
+	LSU1.ST.8 i3, i0
+	LSU0.LDIL i3, 0x1F ; fmt=0
+	IAU.ADD i1, i1, i3
+	IAU.XOR i1, i1, i2
+	IAU.ADD i0, i0, i3
+	LSU1.ST.8 i1, i0
+	BRU.JMP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+Lfunc_end0:
+	.size	controlled_act, Lfunc_end0-controlled_act
+                                        // -- End function

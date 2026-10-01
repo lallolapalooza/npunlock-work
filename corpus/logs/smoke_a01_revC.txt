@@ -1,0 +1,34 @@
+== step skipped: no --toolchain-dir; patching --elf as provided
+== npunlock-patchblob: carrier + ELF -> graph.blob
+patched 2 ACT targets into /home/asdf/projects/npunlock-work/corpus/npu-smoke/graph.blob (43936 bytes)
+wrote patch report to /home/asdf/projects/npunlock-work/corpus/npu-smoke/patch-report.json
+== porting_probe.py create
+/home/asdf/projects/npunlock-work/corpus/npu-smoke/bundle/manifest.json
+== porting_probe.py verify
+{
+  "bundle": "/home/asdf/projects/npunlock-work/corpus/npu-smoke/bundle",
+  "element_count": 16,
+  "graph_sha256": "d717da4d7bbf3440f51d5f6dc0a273c2cba3628ca17bfdca14c4652ae4a7d2ad",
+  "oracle": "fp16_carrier_add1_exact",
+  "schema": "npunlock.porting.probe.verify.v1"
+}
+== npunlock-linux-probe
+wrote execution report to /home/asdf/projects/npunlock-work/corpus/npu-smoke/execution-report.json
+probe failed; report:
+{
+  "schema": "npunlock.porting.linux-execution.v1",
+  "mode": "in-process-bring-up",
+  "bundle_root": "/home/asdf/projects/npunlock-work/corpus/npu-smoke/bundle",
+  "stages": {
+    "loader": "passed",
+    "device_selection": "passed",
+    "graph_extension": "passed",
+    "graph_create": "passed",
+    "initialization": "passed",
+    "execution": "passed",
+    "oracle": "failed"
+  },
+  "result": {"status": "ok", "last_stage": "complete", "level_zero_result": "0x00000000", "driver_index": 0, "device_index": 0, "driver_version": 1789049548, "vendor_id": 32902, "device_id": 32029},
+  "diagnostic": "",
+  "scope": "Linux in-process compatibility probe; a passed graph-create stage alone does not establish execution or semantic compatibility"
+}

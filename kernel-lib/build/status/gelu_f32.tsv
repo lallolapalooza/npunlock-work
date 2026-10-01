@@ -1,0 +1,2 @@
+name	compile	rc	asm	rc	link	rc	validate	text_bytes	sha256	first_message	entries
+gelu_f32	OK	0	OK	0	OK	0	OK	1232	80d1da22fa55b52e7a0c34a64653662edfefe95fdd3f52de443b21883f78476e	<stdin>:30:9: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]	controlled_act	0x0000	0x0268	yes;floor	0x0270	0x0044	no;floorf	0x0270	0x0044	no;tanh	0x02c0	0x00c9	no;tanhf	0x02c0	0x00c9	no;exp	0x0390	0x0136	no;expf	0x0390	0x0136	no

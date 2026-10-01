@@ -1,0 +1,41 @@
+clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' failed.
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang -cc1 -triple shave -target-cpu 3720xx -S -O2 -x c - -ffunction-sections -fdata-sections -I/home/asdf/projects/npunlock-work/corpus/include -o - -main-file-name entry.c
+1.	<eof> parser at end of file
+2.	Code generation
+3.	Running pass 'Function Pass Manager' on module 'entry.c'.
+4.	Running pass 'SHAVE issued-stream legality (load latency + branch delay slots)' on function '@controlled_act'
+ #0 0x000064bf91423984 llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x1faa984)
+ #1 0x000064bf914216ee llvm::sys::RunSignalHandlers() (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x1fa86ee)
+ #2 0x000064bf91423e28 SignalHandler(int) Signals.cpp:0:0
+ #3 0x00007b0ee7045cb0 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x45cb0)
+ #4 0x00007b0ee70a61ac __pthread_kill_implementation ./nptl/pthread_kill.c:44:76
+ #5 0x00007b0ee70a61ac __pthread_kill_internal ./nptl/pthread_kill.c:89:10
+ #6 0x00007b0ee70a61ac pthread_kill ./nptl/pthread_kill.c:100:10
+ #7 0x00007b0ee7045b7e raise ./signal/../sysdeps/posix/raise.c:27:6
+ #8 0x00007b0ee70288ec internal_signal_block_all ./stdlib/../sysdeps/unix/sysv/linux/internal-signals.h:81:3
+ #9 0x00007b0ee70288ec __abort_lock_wrlock ./stdlib/abort.c:62:3
+#10 0x00007b0ee70288ec abort ./stdlib/abort.c:85:3
+#11 0x00007b0ee7029979 _IO_acquire_lock_fct ./libio/libioP.h:991:6
+#12 0x00007b0ee7029979 _IO_peekc_locked ./libio/peekc.c:37:3
+#13 0x00007b0ee703bf75 __libc_message_wrapper ./assert/../include/stdio.h:203:3
+#14 0x00007b0ee703bf75 __assert_fail ./assert/assert.c:37:3
+#15 0x000064bf90424964 (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0xfab964)
+#16 0x000064bf907bcc3c llvm::MachineFunctionPass::runOnFunction(llvm::Function&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x1343c3c)
+#17 0x000064bf90ca7658 llvm::FPPassManager::runOnFunction(llvm::Function&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x182e658)
+#18 0x000064bf90caf8e2 llvm::FPPassManager::runOnModule(llvm::Module&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x18368e2)
+#19 0x000064bf90ca814b llvm::legacy::PassManagerImpl::run(llvm::Module&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x182f14b)
+#20 0x000064bf916ef41f clang::EmitBackendOutput(clang::DiagnosticsEngine&, clang::HeaderSearchOptions const&, clang::CodeGenOptions const&, clang::TargetOptions const&, clang::LangOptions const&, llvm::StringRef, llvm::Module*, clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream>>) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x227641f)
+#21 0x000064bf92323610 clang::BackendConsumer::HandleTranslationUnit(clang::ASTContext&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x2eaa610)
+#22 0x000064bf92e509e5 clang::ParseAST(clang::Sema&, bool, bool) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x39d79e5)
+#23 0x000064bf91d4c81f clang::FrontendAction::Execute() (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x28d381f)
+#24 0x000064bf91ccdcad clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x2854cad)
+#25 0x000064bf91e00010 clang::ExecuteCompilerInvocation(clang::CompilerInstance*) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0x2987010)
+#26 0x000064bf90106835 cc1_main(llvm::ArrayRef<char const*>, char const*, void*) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0xc8d835)
+#27 0x000064bf90104570 ExecuteCC1Tool(llvm::SmallVectorImpl<char const*>&) driver.cpp:0:0
+#28 0x000064bf901042ee main (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0xc8b2ee)
+#29 0x00007b0ee702a601 __libc_start_call_main ./csu/../sysdeps/nptl/libc_start_call_main.h:83:3
+#30 0x00007b0ee702a718 call_init ./csu/../csu/libc-start.c:128:20
+#31 0x00007b0ee702a718 __libc_start_main ./csu/../csu/libc-start.c:347:5
+#32 0x000064bf90101485 _start (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang+0xc88485)

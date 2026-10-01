@@ -1,0 +1,240 @@
+symbol	text_bytes	argdata_bytes	elf_bytes	stage	validator
+acos	768	0	53584	ok	VALID
+acosf	768	0	53584	ok	VALID
+acosh	1008	0	53868	ok	VALID
+acoshf	1008	0	53868	ok	VALID
+acoshl	10240	400	334524	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+acosl	-	-	-	link	ld.lld: error: undefined symbol: __ltdf2
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win32\
+asin	816	0	53632	ok	VALID
+asinf	816	0	53632	ok	VALID
+asinh	2000	0	54860	ok	VALID
+asinhf	2000	0	54860	ok	VALID
+asinhl	10096	464	334332	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+asinl	-	-	-	link	ld.lld: error: undefined symbol: __ltdf2
+>>> referenced by shave_fp64.c:1985 (C:\\j_ws\\mCompile_main\\Compilers\\moviCo
+atan	352	0	53124	ok	VALID
+atan2	560	0	53336	ok	VALID
+atan2f	560	0	53336	ok	VALID
+atan2l	-	-	-	link	ld.lld: error: undefined symbol: __nedf2
+>>> referenced by shave_fp64.c:1764 (C:\\j_ws\\mCompile_main\\Compilers\\moviCo
+atanf	352	0	53124	ok	VALID
+atanh	608	0	53424	ok	VALID
+atanhf	608	0	53424	ok	VALID
+atanhl	9632	320	333720	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+atanl	-	-	-	link	ld.lld: error: undefined symbol: __gedf2
+>>> referenced by shave_fp64.c:1717 (C:\\j_ws\\mCompile_main\\Compilers\\moviCo
+cbrt	272	0	53044	ok	VALID
+cbrtf	272	0	53044	ok	VALID
+cbrtl	6960	0	330620	ok	VALID
+ceil	96	0	52868	ok	VALID
+ceilf	96	0	52868	ok	VALID
+ceill	192	0	323760	ok	VALID
+copysign	48	0	52828	ok	VALID
+copysignf	48	0	52828	ok	VALID
+copysignl	80	0	323608	ok	VALID
+cos	432	0	53204	ok	VALID
+cosf	432	0	53204	ok	VALID
+cosh	576	0	53436	ok	VALID
+coshf	576	0	53436	ok	VALID
+coshl	-	-	-	link	ld.lld: error: undefined symbol: __gtdf2
+>>> referenced by shave_fp64.c:2118 (C:\\j_ws\\mCompile_main\\Compilers\\moviCo
+cosl	7552	224	331564	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+erf	1552	0	54324	ok	VALID
+erfc	2816	0	55676	ok	VALID
+erfcf	2816	0	55676	ok	VALID
+erfcl	-	-	-	link	ld.lld: error: undefined symbol: __adddf3
+>>> referenced by shave_fp64.c:3676 (C:\\j_ws\\mCompile_main\\Compilers\\moviC
+erff	1552	0	54324	ok	VALID
+erfl	-	-	-	link	ld.lld: error: undefined symbol: __adddf3
+>>> referenced by shave_fp64.c:3676 (C:\\j_ws\\mCompile_main\\Compilers\\moviC
+exp	432	0	53248	ok	VALID
+exp2	224	0	52996	ok	VALID
+exp2f	224	0	52996	ok	VALID
+exp2l	-	-	-	link	ld.lld: error: undefined symbol: __subdf3
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win32
+exp_unsafe62	4992	192	328876	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+expf	432	0	53248	ok	VALID
+expl	6400	192	330392	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+expm1	624	0	53484	ok	VALID
+expm1f	624	0	53484	ok	VALID
+expm1l	7328	528	331672	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+fabs	48	0	52820	ok	VALID
+fabsf	48	0	52820	ok	VALID
+fabsl	80	0	323604	ok	VALID
+fdim	128	0	52900	ok	VALID
+fdimf	128	0	52900	ok	VALID
+fdiml	-	-	-	link	ld.lld: error: undefined symbol: __eqdf2
+>>> referenced by shave_fp64.c:782 (C:\\j_ws\\mCompile_main\\Compilers\\moviCom
+feclearexcept	64	0	4108	ok	VALID
+fegetenv	64	0	4100	ok	VALID
+fegetexceptflag	112	0	4156	ok	VALID
+fegetround	64	4	4176	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+feholdexcept	48	0	4088	ok	VALID
+feraiseexcept	64	0	4108	ok	VALID
+fesetenv	96	0	4132	ok	VALID
+fesetexceptflag	64	0	4108	ok	VALID
+fesetround	112	4	4224	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+fetestexcept	48	0	4088	ok	VALID
+feupdateenv	96	0	4136	ok	VALID
+floor	112	0	52888	ok	VALID
+floorf	112	0	52888	ok	VALID
+floorl	496	0	324020	ok	VALID
+fma	1600	0	54372	ok	VALID
+fmaf	1600	0	54372	ok	VALID
+fmal	-	-	-	link	ld.lld: error: undefined symbol: __muldf3
+>>> referenced by shave_fp64.c:4271 (C:\\j_ws\\mCompile_main\\Compilers\\moviC
+fmax	80	0	52852	ok	VALID
+fmaxf	80	0	52852	ok	VALID
+fmaxl	288	0	323812	ok	VALID
+fmin	80	0	52852	ok	VALID
+fminf	80	0	52852	ok	VALID
+fminl	320	0	323844	ok	VALID
+fmod	416	0	53188	ok	VALID
+fmodf	416	0	53188	ok	VALID
+fmodl	1776	0	325372	ok	VALID
+frexp	144	0	52920	ok	VALID
+frexpf	144	0	52920	ok	VALID
+frexpl	416	0	323940	ok	VALID
+hypot	688	0	53508	ok	VALID
+hypotf	688	0	53508	ok	VALID
+hypotl	6528	0	330228	ok	VALID
+ilogb	96	0	52872	ok	VALID
+ilogbf	96	0	52872	ok	VALID
+ilogbl	480	0	324004	ok	VALID
+is_denormal_or_zero	96	0	323636	ok	VALID
+is_nan_or_infl	64	0	323596	ok	VALID
+isinfl	96	0	323620	ok	VALID
+isnanl	112	0	323636	ok	VALID
+iszerol	96	0	323624	ok	VALID
+j0	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j0.c:37 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+j0f	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j0.c:37 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+j1	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j1.c:39 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+j1f	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j1.c:39 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+jn	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_jn.c:35 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+jnf	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_jn.c:35 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+lanczos_ln_gamma62	10704	672	335212	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+ldexp	208	0	53080	ok	VALID
+ldexpf	208	0	53080	ok	VALID
+ldexpl	1104	0	324628	ok	VALID
+lgamma	4128	0	56988	ok	VALID
+lgammaf	4128	0	56988	ok	VALID
+lgammal	-	-	-	link	ld.lld: error: undefined symbol: __eqdf2
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win32\
+llrint	912	4	54004	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+llrintf	912	4	54004	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+llrintl	-	-	-	link	ld.lld: error: undefined symbol: __fixdfdi
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win3
+llround	480	0	53332	ok	VALID
+llroundf	480	0	53332	ok	VALID
+llroundl	-	-	-	link	ld.lld: error: undefined symbol: __fixdfdi
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win3
+log	336	0	53108	ok	VALID
+log10	576	0	53396	ok	VALID
+log10f	576	0	53396	ok	VALID
+log10l	4288	320	328296	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+log1p	1072	0	53888	ok	VALID
+log1pf	1072	0	53888	ok	VALID
+log1pl	-	-	-	link	ld.lld: error: undefined symbol: __eqdf2
+>>> referenced by shave_fp64.c:1888 (C:\\j_ws\\mCompile_main\\Compilers\\moviCo
+log2	528	0	53300	ok	VALID
+log2f	528	0	53300	ok	VALID
+log2l	3840	320	327844	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+logb	96	0	52868	ok	VALID
+logbf	96	0	52868	ok	VALID
+logbl	-	-	-	link	ld.lld: error: undefined symbol: __floatsidf
+>>> referenced by shave_fp64.c:863 (C:\\j_ws\\mCompile_main\\Compilers\\mov
+logf	336	0	53108	ok	VALID
+logl	4400	320	328428	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+lrint	592	4	53656	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+lrintf	592	4	53656	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+lrintl	-	-	-	link	ld.lld: error: undefined symbol: __fixdfsi
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win3
+lround	160	0	52984	ok	VALID
+lroundf	160	0	52984	ok	VALID
+lroundl	-	-	-	link	ld.lld: error: undefined symbol: __fixdfsi
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win3
+modf	96	0	52868	ok	VALID
+modff	96	0	52868	ok	VALID
+modfl	928	0	324452	ok	VALID
+nan	112	0	52908	ok	VALID
+nanf	112	0	52908	ok	VALID
+nanl	48	0	323572	ok	VALID
+nearbyint	544	4	53560	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+nearbyintf	544	4	53560	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+nearbyintl	-	-	-	link	ld.lld: error: undefined symbol: __subdf3
+>>> referenced by shave_fp64.c:2910 (C:\\j_ws\\mCompile_main\\Compilers\\moviC
+nextafter	192	0	52976	ok	VALID
+nextafterf	192	0	52976	ok	VALID
+nextafterl	736	0	324380	ok	VALID
+nexttoward	288	0	53104	ok	VALID
+nexttowardf	288	0	53104	ok	VALID
+nexttowardl	736	0	324380	ok	VALID
+pow	1552	0	54324	ok	VALID
+powf	1552	0	54324	ok	VALID
+powl	-	-	-	link	ld.lld: error: undefined symbol: __fixdfdi
+>>> referenced by C:\\j_ws\\mCompile_main\\Compilers\\moviCompile\\Build-win3
+range_reduction_payne_hanek	2960	0	326508	ok	VALID
+remainder	576	0	53360	ok	VALID
+remainderf	576	0	53360	ok	VALID
+remainderl	-	-	-	link	ld.lld: error: undefined symbol: __adddf3
+>>> referenced by shave_fp64.c:3060 (C:\\j_ws\\mCompile_main\\Compilers\\moviC
+remquo	672	0	53448	ok	VALID
+remquof	672	0	53448	ok	VALID
+remquol	-	-	-	link	ld.lld: error: undefined symbol: __adddf3
+>>> referenced by shave_fp64.c:3060 (C:\\j_ws\\mCompile_main\\Compilers\\moviC
+rint	544	4	53560	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+rintf	544	4	53560	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+rintl	-	-	-	link	ld.lld: error: undefined symbol: __subdf3
+>>> referenced by shave_fp64.c:2910 (C:\\j_ws\\mCompile_main\\Compilers\\moviC
+round	112	0	52888	ok	VALID
+roundf	112	0	52888	ok	VALID
+roundl	560	0	324084	ok	VALID
+scalbln	208	0	53080	ok	VALID
+scalblnf	208	0	53080	ok	VALID
+scalblnl	1152	0	324704	ok	VALID
+scalbn	208	0	53080	ok	VALID
+scalbnf	208	0	53080	ok	VALID
+scalbnl	1152	0	324700	ok	VALID
+sin	432	0	53204	ok	VALID
+sinf	432	0	53204	ok	VALID
+sinh	1056	0	53916	ok	VALID
+sinhf	1056	0	53916	ok	VALID
+sinhl	9920	240	333932	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+sinl	7408	224	331420	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+sqrt	368	0	53140	ok	VALID
+sqrtf	368	0	53140	ok	VALID
+sqrtl	5840	0	329428	ok	VALID
+tan	400	0	53172	ok	VALID
+tanf	400	0	53172	ok	VALID
+tanh	640	0	53500	ok	VALID
+tanhf	640	0	53500	ok	VALID
+tanhl	11040	256	335068	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+tanl	11248	224	335292	ok	status=5 (unsupported): {"status":"unsupported","stage":"elf32.validate","messag
+tgamma	3104	0	56040	ok	VALID
+tgammaf	3104	0	56040	ok	VALID
+tgammal	-	-	-	link	ld.lld: error: undefined symbol: __fixdfsi
+>>> referenced by shave_fp64.c:2678 (C:\\j_ws\\mCompile_main\\Compilers\\movi
+trunc	80	0	52856	ok	VALID
+truncf	80	0	52856	ok	VALID
+truncl	320	0	323844	ok	VALID
+x_mod_2_62	288	0	323816	ok	VALID
+x_times_half_unsafel	80	0	323620	ok	VALID
+y0	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j0.c:58 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+y0f	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j0.c:58 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+y1	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j1.c:61 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+y1f	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_j1.c:61 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+yn	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_jn.c:56 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new
+ynf	-	-	-	link	ld.lld: error: undefined symbol: __errno
+>>> referenced by wf_jn.c:56 (C:/j_ws/mCompile_main/Compilers/LeonTools/src/new

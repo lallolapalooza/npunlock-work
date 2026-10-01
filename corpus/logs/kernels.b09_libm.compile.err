@@ -1,0 +1,17 @@
+<stdin>:11:15: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float a = tanhf(x);
+              ^
+<stdin>:11:15: note: include the header <math.h> or explicitly provide a declaration for 'tanhf'
+<stdin>:12:15: warning: implicitly declaring library function 'expf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float b = expf(x * 0.25f);
+              ^
+<stdin>:12:15: note: include the header <math.h> or explicitly provide a declaration for 'expf'
+<stdin>:13:15: warning: implicitly declaring library function 'sqrtf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float c = sqrtf(fabsf(x) + 1.0f);
+              ^
+<stdin>:13:15: note: include the header <math.h> or explicitly provide a declaration for 'sqrtf'
+<stdin>:13:21: warning: implicitly declaring library function 'fabsf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float c = sqrtf(fabsf(x) + 1.0f);
+                    ^
+<stdin>:13:21: note: include the header <math.h> or explicitly provide a declaration for 'fabsf'
+fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee GlobalAddress); see TARGET_NOTES.md

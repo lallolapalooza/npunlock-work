@@ -1,0 +1,2 @@
+name	compile	rc	asm	rc	link	rc	validate	text_bytes	sha256	first_message	entries
+mul_f16	OK	0	OK	0	OK	0	OK	528	d4e1b7543a17b7dfac120b57dc68e70b521fa87786dd8b755b9d07320693402d	legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18]	controlled_act	0x0000	0x0209	yes

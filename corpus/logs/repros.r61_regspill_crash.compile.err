@@ -1,0 +1,45 @@
+SHAVE: stack spills are not supported yet (no stack-pointer register identified; see TARGET_NOTES.md)
+UNREACHABLE executed at /home/asdf/projects/llvm-14/llvm/lib/Target/SHAVE/SHAVEInstrInfo.cpp:41!
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang -cc1 -triple shave -target-cpu 3720xx -S -O2 -x c - -ffunction-sections -fdata-sections -I/home/asdf/projects/npunlock-work/corpus/include -o - -main-file-name entry.c
+1.	<eof> parser at end of file
+2.	Code generation
+3.	Running pass 'Function Pass Manager' on module 'entry.c'.
+4.	Running pass 'Greedy Register Allocator' on function '@controlled_act'
+ #0 0x00005de8814a1934 llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x1faa934)
+ #1 0x00005de88149f69e llvm::sys::RunSignalHandlers() (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x1fa869e)
+ #2 0x00005de8814a1dd8 SignalHandler(int) Signals.cpp:0:0
+ #3 0x0000700118245cb0 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x45cb0)
+ #4 0x00007001182a61ac __pthread_kill_implementation ./nptl/pthread_kill.c:44:76
+ #5 0x00007001182a61ac __pthread_kill_internal ./nptl/pthread_kill.c:89:10
+ #6 0x00007001182a61ac pthread_kill ./nptl/pthread_kill.c:100:10
+ #7 0x0000700118245b7e raise ./signal/../sysdeps/posix/raise.c:27:6
+ #8 0x00007001182288ec internal_signal_block_all ./stdlib/../sysdeps/unix/sysv/linux/internal-signals.h:81:3
+ #9 0x00007001182288ec __abort_lock_wrlock ./stdlib/abort.c:62:3
+#10 0x00007001182288ec abort ./stdlib/abort.c:85:3
+#11 0x00005de881421f4f (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x1f2af4f)
+#12 0x00005de8804ac929 (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0xfb5929)
+#13 0x00005de880bdaaba (anonymous namespace)::InlineSpiller::spillAll() InlineSpiller.cpp:0:0
+#14 0x00005de880bd7c9e (anonymous namespace)::InlineSpiller::spill(llvm::LiveRangeEdit&) InlineSpiller.cpp:0:0
+#15 0x00005de880b5e6b1 llvm::RAGreedy::selectOrSplitImpl(llvm::LiveInterval&, llvm::SmallVectorImpl<llvm::Register>&, llvm::SmallSet<llvm::Register, 16u, std::less<llvm::Register>>&, unsigned int) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x16676b1)
+#16 0x00005de880b5ea2c llvm::RAGreedy::selectOrSplit(llvm::LiveInterval&, llvm::SmallVectorImpl<llvm::Register>&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x1667a2c)
+#17 0x00005de880beacda llvm::RegAllocBase::allocatePhysRegs() (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x16f3cda)
+#18 0x00005de880b62af3 llvm::RAGreedy::runOnMachineFunction(llvm::MachineFunction&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x166baf3)
+#19 0x00005de88083abec llvm::MachineFunctionPass::runOnFunction(llvm::Function&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x1343bec)
+#20 0x00005de880d25608 llvm::FPPassManager::runOnFunction(llvm::Function&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x182e608)
+#21 0x00005de880d2d892 llvm::FPPassManager::runOnModule(llvm::Module&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x1836892)
+#22 0x00005de880d260fb llvm::legacy::PassManagerImpl::run(llvm::Module&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x182f0fb)
+#23 0x00005de88176d3cf clang::EmitBackendOutput(clang::DiagnosticsEngine&, clang::HeaderSearchOptions const&, clang::CodeGenOptions const&, clang::TargetOptions const&, clang::LangOptions const&, llvm::StringRef, llvm::Module*, clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream>>) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x22763cf)
+#24 0x00005de8823a15c0 clang::BackendConsumer::HandleTranslationUnit(clang::ASTContext&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x2eaa5c0)
+#25 0x00005de882ece995 clang::ParseAST(clang::Sema&, bool, bool) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x39d7995)
+#26 0x00005de881dca7cf clang::FrontendAction::Execute() (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x28d37cf)
+#27 0x00005de881d4bc5d clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x2854c5d)
+#28 0x00005de881e7dfc0 clang::ExecuteCompilerInvocation(clang::CompilerInstance*) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0x2986fc0)
+#29 0x00005de880184835 cc1_main(llvm::ArrayRef<char const*>, char const*, void*) (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0xc8d835)
+#30 0x00005de880182570 ExecuteCC1Tool(llvm::SmallVectorImpl<char const*>&) driver.cpp:0:0
+#31 0x00005de8801822ee main (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0xc8b2ee)
+#32 0x000070011822a601 __libc_start_call_main ./csu/../sysdeps/nptl/libc_start_call_main.h:83:3
+#33 0x000070011822a718 call_init ./csu/../csu/libc-start.c:128:20
+#34 0x000070011822a718 __libc_start_main ./csu/../csu/libc-start.c:347:5
+#35 0x00005de88017f485 _start (/home/asdf/projects/npunlock-work/corpus/toolchain-snapshot/bin/clang+0xc88485)

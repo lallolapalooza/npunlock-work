@@ -1,0 +1,27 @@
+<stdin>:11:15: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float a = tanhf(x);
+              ^
+<stdin>:11:15: note: include the header <math.h> or explicitly provide a declaration for 'tanhf'
+<stdin>:12:15: warning: implicitly declaring library function 'expf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float b = expf(x * 0.25f);
+              ^
+<stdin>:12:15: note: include the header <math.h> or explicitly provide a declaration for 'expf'
+<stdin>:13:15: warning: implicitly declaring library function 'sqrtf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float c = sqrtf(fabsf(x) + 1.0f);
+              ^
+<stdin>:13:15: note: include the header <math.h> or explicitly provide a declaration for 'sqrtf'
+<stdin>:13:21: warning: implicitly declaring library function 'fabsf' with type 'float (float)' [-Wimplicit-function-declaration]
+    float c = sqrtf(fabsf(x) + 1.0f);
+                    ^
+<stdin>:13:21: note: include the header <math.h> or explicitly provide a declaration for 'fabsf'
+fatal error: error in backend: Cannot select: t23: f32 = fsqrt t22
+  t22: f32 = fadd t20, t81
+    t20: f32 = fabs t66
+      t66: f32,ch = load<(load (s16) from %ir.lsr.iv54, !tbaa !7), anyext from f16> t0, t2, undef:i32
+        t2: i32,ch = CopyFromReg t0, Register:i32 %15
+          t1: i32 = Register %15
+        t4: i32 = undef
+    t81: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float 1.000000e+00> 0, undef:i32
+      t80: i32 = ConstantPool<float 1.000000e+00> 0
+      t4: i32 = undef
+In function: controlled_act

@@ -1,0 +1,27 @@
+ld.lld: error: undefined symbol: __floatunsidf
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced 1 more times
+
+ld.lld: error: undefined symbol: __adddf3
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced 3 more times
+
+ld.lld: error: undefined symbol: __muldf3
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __divdf3
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __fixunsdfsi
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __gtdf2
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2casts2.b22_double.o:(controlled_act)

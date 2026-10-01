@@ -1,0 +1,29 @@
+ld.lld: error: undefined symbol: __floatundisf
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __fixunssfdi
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __floatdisf
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __fixsfdi
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __floatdidf
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced 1 more times
+
+ld.lld: error: undefined symbol: __adddf3
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+
+ld.lld: error: undefined symbol: __fixunsdfsi
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)
+>>> referenced by /home/asdf/projects/npunlock-work/corpus/build/cw2mulfix.b23_i64_float.o:(controlled_act)

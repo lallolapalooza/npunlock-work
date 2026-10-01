@@ -1,0 +1,69 @@
+{
+  "id": "arith",
+  "device": "none",
+  "n_predict": 24,
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_s": 11.281,
+  "prompt_tps": 16.9,
+  "gen_tps": 6.7,
+  "generated_text": "4183",
+  "error_lines": [],
+  "shave_stats": {
+    "engine": "ready",
+    "ops": [
+      "add",
+      "mul",
+      "copy"
+    ],
+    "invocations": 0,
+    "offloaded": 0,
+    "declined": 2975,
+    "unsupported": 0,
+    "elements_offloaded": 0,
+    "tile_bytes": 131072,
+    "lanes": {
+      "add": 32768,
+      "mul": 32768,
+      "copy_bytes": 131072
+    },
+    "per_op_invocations": {
+      "add": 0,
+      "mul": 0,
+      "copy": 0
+    },
+    "setup_ms": 20.72,
+    "npu_ms": 0.0,
+    "avg_invocation_us": 0.0
+  },
+  "argv": [
+    "/home/asdf/projects/npunlock-work/llama.cpp/build/bin/llama-cli",
+    "-m",
+    "../models/gemma-4-E4B-it-Q4_0.gguf",
+    "-p",
+    "Compute 47 * 89 exactly. Reply with only the number.",
+    "-n",
+    "24",
+    "-c",
+    "4096",
+    "-t",
+    "8",
+    "--temp",
+    "0",
+    "-s",
+    "1234",
+    "-co",
+    "off",
+    "-st",
+    "--no-warmup",
+    "-fit",
+    "off",
+    "-dev",
+    "none",
+    "-b",
+    "2048",
+    "-ub",
+    "512"
+  ],
+  "ok": true
+}

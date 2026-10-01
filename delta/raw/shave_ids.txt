@@ -1,0 +1,135 @@
+SHAVE
+SHAVE Address Simplifier Pass
+SHAVE Anti-Dependency Breaker Pass
+SHAVE Assembly Printer
+SHAVE DAG-
+SHAVE Fix LUT Operands
+SHAVE Interrupt Handler Pass
+SHAVE Post-RA Scheduler Pass
+SHAVE Pre-RA Scheduler Pass
+SHAVE Pre-RA Scheduler Peephole Pass
+SHAVE Pre-Sched2 Peephole Pass
+SHAVE Predicator
+SHAVE Preemption Handler Pass
+SHAVE Processor
+SHAVE VRF stash-retrieve logic to avoid spilling IRF registers to stack
+SHAVE Vector Type Widening Pass
+SHAVE instruction scheduler 
+SHAVE loop load hoister pass
+SHAVE scheduler pre-register-allocation
+SHAVEExitCodes_t
+SHAVEExitNormal
+SHAVEISD
+SHAVE_BRANCH_DELAY_SLOTS__
+SHAVE_CALL
+SHAVE_CALL 
+SHAVE_EXTRACT_SUBVECTOR
+SHAVE_INSERT_SUBVECTOR 
+SHAVE_MEMORY_LOAD_LATENCY__
+SHAVE_RETURN
+SHAVE_SETCC
+SHAVE_SETCC_f16
+SHAVE_SETCC_f32
+SHAVE_SETCC_i16
+SHAVE_SETCC_i32
+SHAVE_SETCC_i8
+SHAVE_SETCC_v16f16_v16i16_Myr4
+SHAVE_SETCC_v16f32_v16i32_Myr4
+SHAVE_SETCC_v16i16_v16i16_Myr4
+SHAVE_SETCC_v16i32_v16i32_Myr4
+SHAVE_SETCC_v16i8_v16i8
+SHAVE_SETCC_v16i8_v16i8_Myr4
+SHAVE_SETCC_v2f16_v2i16
+SHAVE_SETCC_v2f32_v2i32
+SHAVE_SETCC_v2f32_v2i32_Myr4
+SHAVE_SETCC_v2i16_v2i16
+SHAVE_SETCC_v2i32_v2i32
+SHAVE_SETCC_v2i32_v2i32_Myr4
+SHAVE_SETCC_v2i8_v2i8
+SHAVE_SETCC_v32f16_v32i16_Myr4
+SHAVE_SETCC_v32i16_v32i16_Myr4
+SHAVE_SETCC_v32i8_v32i8_Myr4
+SHAVE_SETCC_v4f16_v4i16
+SHAVE_SETCC_v4f16_v4i16_Myr4
+SHAVE_SETCC_v4f32_v4i32
+SHAVE_SETCC_v4f32_v4i32_Myr4
+SHAVE_SETCC_v4i16_v4i16
+SHAVE_SETCC_v4i16_v4i16_Myr4
+SHAVE_SETCC_v4i32_v4i32
+SHAVE_SETCC_v4i32_v4i32_Myr4
+SHAVE_SETCC_v4i8_v4i8
+SHAVE_SETCC_v64i8_v64i8_Myr4
+SHAVE_SETCC_v8f16_v8i16
+SHAVE_SETCC_v8f16_v8i16_Myr4
+SHAVE_SETCC_v8f32_v8i32_Myr4
+SHAVE_SETCC_v8i16_v8i16
+SHAVE_SETCC_v8i16_v8i16_Myr4
+SHAVE_SETCC_v8i32_v8i32_Myr4
+SHAVE_SETCC_v8i8_v8i8
+SHAVE_SETCC_v8i8_v8i8_Myr4
+shave-aliased-store-distance
+shave-align-all-branch-targets
+shave-align-function-targets
+shave-align-jump-targets
+shave-align-loop-targets
+shave-align-stack
+shave-average-instruction-size
+shave-branch-delays
+shave-disable-NaN-checking
+shave-disable-constant-pools
+shave-disable-nop-compression
+shave-disable-slot-optimiser
+shave-enable-address-simplifier
+shave-enable-anti-dependency-breaker
+shave-enable-interrupt-friendly-scheduling
+shave-enable-ldi
+shave-enable-ldx-and-stx-instructions
+shave-enable-loop-load-hoisting
+shave-enable-low-impact-preemption
+shave-enable-preemption-checks
+shave-enable-vilv
+shave-generate-fp-acc-mac
+shave-generate-int-acc-mac
+shave-has-LSU1-fu
+shave-has-SAU-fu
+shave-has-VAU-fu
+shave-has-floating-point-unit
+shave-inline-assembly-warning-threshold
+shave-inplace-mutation
+shave-load-latency
+shave-loop-load-hoister
+shave-low-impact-preemption
+shave-lsu-flush-on-enter
+shave-lsu-load-policy
+shave-lsu-store-policy
+shave-lsu-volatile-load-store-policy
+shave-max-inline-assembly-lines
+shave-no-peephole
+shave-no-replace-jmp-with-bra
+shave-nop-sync-after-inline-asm
+shave-postra-scheduler-functional-unit-mutation-order
+shave-postra-scheduler-inner-loop-block-weight-modifier
+shave-postra-scheduler-max-trace-blocks
+shave-postra-scheduler-outer-loop-block-weight-modifier
+shave-postra-scheduler-trace-generation-direction
+shave-pre-sched2-peepholes
+shave-predicator
+shave-preemption-checks
+shave-preemption-max-loop-depth
+shave-prera-scheduler
+shave-prera-scheduler-peepholes
+shave-scheduler-max-tracked-mem-ops
+shave-stack-overflow-checking
+shave-standard-section-prefix
+shave-stash-retrieve
+shave-track-stack-usage
+shave-vpu4-load-store-distance
+shave-widen-three-element-vectors
+shaveaddresssimplifierpass
+shaveantidepbreakerpass
+shavepostraschedulerpass
+shavepreemptionhandlerpass
+shavepreraschedulerpass
+shavepreraschedulerpeepholepass
+shavepresched2peepholepass
+shavewidenvectortypespass

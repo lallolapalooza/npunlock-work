@@ -1,0 +1,54 @@
+ggml-shave: engine status: ready
+ggml-shave: engine tile: 32768 f32 lanes, 131072 copy bytes
+  [ ok ] engine advertises a model-sized tile
+  [ ok ] add and mul share the tile geometry
+ggml-shave: f32 add of 32768 elements (one full tile)
+  [ ok ] add f32 tile: supports_op == true
+  [ ok ] add f32 tile: SHAVE graph_compute returned success
+  [ ok ] add f32 tile: CPU graph_compute returned success
+  [ ok ] add f32 tile: CPU result matches the host reference
+  [ ok ] add f32 tile: NPU result is bit-exact with the CPU backend
+ggml-shave: f32 mul of 32768 elements (one full tile)
+  [ ok ] mul f32 tile: supports_op == true
+  [ ok ] mul f32 tile: SHAVE graph_compute returned success
+  [ ok ] mul f32 tile: CPU graph_compute returned success
+  [ ok ] mul f32 tile: CPU result matches the host reference
+  [FAIL] mul f32 tile: NPU result is bit-exact with the CPU backend
+        first difference at byte 52 (npu 00 cpu 66, 131072 bytes total)
+  [ ok ] add f32 sub-tile: supports_op == true
+  [ ok ] add f32 sub-tile: SHAVE graph_compute returned success
+  [ ok ] add f32 sub-tile: CPU graph_compute returned success
+  [ ok ] add f32 sub-tile: CPU result matches the host reference
+  [ ok ] add f32 sub-tile: NPU result is bit-exact with the CPU backend
+  [ ok ] mul f32 single element: supports_op == true
+  [ ok ] mul f32 single element: SHAVE graph_compute returned success
+  [ ok ] mul f32 single element: CPU graph_compute returned success
+  [ ok ] mul f32 single element: CPU result matches the host reference
+  [ ok ] mul f32 single element: NPU result is bit-exact with the CPU backend
+ggml-shave: byte-exact copy of 131072 bytes
+  [ ok ] copy f32: supports_op == true
+  [ ok ] copy f32: SHAVE graph_compute returned success
+  [ ok ] copy f32: CPU graph_compute returned success
+  [ ok ] copy f32: CPU result matches the host reference
+  [ ok ] copy f32: NPU result is bit-exact with the CPU backend
+  [ ok ] copy f16: supports_op == true
+  [ ok ] copy f16: SHAVE graph_compute returned success
+  [ ok ] copy f16: CPU graph_compute returned success
+  [ ok ] copy f16: CPU result matches the host reference
+  [ ok ] copy f16: NPU result is bit-exact with the CPU backend
+  [ ok ] copy f32 sub-tile: supports_op == true
+  [ ok ] copy f32 sub-tile: SHAVE graph_compute returned success
+  [ ok ] copy f32 sub-tile: CPU graph_compute returned success
+  [ ok ] copy f32 sub-tile: CPU result matches the host reference
+  [ ok ] copy f32 sub-tile: NPU result is bit-exact with the CPU backend
+ggml-shave: capability gate
+  [ ok ] f16 add is declined (no bit-exact f16 kernel)
+  [ ok ] f32 add larger than one tile is declined
+  [ ok ] broadcast f32 add is declined
+  [ ok ] copy of a non-dense source is declined
+ggml-shave: scheduler placement
+  [ ok ] exactly the two supported nodes ran on the NPU
+  [ ok ] mixed (NPU+CPU) scheduler computed the graph
+  [ ok ] CPU-only scheduler computed the graph
+  [FAIL] mixed graph result is bit-exact with the CPU-only scheduler
+ggml-shave: FAIL (NPU offloads: 9, 100.874 ms total NPU time)

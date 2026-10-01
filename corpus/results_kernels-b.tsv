@@ -1,0 +1,34 @@
+kernel	compile	rc	asm	rc	link	rc	validate	text_bytes	class	first_message
+a01_add1_fp16	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' faile
+a02_add1_fp16_header	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: unsupported condition code 20 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md
+a03_gelu_fp16	FAIL	1	-	-	-	-	SKIP	-	error	<stdin>:15:11: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+a04_gelu_fp32	FAIL	1	-	-	-	-	SKIP	-	error	<stdin>:15:11: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+a05_scale_f32	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' faile
+a06_mix_f16	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' faile
+a07_weighted_mix_f16	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' faile
+b01_int_arith	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t39: i32 = mulhu t24, Constant:i32<-1431655765>
+b02_div_mod	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t87: i32,i32 = sdivrem t57, t58
+b03_casts_fp	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t79: f32 = uint_to_fp t78
+b04_mem_widths	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' faile
+b05_loops	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: unsupported condition code 20 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md
+b06_cond	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' faile
+b07_switch	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t4: ch = br_jt t2:1, JumpTable:i32<0>, t2
+b08_calls_internal	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee GlobalAddress); see TARGET_NOTES.md
+b09_libm	FAIL	1	-	-	-	-	SKIP	-	error	<stdin>:11:15: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+b10_structs	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t59: i32 = fp_to_uint t58
+b11_int64	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+b12_bitfields	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t83: i32 = fp_to_uint t89
+b13_varargs	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee GlobalAddress); see TARGET_NOTES.md
+b14_volatile	OK	0	OK	0	OK	0	OK	256	PASS	legalize: 6 delay-slot NOP(s); 9 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LS
+b15_recursion	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee GlobalAddress); see TARGET_NOTES.md
+b16_fcmp	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported fcmp in wave 1: t24: i32 = <<Unknown Node #370>> t8, t27, setule:ch
+b17_alloca	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported IR node in wave 1: t51: i32 = FrameIndex<0>
+b18_globals	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t39: i32 = GlobalAddress<i32* @counter> 0
+b19_fp_arith	OK	0	OK	0	OK	0	OK	80	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+b20_funcptr	OK	0	OK	0	OK	0	OK	176	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+b21_memset_like	OK	0	OK	0	OK	0	OK	688	PASS	legalize: 6 delay-slot NOP(s); 32 LSU unit rewrite(s) [LSU0.ST.8->LSU1.ST.8, LSU0.ST.8->LSU1.ST.8, LSU0.ST.8->LSU1.ST.8, LSU0.ST.8->LSU1.ST.8, LSU0.ST.8->LSU1.ST.8, LSU0.ST.8->LSU1.ST.8, LSU0.ST.8->LS
+b22_double	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+b23_i64_float	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+b24_signed_index	OK	0	OK	0	OK	0	OK	240	PASS	legalize: 6 delay-slot NOP(s); 2 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+b25_large_const	OK	0	OK	0	OK	0	OK	144	PASS	legalize: 6 delay-slot NOP(s); 4 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+b26_goto	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	clang: /home/asdf/projects/llvm-14/llvm/include/llvm/CodeGen/MachineOperand.h:553: MachineBasicBlock *llvm::MachineOperand::getMBB() const: Assertion `isMBB() && "Wrong MachineOperand accessor"' faile

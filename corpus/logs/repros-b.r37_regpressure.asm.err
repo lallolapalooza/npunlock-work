@@ -1,0 +1,1 @@
+legalize: 6 delay-slot NOP(s); 4 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]

@@ -1,0 +1,3 @@
+ARGV[/home/asdf/projects/npunlock-work/mathlink/out/mocktc/bin/moviCompile]: -cc1 -triple shave -target-cpu 3720xx -S -O2 -x c entry.c -ffunction-sections -fdata-sections -o -
+ARGV[/home/asdf/projects/npunlock-work/mathlink/out/mocktc/bin/moviAsm]: --cv 3720xx --noSPrefixing
+ARGV[/home/asdf/projects/npunlock-work/mathlink/out/mocktc/bin/moviLLD]: -flavor gnu -EL -e controlled_act -z max-page-size=0x10 --gc-sections /home/asdf/projects/npunlock-work/mathlink/out/mocktc/lib/mlibm.a -T /tmp/npunlock-script-GD25G7 /tmp/npunlock-object-2voPfV -o -

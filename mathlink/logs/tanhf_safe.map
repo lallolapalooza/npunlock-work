@@ -1,0 +1,49 @@
+     VMA      LMA     Size Align Out     In      Symbol
+       0        0 1e000000     1 . = 0x1e000000
+1e000000 1e000000        0     1 .arg.data
+1e000000 1e000000        0     1         . = ALIGN ( 16 )
+1e000000 1e000000 ffffffffff000000     1 . = 0x1d000000
+1d000000 1d000000      280    16 .text
+1d000000 1d000000       11    16         out/tanhf_linkprobe_safe.o:(.text.controlled_act)
+1d000000 1d000000        0     1                 controlled_act
+1d000020 1d000020       44    16         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.text.floorf)
+1d000020 1d000020       44     1                 floorf
+1d000020 1d000020       44     1                 floor
+1d000070 1d000070       c9    16         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.text.tanhf)
+1d000070 1d000070       c9     1                 tanhf
+1d000070 1d000070       c9     1                 tanh
+1d000140 1d000140      136    16         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.text.expf)
+1d000140 1d000140      136     1                 expf
+1d000140 1d000140      136     1                 exp
+1d000276 1d000276        a     1         . = ALIGN ( 16 )
+1d000280 1d000280        0     1         . = ALIGN ( 16 )
+1d000280 1d000280        0     1         . = ALIGN ( 16 )
+       0        0     4d5a     1 .debug_loc
+       0        0     4c77     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.debug_loc)
+    4c77     4c77       e3     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(shave_fenv.o):(.debug_loc)
+       0        0      35f     1 .debug_abbrev
+       0        0      25c     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.debug_abbrev)
+     25c      25c      103     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(shave_fenv.o):(.debug_abbrev)
+       0        0     3946     1 .debug_info
+       0        0     35ff     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.debug_info)
+    35ff     35ff      347     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(shave_fenv.o):(.debug_info)
+       0        0      948     1 .debug_ranges
+       0        0      8d8     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.debug_ranges)
+     8d8      8d8       70     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(shave_fenv.o):(.debug_ranges)
+       0        0      b62     1 .debug_str
+       0        0      9a7     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.debug_str)
+     9a7      9a7      1bb     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(shave_fenv.o):(.debug_str)
+       0        0     2246     1 .debug_line
+       0        0     2001     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.debug_line)
+    2001     2001      245     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(shave_fenv.o):(.debug_line)
+       0        0      6e4     1 .debug_frame
+       0        0      59c     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(math_lite.o):(.debug_frame)
+     59c      59c      148     1         /home/asdf/projects/npunlock-work/shave-toolchain-root/lib/mlibm.a(shave_fenv.o):(.debug_frame)
+       0        0       36     1 .comment
+       0        0       36     1         <internal>:(.comment)
+       0        0       d0     4 .symtab
+       0        0       d0     4         <internal>:(.symtab)
+       0        0       8b     1 .shstrtab
+       0        0       8b     1         <internal>:(.shstrtab)
+       0        0      223     1 .strtab
+       0        0      223     1         <internal>:(.strtab)

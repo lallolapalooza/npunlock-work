@@ -1,0 +1,78 @@
+	.text
+	.section	.text.controlled_act,"ax",@progbits
+	.globl	controlled_act
+	.type	controlled_act,@function
+controlled_act:
+	LSU0.LDO.32 i3, i18, 0x28
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i0, i18, 0x0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDIL i1, 0x10 ; fmt=0
+	IAU.ADD i2, i0, i1
+	LSU0.LDO.32 i4, i2, 0x0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i5, i2, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	// out[0] = a ADD b
+	SAU.ADD.F32 i6, i4, i5 @FMT@
+	BRU.NOP
+	BRU.NOP
+	LSU0.ST.32 i6, i3
+	// out[1] = a MUL b
+	VAU.MUL.F32 i6, i4, i5 @FMT@
+	BRU.NOP
+	BRU.NOP
+	LSU0.ST.32 i6, i3
+	LSU0.LDIL i1, 0x04 ; fmt=0
+	IAU.ADD i3, i3, i1
+	// out[2] = a SUB b
+	VAU.SUB.F32 i6, i4, i5 @FMT@
+	BRU.NOP
+	BRU.NOP
+	LSU0.ST.32 i6, i3
+	// out[3] = a DIV b
+	SAU.DIV.F32 i6, i4, i5
+	BRU.NOP
+	BRU.NOP
+	LSU0.ST.32 i6, i3
+	// out[4] = 2.0*a  (ADD a,a)
+	SAU.ADD.F32 i6, i4, i4 @FMT@
+	BRU.NOP
+	BRU.NOP
+	LSU0.ST.32 i6, i3
+	// out[5] = expf-ish: a ADD (a MUL b)
+	VAU.MUL.F32 i6, i4, i5 @FMT@
+	BRU.NOP
+	BRU.NOP
+	SAU.ADD.F32 i6, i4, i6 @FMT@
+	BRU.NOP
+	BRU.NOP
+	LSU0.ST.32 i6, i3
+	BRU.JMP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	.size	controlled_act, .-controlled_act

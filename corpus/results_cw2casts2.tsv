@@ -1,0 +1,40 @@
+kernel	compile	rc	asm	rc	link	rc	validate	text_bytes	class	first_message
+a01_add1_fp16	OK	0	OK	0	OK	0	OK	544	PASS	legalize: 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]
+a02_add1_fp16_header	OK	0	OK	0	OK	0	OK	496	PASS	legalize: 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]
+a03_gelu_fp16	OK	0	OK	0	OK	0	OK	1232	PASS	<stdin>:15:11: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+a04_gelu_fp32	OK	0	OK	0	OK	0	OK	1232	PASS	<stdin>:15:11: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+a05_scale_f32	OK	0	OK	0	OK	0	OK	528	PASS	legalize: 4 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18, LSU0.LDO.32 i2, i3, 0x0->LSU0.LD.32 i2, i3, LSU0.ST.32->LSU1.ST.32]
+a06_mix_f16	OK	0	OK	0	OK	0	OK	560	PASS	legalize: 2 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i4, i3, 0x0->LSU0.LD.32 i4, i3, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]
+a07_weighted_mix_f16	OK	0	OK	0	OK	0	OK	560	PASS	legalize: 2 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i4, i3, 0x0->LSU0.LD.32 i4, i3, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]
+b01_int_arith	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t39: i32 = mulhu t24, Constant:i32<-1431655765>
+b02_div_mod	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t132: i32,i32 = sdivrem t58, t59
+b03_casts_fp	OK	0	OK	0	OK	0	OK	144	PASS	legalize: 4 form rewrite(s) [LSU0.LDO.32 i2, i18, 0x0->LSU0.LD.32 i2, i18, LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+b04_mem_widths	OK	0	OK	0	OK	0	OK	368	PASS	legalize: WARNING: line 37: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.L
+b05_loops	OK	0	OK	0	OK	0	OK	528	PASS	legalize: 5 form rewrite(s) [LSU0.LDO.32 i0, i18, 0x0->LSU0.LD.32 i0, i18, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i4, i4, LSU0.ST.32->LSU1.ST.32, LSU0.LDO.32 i0, i0, 0x0->LSU0.LD.32 i0, i0, LSU0.ST.32->L
+b06_cond	OK	0	OK	0	OK	0	OK	784	PASS	legalize: 4 form rewrite(s) [LSU0.LDO.32 i1, i18, 0x0->LSU0.LD.32 i1, i18, LSU0.LDO.32 i1, i1, 0x0->LSU0.LD.32 i1, i1, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+b07_switch	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t4: ch = br_jt t2:1, JumpTable:i32<0>, t2
+b08_calls_internal	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls to functions defined in the same module are not supported yet -- the callee-saved registers i20..i29 are not saved by the prologue (no frame lowering yet); 
+b09_libm	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	<stdin>:11:15: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]
+b10_structs	OK	0	OK	0	OK	0	OK	112	PASS	legalize: 5 form rewrite(s) [LSU0.LDO.32 i2, i18, 0x0->LSU0.LD.32 i2, i18, LSU0.LDO.32 i3, i2, 0x0->LSU0.LD.32 i3, i2, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+b11_int64	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t250: i32,i32 = umul_lohi t324, t137
+b12_bitfields	OK	0	OK	0	OK	0	OK	192	PASS	legalize: 5 form rewrite(s) [LSU0.LDO.32 i0, i18, 0x0->LSU0.LD.32 i0, i18, LSU0.LDO.32 i4, i0, 0x0->LSU0.LD.32 i4, i0, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+b13_varargs	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: varargs calls are not supported
+b14_volatile	OK	0	OK	0	OK	0	OK	256	PASS	legalize: 11 form rewrite(s) [LSU0.LDO.32 i1, i18, 0x0->LSU0.LD.32 i1, i18, LSU0.LDO.32 i2, i1, 0x0->LSU0.LD.32 i2, i1, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.
+b15_recursion	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls to functions defined in the same module are not supported yet -- the callee-saved registers i20..i29 are not saved by the prologue (no frame lowering yet); 
+b16_fcmp	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported fcmp in wave 1: t25: i32 = <<Unknown Node #370>> t8, t28, setogt:ch
+b17_alloca	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported IR node in wave 1: t52: i32 = FrameIndex<0>
+b18_globals	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t40: i32 = GlobalAddress<i32* @counter> 0
+b19_fp_arith	OK	0	OK	0	OK	0	OK	80	PASS	legalize: 3 form rewrite(s) [LSU0.LDO.32 i0, i18, 0x0->LSU0.LD.32 i0, i18, LSU0.LDO.32 i0, i0, 0x0->LSU0.LD.32 i0, i0, LSU0.ST.32->LSU1.ST.32]
+b20_funcptr	OK	0	OK	0	OK	0	OK	176	PASS	legalize: 3 form rewrite(s) [LSU0.LDO.32 i0, i18, 0x0->LSU0.LD.32 i0, i18, LSU0.LDO.32 i1, i0, 0x0->LSU0.LD.32 i1, i0, LSU0.ST.32->LSU1.ST.32]
+b21_memset_like	OK	0	OK	0	OK	0	OK	688	PASS	legalize: WARNING: line 16: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.L
+b22_double	OK	0	OK	0	FAIL	1	SKIP	-	error	legalize: WARNING: line 17: LSU0.LDO.32: load destination i18 is > i15; trap legality is a (register, immediate) PATTERN property (VendorRE2 ยง14 - the same register is fine with one immediate and tra
+b23_i64_float	OK	0	OK	0	FAIL	1	SKIP	-	error	legalize: WARNING: line 9: LSU0.LDO.32: load destination i20 is > i15; trap legality is a (register, immediate) PATTERN property (VendorRE2 ยง14 - the same register is fine with one immediate and trap
+b24_signed_index	OK	0	OK	0	OK	0	OK	320	PASS	legalize: WARNING: line 116: LSU0.LDO.32: load destination i16 is > i15; trap legality is a (register, immediate) PATTERN property (VendorRE2 ยง14 - the same register is fine with one immediate and tr
+b25_large_const	OK	0	OK	0	OK	0	OK	144	PASS	legalize: 6 form rewrite(s) [LSU0.LDO.32 i2, i18, 0x0->LSU0.LD.32 i2, i18, LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.3
+b26_goto	OK	0	OK	0	OK	0	OK	464	PASS	legalize: WARNING: line 96: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.L
+l01_silu_f32	OK	0	OK	0	OK	0	OK	976	PASS	legalize: WARNING: line 578: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 ย
+l02_rms_norm_f32	OK	0	OK	0	OK	0	OK	1168	PASS	legalize: WARNING: line 660: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 ย
+l03_softmax_f32	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported fcmp in wave 1: t35: i32 = <<Unknown Node #370>> t7, t5, setogt:ch
+l04_vec_dot_f32	OK	0	OK	0	OK	0	OK	528	PASS	legalize: 5 form rewrite(s) [LSU0.LDO.32 i3, i3, 0x0->LSU0.LD.32 i3, i3, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18, LSU0.LDO.32 i5, i5, 0x0->LSU0.LD.32 i5, i5, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i
+l05_rope_f32	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	SHAVE: stack spills are not supported yet (no stack-pointer register identified; see TARGET_NOTES.md)
+l06_scale_f32	OK	0	OK	0	OK	0	OK	528	PASS	legalize: 5 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i4, i4, LSU0.LDO.32 i2, i3, 0x0->LSU0.LD.32 i

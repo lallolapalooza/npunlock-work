@@ -1,0 +1,23 @@
+#!/bin/sh
+# moviCompile — native SHAVE compiler stage.
+#
+# Contract (npunlock src/shavecc/shavecc.c compile_base/compile_tail):
+#   moviCompile -cc1 -triple shave -target-cpu <cpu> -S -O2 -x c entry.c \
+#       -ffunction-sections -fdata-sections [-DNAME=VAL ...] -o -
+# C source arrives on stdin; Movidius-syntax SHAVE assembly goes to stdout;
+# diagnostics go to stderr.  The source filename token is the literal
+# "entry.c" (kept for #line markers); clang cannot open it, so this wrapper
+# rewrites that exact token to "-" (clang's stdin) and pins the translation
+# unit name with -main-file-name so `.file`/diagnostics still say entry.c —
+# everything else is forwarded verbatim to the wave-1 LLVM-fork clang.
+CLANG=/home/asdf/projects/llvm-14/build/bin/clang
+
+for arg do
+  shift
+  if [ "$arg" = "entry.c" ]; then
+    arg="-"
+  fi
+  set -- "$@" "$arg"
+done
+
+exec "$CLANG" "$@" -main-file-name entry.c

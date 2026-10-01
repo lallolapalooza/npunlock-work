@@ -1,0 +1,6 @@
+# Four entries in one image: every arithmetic op is fp16-typed (self-annotated
+# ; fmt=2) or a literal add the compiler encodes as a constant selector
+# (; fmt=3), so no fp32 register-form rewrite is needed.
+FIXUP=off
+# the four entries must survive --gc-sections: kernel_quad.ld KEEPs them
+LDSCRIPT=src/kernel_quad.ld

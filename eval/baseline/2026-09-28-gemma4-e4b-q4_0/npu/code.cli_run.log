@@ -1,0 +1,69 @@
+{
+  "id": "code",
+  "device": "SHAVE0",
+  "n_predict": 96,
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_s": 61.956,
+  "prompt_tps": 6.3,
+  "gen_tps": 0.4,
+  "generated_text": "```python\ndef add(a, b):\n    return a + b\n```",
+  "error_lines": [],
+  "shave_stats": {
+    "engine": "ready",
+    "ops": [
+      "add",
+      "mul",
+      "copy"
+    ],
+    "invocations": 7387,
+    "offloaded": 7387,
+    "declined": 65357,
+    "unsupported": 0,
+    "elements_offloaded": 20937216,
+    "tile_bytes": 131072,
+    "lanes": {
+      "add": 32768,
+      "mul": 32768,
+      "copy_bytes": 131072
+    },
+    "per_op_invocations": {
+      "add": 2665,
+      "mul": 4722,
+      "copy": 0
+    },
+    "setup_ms": 18.98,
+    "npu_ms": 37434.86,
+    "avg_invocation_us": 5067.7
+  },
+  "argv": [
+    "/home/asdf/projects/npunlock-work/llama.cpp/build/bin/llama-cli",
+    "-m",
+    "../models/gemma-4-E4B-it-Q4_0.gguf",
+    "-p",
+    "Write a Python function add(a, b) that returns the sum of its two arguments. Reply with code only, no explanation.",
+    "-n",
+    "96",
+    "-c",
+    "4096",
+    "-t",
+    "8",
+    "--temp",
+    "0",
+    "-s",
+    "1234",
+    "-co",
+    "off",
+    "-st",
+    "--no-warmup",
+    "-fit",
+    "off",
+    "-dev",
+    "SHAVE0",
+    "-b",
+    "2048",
+    "-ub",
+    "512"
+  ],
+  "ok": true
+}

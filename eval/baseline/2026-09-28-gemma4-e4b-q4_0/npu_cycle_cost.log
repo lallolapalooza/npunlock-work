@@ -1,0 +1,7 @@
+  iter 0: patch 4.3 ms  bundle 116.6 ms  verify 90.3 ms  probe(NPU) 31.9 ms  total 243.4 ms
+  iter 1: patch 5.3 ms  bundle 136.7 ms  verify 175.8 ms  probe(NPU) 31.0 ms  total 349.2 ms
+  iter 2: patch 4.8 ms  bundle 131.4 ms  verify 102.7 ms  probe(NPU) 35.2 ms  total 274.3 ms
+
+probe-only  : 31.0 ms -> 32.3 NPU graph runs/s
+full cycle  : 243.4 ms -> 4.1 kernel deployments/s
+wrote /home/asdf/projects/npunlock-work/eval/baseline/2026-09-28-gemma4-e4b-q4_0/npu_cycle_cost.json

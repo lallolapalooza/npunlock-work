@@ -1,0 +1,63 @@
+kernel	compile	rc	asm	rc	link	rc	validate	text_bytes	class	first_message
+r01_udiv_by_const	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t56: i32 = mulhu t49, Constant:i32<-1431655765>
+r02_udiv_by_value	OK	0	OK	0	OK	0	OK	80	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r03_umod_by_const	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t57: i32 = mulhu t49, Constant:i32<-858993459>
+r04_sdiv_i32	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t68: i32,i32 = sdivrem t49, t53
+r05_srem_i32	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t68: i32,i32 = sdivrem t49, t53
+r06_uint_to_float	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: f32 = uint_to_fp t49
+r07_float_to_uint	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: i32 = fp_to_uint t49
+r08_float_to_int	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: i32 = fp_to_sint t49
+r09_int_to_float	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: f32 = sint_to_fp t49
+r10_jumptable_switch	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t1: i32 = GlobalAddress<[7 x i32]* @switch.table.controlled_act> 0
+r11_switch_3cases	OK	0	OK	0	OK	0	OK	144	PASS	legalize: WARNING: line 33: BRU.BRA has no `1b 40` delay descriptor - the branch will NOT transfer control (emit it in the backend, or use --bra-descriptor)
+r12_global_var	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: i32 = GlobalAddress<i32* @g_counter> 0
+r13_rodata_table	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t52: i32 = GlobalAddress<[8 x i32]* @table> 0
+r14_alloca_array	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported IR node in wave 1: t2: i32 = FrameIndex<0>
+r15_fcmp	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported fcmp in wave 1: t83: i32 = setcc t49, t88, setogt:ch
+r16_call_internal	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee GlobalAddress); see TARGET_NOTES.md
+r17_call_libm_tanhf	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: unsupported condition code 20 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md
+r18_i64_div	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r19_i64_mul	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t116: i32 = mulhu t66, t106
+r20_double_add	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r21_f64_compare	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r22_variable_shift	OK	0	OK	0	OK	0	OK	96	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r23_signed_minmax	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: unsupported condition code 18 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md
+r24_bitfield	OK	0	OK	0	OK	0	OK	80	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r25_f32_div	OK	0	OK	0	OK	0	OK	80	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r26_f32_minmax	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: only i32 value-selects are supported in wave 1; see TARGET_NOTES.md
+r27_volatile_mmio	OK	0	OK	0	OK	0	OK	48	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r28_struct_return	OK	0	OK	0	OK	0	OK	64	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r29_half_arith	OK	0	OK	0	OK	0	OK	80	PASS	legalize: 6 delay-slot NOP(s)
+r30_struct_copy	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported IR node in wave 1: t39: i32 = FrameIndex<0>
+r33_i64_sdiv	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r34_i64_to_float	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r35_funcptr_call	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee select); see TARGET_NOTES.md
+r36_global_init_data	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t54: i32 = GlobalAddress<[4 x i32]* @g_table> 0
+r37_regpressure	OK	0	OK	0	OK	0	OK	336	PASS	legalize: 6 delay-slot NOP(s); 4 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+r38_half_roundtrip	OK	0	OK	0	OK	0	OK	112	PASS	legalize: 6 delay-slot NOP(s); 2 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32, LSU0.ST.32->LSU1.ST.32]
+r39_i32_i64_ext	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: unsupported condition code 20 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md
+r40_memcpy_builtin	OK	0	OK	0	OK	0	OK	144	PASS	legalize: WARNING: line 45: BRU.BRA has no `1b 40` delay descriptor - the branch will NOT transfer control (emit it in the backend, or use --bra-descriptor)
+r41_f64_param	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r42_undefined_entry	OK	0	OK	0	FAIL	1	SKIP	-	error	legalize: 6 delay-slot NOP(s)
+r43_empty_tu	OK	0	OK	0	FAIL	1	SKIP	-	error	ld.lld: error: output file too large: 18446744073692774968 bytes
+r44_builtins	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t83: i32 = ctlz t50
+r45_f32_ops	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t100: f32 = fabs t99
+r46_half_ops	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t69: f32 = sint_to_fp t68
+r47_volatile_loop	FAIL	1	-	-	-	-	SKIP	-	error	error: SHAVE: unsupported IR node in wave 1: t39: i32 = FrameIndex<0>
+r48_memset_builtin	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r49_ctlz	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t65: i32 = ctlz t50
+r50_cttz	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t65: i32 = cttz t50
+r51_popcount	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: i32 = ctpop t49
+r52_bswap	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: i32 = bswap t49
+r53_fabs	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t50: f32 = fabs t49
+r54_string_literal	OK	0	OK	0	OK	0	OK	32	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r55_float_arg_call	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t58: i32 = fp_to_uint t57
+r56_bool_enum	FAIL	70	-	-	-	-	SKIP	-	ISEL-CannotSelect	fatal error: error in backend: Cannot select: t77: i32 = mulhu t49, Constant:i32<-1431655765>
+r57_long_double	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: calls are unsupported in wave 1 (callee ExternalSymbol); see TARGET_NOTES.md
+r58_i64_shift_var	OK	0	OK	0	OK	0	OK	160	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r59_deep_chain	OK	0	OK	0	OK	0	OK	464	PASS	legalize: WARNING: line 83: BRU.BRA has no `1b 40` delay descriptor - the branch will NOT transfer control (emit it in the backend, or use --bra-descriptor)
+r60_big_function	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	SHAVE: stack spills are not supported yet (no stack-pointer register identified; see TARGET_NOTES.md)
+r61_regspill_crash	FAIL	134	-	-	-	-	SKIP	-	LLVM-CRASH	SHAVE: stack spills are not supported yet (no stack-pointer register identified; see TARGET_NOTES.md)
+r62_signed_relational	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: unsupported condition code 21 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md
+r63_f32_constpool	OK	0	OK	0	OK	0	OK	80	PASS	legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]
+r64_fcmp_only	FAIL	1	-	-	-	-	SKIP	-	error	fatal error: error in backend: SHAVE: only i32 value-selects are supported in wave 1; see TARGET_NOTES.md

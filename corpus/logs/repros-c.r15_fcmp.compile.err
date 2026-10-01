@@ -1,0 +1,2 @@
+error: SHAVE: unsupported fcmp in wave 1: t83: i32 = setcc t49, t88, setogt:ch
+fatal error: error in backend: SHAVE wave 1 does not support floating-point compares; see TARGET_NOTES.md

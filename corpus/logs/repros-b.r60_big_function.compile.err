@@ -1,0 +1,9 @@
+SHAVE: stack spills are not supported yet (no stack-pointer register identified; see TARGET_NOTES.md)
+UNREACHABLE executed at /home/asdf/projects/llvm-14/llvm/lib/Target/SHAVE/SHAVEInstrInfo.cpp:41!
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /home/asdf/projects/npunlock-work/corpus/toolchain-snapshot-b/bin/clang -cc1 -triple shave -target-cpu 3720xx -S -O2 -x c - -ffunction-sections -fdata-sections -I/home/asdf/projects/npunlock-work/corpus/include -o - -main-file-name entry.c
+1.	<eof> parser at end of file
+2.	Code generation
+3.	Running pass 'Function Pass Manager' on module 'entry.c'.
+4.	Running pass 'Greedy Register Allocator' on function '@controlled_act'

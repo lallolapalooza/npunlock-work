@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "ARGV[$0]: $*" >> /home/asdf/projects/npunlock-work/mathlink/out/mocktc/argv.log
+cat > /dev/null 2>/dev/null || true
+echo "MOCK-OUTPUT"

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<net name="maximum1024" version="11">
+  <layers>
+    <layer id="0" name="a" type="Parameter" version="opset1">
+      <data shape="1,1024" element_type="f16" />
+      <output>
+        <port id="0" precision="FP16" names="a">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </output>
+    </layer>
+    <layer id="1" name="b" type="Parameter" version="opset1">
+      <data shape="1,1024" element_type="f16" />
+      <output>
+        <port id="0" precision="FP16" names="b">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </output>
+    </layer>
+    <layer id="2" name="out" type="Maximum" version="opset1">
+      <input>
+        <port id="0" precision="FP16">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+        <port id="1" precision="FP16">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </input>
+      <output>
+        <port id="2" precision="FP16" names="out">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </output>
+    </layer>
+    <layer id="3" name="out" type="Result" version="opset1" output_names="out">
+      <input>
+        <port id="0" precision="FP16">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </input>
+    </layer>
+  </layers>
+  <edges>
+    <edge from-layer="0" from-port="0" to-layer="2" to-port="0" />
+    <edge from-layer="1" from-port="0" to-layer="2" to-port="1" />
+    <edge from-layer="2" from-port="2" to-layer="3" to-port="0" />
+  </edges>
+  <rt_info />
+</net>

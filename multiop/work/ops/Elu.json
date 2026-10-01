@@ -1,0 +1,9 @@
+{
+  "schema": "npunlock.porting.inspect.v1",
+  "graph": {"path": "work/ops/Elu.blob", "size": 35776, "sha256": "eccb1380035fa308e6611ac5cfd9b8b137d52a2977f1a546316af6e4842dbefe"},
+  "act": {"group_count": 1, "target_count": 2, "targets": [
+    {"group_index": 0, "invocation_index": 0, "range_index": 0, "input_count": 1, "element_count": 1024, "span_bytes": 2048, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 1, "range_index": 1, "input_count": 1, "element_count": 1024, "span_bytes": 2048, "contract_flags": 31, "precision": "fp16"}
+  ]},
+  "scope": "observed NPU3720/compiler-8.3 ACT contract; discovery is not proof of execution compatibility"
+}

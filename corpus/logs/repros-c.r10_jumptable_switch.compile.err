@@ -1,0 +1,2 @@
+fatal error: error in backend: Cannot select: t1: i32 = GlobalAddress<[7 x i32]* @switch.table.controlled_act> 0
+In function: controlled_act

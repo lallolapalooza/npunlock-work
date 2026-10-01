@@ -1,0 +1,15 @@
+{
+  "schema": "npunlock.porting.inspect.v1",
+  "graph": {"path": "/home/asdf/projects/npunlock-work/npunlock/tests/fixtures/npu3720/abs-abs-1x32.blob", "size": 43432, "sha256": "da8c205954f565c95845d9109558928d3c3e2c249c2c9942dc92b7ed60c4402c"},
+  "act": {"group_count": 2, "target_count": 8, "targets": [
+    {"group_index": 0, "invocation_index": 0, "range_index": 0, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 1, "range_index": 1, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 2, "range_index": 2, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 3, "range_index": 3, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 1, "invocation_index": 4, "range_index": 4, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 1, "invocation_index": 5, "range_index": 5, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 1, "invocation_index": 6, "range_index": 6, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 1, "invocation_index": 7, "range_index": 7, "input_count": 1, "element_count": 16, "span_bytes": 32, "contract_flags": 31, "precision": "fp16"}
+  ]},
+  "scope": "observed NPU3720/compiler-8.3 ACT contract; discovery is not proof of execution compatibility"
+}

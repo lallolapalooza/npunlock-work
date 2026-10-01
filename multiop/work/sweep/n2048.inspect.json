@@ -1,0 +1,11 @@
+{
+  "schema": "npunlock.porting.inspect.v1",
+  "graph": {"path": "/home/asdf/projects/npunlock-work/multiop/work/sweep/n2048.blob", "size": 41072, "sha256": "0e46ad1acd69f28a38c5a441f0620ebbbed8099df0b3c0823bd2c9f514aa684a"},
+  "act": {"group_count": 1, "target_count": 4, "targets": [
+    {"group_index": 0, "invocation_index": 0, "range_index": 0, "input_count": 1, "element_count": 1024, "span_bytes": 2048, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 1, "range_index": 1, "input_count": 1, "element_count": 1024, "span_bytes": 2048, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 2, "range_index": 2, "input_count": 1, "element_count": 1024, "span_bytes": 2048, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 3, "range_index": 3, "input_count": 1, "element_count": 1024, "span_bytes": 2048, "contract_flags": 31, "precision": "fp16"}
+  ]},
+  "scope": "observed NPU3720/compiler-8.3 ACT contract; discovery is not proof of execution compatibility"
+}

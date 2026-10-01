@@ -1,0 +1,46 @@
+{
+  "expected_outputs": [
+    {
+      "argument_index": 1,
+      "dtype": "f16",
+      "file": "expected-output-0.bin",
+      "sha256": "d380c04fb75de720f465424e02bb3ad6b90a40af19faa247abd8e22fa6d2abf7",
+      "shape": [
+        1,
+        16
+      ],
+      "size": 32
+    }
+  ],
+  "graph": {
+    "file": "graph.blob",
+    "sha256": "ddf7cefba7aad0cef0fe89c690525f362e4918264919d3a8145bcc988420c314",
+    "size": 44000
+  },
+  "inputs": [
+    {
+      "argument_index": 0,
+      "dtype": "f16",
+      "file": "input-0.bin",
+      "sha256": "1cc981610ea3d3b52d4322917deb8ce245a00c37bde6f2b1b2fe2141ec291f3f",
+      "shape": [
+        1,
+        16
+      ],
+      "size": 32
+    }
+  ],
+  "oracle": {
+    "input_argument_index": 0,
+    "name": "fp16_carrier_add1_exact",
+    "output_argument_index": 1
+  },
+  "producer": {
+    "device": "Intel NPU (/dev/accel0)",
+    "driver_version": "unknown",
+    "graph_compiler_version": "unknown",
+    "platform": "Linux x86_64"
+  },
+  "purpose": "Test loading and exact FP16 execution of one prepatched native graph whose carrier adds a fixed ramp before the patched add-one kernel.",
+  "schema": "npunlock.porting.probe.v1"
+}

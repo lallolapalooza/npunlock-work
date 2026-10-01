@@ -1,0 +1,3 @@
+legalize: WARNING: line 249: emitted the BRU.BRA delay descriptor 1b50 (forward->LBB2_6 (immediate, k=0))
+legalize: WARNING: line 278: emitted the BRU.BRA delay descriptor 1b50 (forward->LBB2_9 (immediate, k=0))
+legalize: 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]

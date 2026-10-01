@@ -1,0 +1,10 @@
+#!/bin/sh
+# moviAsm — native SHAVE assembler stage.
+#
+# Contract (npunlock src/shavecc/shavecc.c assemble_args):
+#   moviAsm --cv 3720xx --noSPrefixing
+# Movidius-syntax SHAVE assembly arrives on stdin, an ELF32 little-endian
+# SPARC REL object goes to stdout (diagnostics on stderr).  The two contract
+# flags are accepted (value ignored) by shave_asm.py's obj mode; everything
+# is forwarded verbatim.
+exec python3 /home/asdf/projects/npunlock-work/shave-isa/shave_asm.py obj "$@"

@@ -1,0 +1,5 @@
+legalize: WARNING: line 33: BRU.BRA has no `1b 40` delay descriptor - the branch will NOT transfer control (emit it in the backend, or use --bra-descriptor)
+legalize: WARNING: line 35: BRU.BRA has no `1b 40` delay descriptor - the branch will NOT transfer control (emit it in the backend, or use --bra-descriptor)
+legalize: WARNING: line 47: BRU.BRA has no `1b 40` delay descriptor - the branch will NOT transfer control (emit it in the backend, or use --bra-descriptor)
+legalize: WARNING: line 49: BRU.BRA has no `1b 40` delay descriptor - the branch will NOT transfer control (emit it in the backend, or use --bra-descriptor)
+legalize: 6 delay-slot NOP(s); 1 LSU unit rewrite(s) [LSU0.ST.32->LSU1.ST.32]

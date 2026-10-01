@@ -1,0 +1,4 @@
+LSU0.LD.8 i2, i10, 0x1
+LSU0.LD.8 i2, i10
+LSU0.LD.8 i2, i10, 1
+LSU1.LD.8 i2, i10, 0x1

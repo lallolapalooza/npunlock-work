@@ -1,0 +1,12 @@
+{
+  "schema": "npunlock.eval.runmeta.v1",
+  "mode": "cpu2",
+  "device": "none",
+  "model": "../models/gemma-4-E4B-it-Q4_0.gguf",
+  "threads": 8,
+  "ctx": 4096,
+  "seed": 1234,
+  "temperature": 0.0,
+  "bin": "build/bin/llama-cli",
+  "recorded_utc": "2026-09-28T21:18:55+00:00"
+}

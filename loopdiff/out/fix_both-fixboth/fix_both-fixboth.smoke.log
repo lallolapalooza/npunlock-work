@@ -1,0 +1,34 @@
+== step skipped: no --toolchain-dir; patching --elf as provided
+== npunlock-patchblob: carrier + ELF -> graph.blob
+patched 2 ACT targets into /home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-smoke/graph.blob (44016 bytes)
+wrote patch report to /home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-smoke/patch-report.json
+== porting_probe.py create
+/home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-smoke/bundle/manifest.json
+== porting_probe.py verify
+{
+  "bundle": "/home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-smoke/bundle",
+  "element_count": 16,
+  "graph_sha256": "29521eb4c36c2befb8c7ff3ea61579e22bc7c8b371c2809fa208f730bc87c2e5",
+  "oracle": "fp16_carrier_add1_exact",
+  "schema": "npunlock.porting.probe.verify.v1"
+}
+== npunlock-linux-probe
+wrote execution report to /home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-smoke/execution-report.json
+probe failed; report:
+{
+  "schema": "npunlock.porting.linux-execution.v1",
+  "mode": "in-process-bring-up",
+  "bundle_root": "/home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-smoke/bundle",
+  "stages": {
+    "loader": "passed",
+    "device_selection": "passed",
+    "graph_extension": "passed",
+    "graph_create": "passed",
+    "initialization": "passed",
+    "execution": "failed",
+    "oracle": "not-run"
+  },
+  "result": {"status": "driver-failed", "last_stage": "execution", "level_zero_result": "0x70000001", "driver_index": 0, "device_index": 0, "driver_version": 1789049548, "vendor_id": 32902, "device_id": 32029},
+  "diagnostic": "zeFenceHostSynchronize returned Level Zero result 0x70000001",
+  "scope": "Linux in-process compatibility probe; a passed graph-create stage alone does not establish execution or semantic compatibility"
+}

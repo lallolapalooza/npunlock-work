@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<net name="floor" version="11">
+  <layers>
+    <layer id="0" name="x" type="Parameter" version="opset1">
+      <data shape="1,1024" element_type="f16" />
+      <output>
+        <port id="0" precision="FP16" names="x">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </output>
+    </layer>
+    <layer id="1" name="y" type="Floor" version="opset1">
+      <input>
+        <port id="0" precision="FP16">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </input>
+      <output>
+        <port id="1" precision="FP16" names="y">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </output>
+    </layer>
+    <layer id="2" name="y" type="Result" version="opset1" output_names="y">
+      <input>
+        <port id="0" precision="FP16">
+          <dim>1</dim>
+          <dim>1024</dim>
+        </port>
+      </input>
+    </layer>
+  </layers>
+  <edges>
+    <edge from-layer="0" from-port="0" to-layer="1" to-port="0" />
+    <edge from-layer="1" from-port="1" to-layer="2" to-port="0" />
+  </edges>
+  <rt_info />
+</net>

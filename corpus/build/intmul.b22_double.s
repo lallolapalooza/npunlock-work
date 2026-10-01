@@ -1,0 +1,330 @@
+	.text
+	.file	"entry.c"
+	.section	.text.controlled_act,"ax",@progbits
+	.globl	controlled_act                  // -- Begin function controlled_act
+	.type	controlled_act,@function
+controlled_act:                         // @controlled_act
+.Lcontrolled_act$local:
+// %bb.0:                               // %entry
+	IAU.AND i12, i18, i18
+	LSU0.LDO.32 i15, i12, 0x0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i18, i15, 0x0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __floatunsidf
+	LSU1.LDIH i30, __floatunsidf
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.ADD i19, i19, 8
+	IAU.AND i13, i18, i18
+	IAU.AND i14, i18, i18
+	LSU0.LDO.32 i18, i15, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __floatunsidf
+	LSU1.LDIH i30, __floatunsidf
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.ADD i19, i19, 8
+	IAU.AND i17, i18, i18
+	LSU0.LDIL i20, 0x00 ; fmt=0
+	LSU0.LDIL i15, 0x00 ; fmt=0
+	LSU1.LDIH i15, 0x3FE0
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.AND i16, i20, i20
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __adddf3
+	LSU1.LDIH i30, __adddf3
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	IAU.ADD i19, i19, 8
+	IAU.AND i21, i18, i18
+	IAU.AND i22, i18, i18
+	IAU.AND i17, i22, i22
+	IAU.AND i16, i13, i13
+	IAU.AND i15, i14, i14
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __muldf3
+	LSU1.LDIH i30, __muldf3
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.ADD i19, i19, 8
+	IAU.AND i17, i18, i18
+	LSU0.LDIL i15, 0x00 ; fmt=0
+	LSU1.LDIH i15, 0x400A
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.AND i16, i20, i20
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __adddf3
+	LSU1.LDIH i30, __adddf3
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.ADD i19, i19, 8
+	IAU.AND i13, i18, i18
+	IAU.AND i14, i18, i18
+	LSU0.LDIL i15, 0x00 ; fmt=0
+	LSU1.LDIH i15, 0x3FF0
+	BRU.NOP
+	BRU.NOP
+	IAU.AND i18, i21, i21
+	IAU.AND i17, i22, i22
+	IAU.AND i16, i20, i20
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __adddf3
+	LSU1.LDIH i30, __adddf3
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	IAU.ADD i19, i19, 8
+	IAU.AND i16, i18, i18
+	IAU.AND i15, i18, i18
+	IAU.AND i18, i13, i13
+	IAU.AND i17, i14, i14
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __divdf3
+	LSU1.LDIH i30, __divdf3
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	BRU.NOP
+	IAU.ADD i19, i19, 8
+	IAU.AND i13, i18, i18
+	IAU.AND i14, i18, i18
+	IAU.AND i17, i14, i14
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __fixunsdfsi
+	LSU1.LDIH i30, __fixunsdfsi
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.ADD i19, i19, 8
+	LSU0.LDO.32 i12, i12, 0x28
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU1.ST.32 i18, i12
+	IAU.AND i18, i13, i13
+	IAU.AND i17, i14, i14
+	IAU.AND i16, i21, i21
+	IAU.AND i15, i22, i22
+	IAU.SUB i19, i19, 8
+	LSU1.STO.32 i30, i19, 0x4
+	LSU0.LDIL i30, __gtdf2
+	LSU1.LDIH i30, __gtdf2
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.SWP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	LSU0.LDO.32 i30, i19, 0x4
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.ADD i19, i19, 8
+	LSU0.LDIL i0, 0x04 ; fmt=0
+	IAU.ADD i0, i12, i0
+	LSU0.LDIL i1, 0x01 ; fmt=0
+	LSU0.LDIL i2, 0x00 ; fmt=0
+	LSU1.LDIH i2, 0x8000
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	IAU.XOR i3, i18, i2
+	IAU.XOR i2, i20, i2
+	IAU.ADD i1, i2, i1
+	SAU.DIV.U32 i1, i3, i1
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	CMU.CMZ.I32 i1
+	LSU1.ST.32 i1, i0
+	BRU.JMP i30
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+	BRU.NOP
+Lfunc_end0:
+	.size	controlled_act, Lfunc_end0-controlled_act
+                                        // -- End function

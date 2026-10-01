@@ -1,0 +1,321 @@
+{
+ "shave-aliased-store-distance": [
+  "180003600",
+  "1800d6ee0",
+  "1800e8e80",
+  "18302e580"
+ ],
+ "shave-align-all-branch-targets": [
+  "180003740",
+  "180097e00",
+  "18302e5f0"
+ ],
+ "shave-align-function-targets": [
+  "180003850",
+  "180098410",
+  "18011eca0",
+  "18302e660"
+ ],
+ "shave-align-jump-targets": [
+  "180003970",
+  "180097e00",
+  "18302e6d0"
+ ],
+ "shave-align-loop-targets": [
+  "180003a80",
+  "180097e00",
+  "18011eca0",
+  "18302e740"
+ ],
+ "shave-align-stack": [
+  "180003b90",
+  "180123080",
+  "18302e7b0"
+ ],
+ "shave-average-instruction-size": [
+  "180003cb0",
+  "1800e8800",
+  "18302e820"
+ ],
+ "shave-branch-delays": [
+  "180003df0",
+  "180145fd0",
+  "18302e890"
+ ],
+ "shave-disable-constant-pools": [
+  "180003f30",
+  "18011af00",
+  "18302e900"
+ ],
+ "shave-no-replace-jmp-with-bra": [
+  "180004040",
+  "1800e8e80",
+  "18302e970"
+ ],
+ "shave-disable-nop-compression": [
+  "180004150",
+  "180098ca0",
+  "18302e9e0"
+ ],
+ "shave-disable-NaN-checking": [
+  "180004260",
+  "180107720",
+  "18010f840",
+  "18302ea50"
+ ],
+ "shave-no-peephole": [
+  "180004370",
+  "180084b40",
+  "1800e8e80",
+  "18302eac0"
+ ],
+ "shave-disable-slot-optimiser": [
+  "180004480",
+  "18302eb30"
+ ],
+ "shave-enable-address-simplifier": [
+  "180004590",
+  "180084b40",
+  "18302eba0"
+ ],
+ "shave-enable-anti-dependency-breaker": [
+  "1800046a0",
+  "180084ac0",
+  "18302ec10"
+ ],
+ "shave-generate-fp-acc-mac": [
+  "1800047b0",
+  "180100250",
+  "18011eca0",
+  "18302ec80"
+ ],
+ "shave-generate-int-acc-mac": [
+  "1800048c0",
+  "1800ff260",
+  "18011eca0",
+  "18302ecf0"
+ ],
+ "shave-inplace-mutation": [
+  "1800049d0",
+  "1800e0a70",
+  "18302ed60"
+ ],
+ "shave-enable-interrupt-friendly-scheduling": [
+  "180004ae0",
+  "1800ee100",
+  "18302edd0"
+ ],
+ "shave-enable-ldx-and-stx-instructions": [
+  "180004bf0",
+  "18009e2e0",
+  "1800a7d50",
+  "18302ee40"
+ ],
+ "shave-enable-loop-load-hoisting": [
+  "180004d00",
+  "1800eb310",
+  "18302eeb0"
+ ],
+ "shave-enable-low-impact-preemption": [
+  "180004e10",
+  "1800b36c0",
+  "18302ef20"
+ ],
+ "shave-prera-scheduler": [
+  "180004f20",
+  "180084b40",
+  "18302ef90"
+ ],
+ "shave-pre-sched2-peepholes": [
+  "180005030",
+  "180084c00",
+  "18302f000"
+ ],
+ "shave-enable-preemption-checks": [
+  "180005140",
+  "180084c00",
+  "18009c220",
+  "1800b3e50",
+  "18302f070"
+ ],
+ "shave-stash-retrieve": [
+  "180005480",
+  "1800f9fe0",
+  "18014acd0",
+  "18302f0f0"
+ ],
+ "shave-has-floating-point-unit": [
+  "180005590",
+  "18011eca0",
+  "18302f160"
+ ],
+ "shave-has-LSU1-fu": [
+  "1800056a0",
+  "180098410",
+  "1800e0a70",
+  "1800e13e0",
+  "1800e76f0",
+  "1800ed130",
+  "1800fbca0",
+  "18302f1d0"
+ ],
+ "shave-has-SAU-fu": [
+  "1800057b0",
+  "1800ff260",
+  "180100250",
+  "180107720",
+  "1801081c0",
+  "18011eca0",
+  "180145f90",
+  "18302f240"
+ ],
+ "shave-has-VAU-fu": [
+  "1800058c0",
+  "1800ff260",
+  "180100250",
+  "1801081c0",
+  "18011eca0",
+  "180145fa0",
+  "180146b30",
+  "18302f2b0"
+ ],
+ "shave-inline-assembly-warning-threshold": [
+  "1800059d0",
+  "18302f320"
+ ],
+ "shave-postra-scheduler-inner-loop-block-weight-modifier": [
+  "180005af0",
+  "1800da4a0",
+  "18302f390"
+ ],
+ "shave-lsu-flush-on-enter": [
+  "180005c10",
+  "1800fbca0",
+  "18302f400"
+ ],
+ "shave-lsu-load-policy": [
+  "180005d20",
+  "1800e1b80",
+  "1800ed130",
+  "18302f470"
+ ],
+ "shave-lsu-store-policy": [
+  "180006100",
+  "1800d6ee0",
+  "1800e1b80",
+  "1800ed130",
+  "18302f4f0"
+ ],
+ "shave-lsu-volatile-load-store-policy": [
+  "1800064e0",
+  "1800d6ee0",
+  "1800ed130",
+  "1800fd610",
+  "180103270",
+  "18302f570"
+ ],
+ "shave-load-latency": [
+  "1800067d0",
+  "180145fd0",
+  "18302f5f0"
+ ],
+ "shave-max-inline-assembly-lines": [
+  "180006910",
+  "1814618a0",
+  "18302f660"
+ ],
+ "shave-postra-scheduler-max-trace-blocks": [
+  "180006a30",
+  "1800daaf0",
+  "18302f6d0"
+ ],
+ "shave-scheduler-max-tracked-mem-ops": [
+  "180006b50",
+  "1800c5740",
+  "18014dc60",
+  "18302f740"
+ ],
+ "shave-postra-scheduler-outer-loop-block-weight-modifier": [
+  "180006ce0",
+  "1800da4a0",
+  "18302f820"
+ ],
+ "shave-prera-scheduler-peepholes": [
+  "180006e00",
+  "180084b40",
+  "18302f890"
+ ],
+ "shave-preemption-max-loop-depth": [
+  "180006f10",
+  "1800b3e50",
+  "18302f900"
+ ],
+ "shave-standard-section-prefix": [
+  "180007030",
+  "180095b60",
+  "180129010",
+  "180129400",
+  "180129e70",
+  "18012a3d0",
+  "18012a4a0",
+  "18012a8e0",
+  "18012ac90",
+  "180157550",
+  "18302f970"
+ ],
+ "shave-stack-overflow-checking": [
+  "1800070a0",
+  "1800facf0",
+  "180103270",
+  "18011eca0",
+  "18302f9e0"
+ ],
+ "shave-postra-scheduler-trace-generation-direction": [
+  "1800071b0",
+  "1800daaf0",
+  "18302fa50"
+ ],
+ "shave-track-stack-usage": [
+  "1800074f0",
+  "1800fd610",
+  "180103270",
+  "18011eca0",
+  "18302fad0"
+ ],
+ "shave-enable-ldi": [
+  "180007600",
+  "180107720",
+  "1801081c0",
+  "18302fb40"
+ ],
+ "shave-nop-sync-after-inline-asm": [
+  "180007710",
+  "180149a20",
+  "18015f870",
+  "18302fbb0"
+ ],
+ "shave-enable-vilv": [
+  "180007820",
+  "18011c2c0",
+  "180155220",
+  "18302fc20"
+ ],
+ "shave-vpu4-load-store-distance": [
+  "180007930",
+  "1800d6ee0",
+  "1800e3050",
+  "1800e8e80",
+  "1800f4df0",
+  "18302fc90"
+ ],
+ "shave-widen-three-element-vectors": [
+  "180007a40",
+  "1800b94c0",
+  "18302fd00"
+ ],
+ "shave-postra-scheduler-functional-unit-mutation-order": [
+  "1800e0a70",
+  "1800e76f0",
+  "18302f7b0"
+ ]
+}

@@ -1,0 +1,829 @@
+{
+  "schema": "npunlock.eval.summary.v1",
+  "label": "gemma4-e4b-q4_0 cpu/cpu2/npu (32768-lane engine b0671c3c)",
+  "promptset": "prompts.json",
+  "prompt_count": 8,
+  "model": "../models/gemma-4-E4B-it-Q4_0.gguf",
+  "baseline_mode": "cpu",
+  "modes": {
+    "cpu": {
+      "device": "none",
+      "records": 8,
+      "prompt_tps_mean": 18.163,
+      "gen_tps_mean": 6.55,
+      "wall_s_mean": 23.906,
+      "shave_stats": {
+        "engine": "ready",
+        "ops": [
+          "add",
+          "mul",
+          "copy"
+        ],
+        "invocations": 0,
+        "offloaded": 0,
+        "declined": 4271,
+        "unsupported": 0,
+        "elements_offloaded": 0,
+        "tile_bytes": 131072,
+        "lanes": {
+          "add": 32768,
+          "mul": 32768,
+          "copy_bytes": 131072
+        },
+        "per_op_invocations": {
+          "add": 0,
+          "mul": 0,
+          "copy": 0
+        },
+        "setup_ms": 13.18,
+        "npu_ms": 0.0,
+        "avg_invocation_us": 0.0
+      },
+      "bench": {
+        "pp_tps": 28.391,
+        "pp_stddev": 0.305,
+        "pp_n": 128,
+        "tg_tps": 8.231,
+        "tg_stddev": 0.019,
+        "tg_n": 32
+      }
+    },
+    "cpu2": {
+      "device": "none",
+      "records": 8,
+      "prompt_tps_mean": 13.65,
+      "gen_tps_mean": 5.4,
+      "wall_s_mean": 26.65,
+      "shave_stats": {
+        "engine": "ready",
+        "ops": [
+          "add",
+          "mul",
+          "copy"
+        ],
+        "invocations": 0,
+        "offloaded": 0,
+        "declined": 4271,
+        "unsupported": 0,
+        "elements_offloaded": 0,
+        "tile_bytes": 131072,
+        "lanes": {
+          "add": 32768,
+          "mul": 32768,
+          "copy_bytes": 131072
+        },
+        "per_op_invocations": {
+          "add": 0,
+          "mul": 0,
+          "copy": 0
+        },
+        "setup_ms": 10.35,
+        "npu_ms": 0.0,
+        "avg_invocation_us": 0.0
+      },
+      "bench": {
+        "pp_tps": 21.725,
+        "pp_stddev": 1.609,
+        "pp_n": 128,
+        "tg_tps": 6.546,
+        "tg_stddev": 0.194,
+        "tg_n": 32
+      }
+    },
+    "npu": {
+      "device": "SHAVE0",
+      "records": 8,
+      "prompt_tps_mean": 8.1,
+      "gen_tps_mean": 0.463,
+      "wall_s_mean": 81.358,
+      "shave_stats": {
+        "engine": "ready",
+        "ops": [
+          "add",
+          "mul",
+          "copy"
+        ],
+        "invocations": 9414,
+        "offloaded": 9414,
+        "declined": 89567,
+        "unsupported": 0,
+        "elements_offloaded": 25713152,
+        "tile_bytes": 131072,
+        "lanes": {
+          "add": 32768,
+          "mul": 32768,
+          "copy_bytes": 131072
+        },
+        "per_op_invocations": {
+          "add": 3427,
+          "mul": 5987,
+          "copy": 0
+        },
+        "setup_ms": 10.94,
+        "npu_ms": 46831.0,
+        "avg_invocation_us": 4974.6
+      },
+      "bench": {
+        "pp_tps": 18.889,
+        "pp_stddev": 1.183,
+        "pp_n": 128,
+        "tg_tps": 0.458,
+        "tg_stddev": 0.009,
+        "tg_n": 32
+      }
+    }
+  },
+  "rows": [
+    {
+      "id": "arith",
+      "kind": "arithmetic",
+      "modes": {
+        "cpu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 6.3,
+          "prompt_tps": 17.9,
+          "match_vs_baseline": "baseline",
+          "generated_text": "4183",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: exact product 47*89 = 4183"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 6.7,
+          "prompt_tps": 16.9,
+          "match_vs_baseline": "exact",
+          "generated_text": "4183",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: exact product 47*89 = 4183"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.5,
+          "prompt_tps": 6.8,
+          "match_vs_baseline": "exact",
+          "generated_text": "4183",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: exact product 47*89 = 4183"
+            }
+          ]
+        }
+      },
+      "oracle_exact": true
+    },
+    {
+      "id": "short",
+      "kind": "short_answer",
+      "modes": {
+        "cpu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 8.1,
+          "prompt_tps": 16.2,
+          "match_vs_baseline": "baseline",
+          "generated_text": "Paris",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: answers 'Paris'"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 6.2,
+          "prompt_tps": 15.3,
+          "match_vs_baseline": "exact",
+          "generated_text": "Paris",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: answers 'Paris'"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.5,
+          "prompt_tps": 7.2,
+          "match_vs_baseline": "exact",
+          "generated_text": "Paris",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: answers 'Paris'"
+            }
+          ]
+        }
+      },
+      "oracle_exact": true
+    },
+    {
+      "id": "repeat",
+      "kind": "repeat_after_me",
+      "modes": {
+        "cpu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 7.3,
+          "prompt_tps": 19.5,
+          "match_vs_baseline": "baseline",
+          "generated_text": "The quick brown fox jumps over the lazy dog.",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "equals_normalized: verbatim echo of the sentence"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 5.5,
+          "prompt_tps": 12.0,
+          "match_vs_baseline": "exact",
+          "generated_text": "The quick brown fox jumps over the lazy dog.",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "equals_normalized: verbatim echo of the sentence"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.5,
+          "prompt_tps": 9.0,
+          "match_vs_baseline": "exact",
+          "generated_text": "The quick brown fox jumps over the lazy dog.",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "equals_normalized: verbatim echo of the sentence"
+            }
+          ]
+        }
+      },
+      "oracle_exact": true
+    },
+    {
+      "id": "list3",
+      "kind": "instruction_following",
+      "modes": {
+        "cpu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 6.8,
+          "prompt_tps": 19.0,
+          "match_vs_baseline": "baseline",
+          "generated_text": "Red\nBlue\nYellow",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "each_line_matches: three lines, each naming a primary colour"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 4.9,
+          "prompt_tps": 10.6,
+          "match_vs_baseline": "exact",
+          "generated_text": "Red\nBlue\nYellow",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "each_line_matches: three lines, each naming a primary colour"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.5,
+          "prompt_tps": 7.1,
+          "match_vs_baseline": "exact",
+          "generated_text": "Red\nBlue\nYellow",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "each_line_matches: three lines, each naming a primary colour"
+            }
+          ]
+        }
+      },
+      "oracle_exact": true
+    },
+    {
+      "id": "count10",
+      "kind": "counting",
+      "modes": {
+        "cpu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 7.0,
+          "prompt_tps": 19.2,
+          "match_vs_baseline": "baseline",
+          "generated_text": "1 2 3 4 5 6 7 8 9 10",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: the sequence 1..10 as space-separated digits"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 5.2,
+          "prompt_tps": 10.8,
+          "match_vs_baseline": "exact",
+          "generated_text": "1 2 3 4 5 6 7 8 9 10",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: the sequence 1..10 as space-separated digits"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 1,
+          "total": 1,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.4,
+          "prompt_tps": 6.4,
+          "match_vs_baseline": "exact",
+          "generated_text": "1 2 3 4 5 6 7 8 9 10",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: the sequence 1..10 as space-separated digits"
+            }
+          ]
+        }
+      },
+      "oracle_exact": true
+    },
+    {
+      "id": "code",
+      "kind": "code",
+      "modes": {
+        "cpu": {
+          "passed": 2,
+          "total": 2,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 6.6,
+          "prompt_tps": 18.9,
+          "match_vs_baseline": "baseline",
+          "generated_text": "```python\ndef add(a, b):\n    return a + b\n```",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: defines add(...)"
+            },
+            {
+              "ok": true,
+              "desc": "regex: returns a + b"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 2,
+          "total": 2,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 5.3,
+          "prompt_tps": 12.3,
+          "match_vs_baseline": "exact",
+          "generated_text": "```python\ndef add(a, b):\n    return a + b\n```",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: defines add(...)"
+            },
+            {
+              "ok": true,
+              "desc": "regex: returns a + b"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 2,
+          "total": 2,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.4,
+          "prompt_tps": 6.3,
+          "match_vs_baseline": "exact",
+          "generated_text": "```python\ndef add(a, b):\n    return a + b\n```",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: defines add(...)"
+            },
+            {
+              "ok": true,
+              "desc": "regex: returns a + b"
+            }
+          ]
+        }
+      },
+      "oracle_exact": false
+    },
+    {
+      "id": "explain",
+      "kind": "explanation",
+      "modes": {
+        "cpu": {
+          "passed": 2,
+          "total": 2,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 5.4,
+          "prompt_tps": 13.3,
+          "match_vs_baseline": "baseline",
+          "generated_text": "[Start thinking]\n\n1.  **Analyze the Request:** Explain why the sky is blue in exactly two sentences. Must mention \"light scattering.\"\n2.  **Identify Key Concepts:** Sunlight contains all colors (wavelength spectrum). Earth's atmosphere has gases/particles. Blue light is scattered more effectively than other colors.\n3.  **Draft Sentence 1 (The Mechanism):** Sunlight enters the atmosphere and interacts with gas molecules.\n4.  **Draft Sentence ",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: mentions scattering"
+            },
+            {
+              "ok": true,
+              "desc": "min_words: produces an actual explanation, not a fragment"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 2,
+          "total": 2,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 5.0,
+          "prompt_tps": 12.9,
+          "match_vs_baseline": "exact",
+          "generated_text": "[Start thinking]\n\n1.  **Analyze the Request:** Explain why the sky is blue in exactly two sentences. Must mention \"light scattering.\"\n2.  **Identify Key Concepts:** Sunlight contains all colors (wavelength spectrum). Earth's atmosphere has gases/particles. Blue light is scattered more effectively than other colors.\n3.  **Draft Sentence 1 (The Mechanism):** Sunlight enters the atmosphere and interacts with gas molecules.\n4.  **Draft Sentence ",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: mentions scattering"
+            },
+            {
+              "ok": true,
+              "desc": "min_words: produces an actual explanation, not a fragment"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 2,
+          "total": 2,
+          "all_pass": true,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.5,
+          "prompt_tps": 6.9,
+          "match_vs_baseline": "diverged",
+          "generated_text": "[Start thinking]\n\n1.  **Analyze the Request:** The user wants a two-sentence explanation of why the sky is blue, specifically mentioning light scattering.\n2.  **Identify Key Concepts:**\n    *   Sky color (blue).\n    *   Mechanism (light scattering).\n    *   Specific type of scattering (Rayleigh scattering - though not strictly required, it's the scientific basis).\n    *   The role of the atmosphere (air molecules).",
+          "checks": [
+            {
+              "ok": true,
+              "desc": "regex: mentions scattering"
+            },
+            {
+              "ok": true,
+              "desc": "min_words: produces an actual explanation, not a fragment"
+            }
+          ]
+        }
+      },
+      "oracle_exact": false
+    },
+    {
+      "id": "longctx",
+      "kind": "long_context_tail",
+      "modes": {
+        "cpu": {
+          "passed": 0,
+          "total": 1,
+          "all_pass": false,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 4.9,
+          "prompt_tps": 21.3,
+          "match_vs_baseline": "baseline",
+          "generated_text": "[Start thinking]\n\nThe user wants me to extract the vault passphrase from the provided text.\nThe text ends with: `",
+          "checks": [
+            {
+              "ok": false,
+              "desc": "regex: retrieves the passphrase from the context tail"
+            }
+          ]
+        },
+        "cpu2": {
+          "passed": 0,
+          "total": 1,
+          "all_pass": false,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 4.4,
+          "prompt_tps": 18.4,
+          "match_vs_baseline": "exact",
+          "generated_text": "[Start thinking]\n\nThe user wants me to extract the vault passphrase from the provided text.\nThe text ends with: `",
+          "checks": [
+            {
+              "ok": false,
+              "desc": "regex: retrieves the passphrase from the context tail"
+            }
+          ]
+        },
+        "npu": {
+          "passed": 0,
+          "total": 1,
+          "all_pass": false,
+          "run_ok": true,
+          "error_lines": [],
+          "gen_tps": 0.4,
+          "prompt_tps": 15.1,
+          "match_vs_baseline": "diverged",
+          "generated_text": "[Start thinking]\n\nThe user wants me to extract the vault passphrase from the provided text.\nThe text ends with:",
+          "checks": [
+            {
+              "ok": false,
+              "desc": "regex: retrieves the passphrase from the context tail"
+            }
+          ]
+        }
+      },
+      "oracle_exact": true
+    }
+  ],
+  "npu_engine_cost": {
+    "schema": "npunlock.eval.npu-engine-cost.v1",
+    "what": "per-invocation NPU cost reported by the shipped ggml-shave engine itself (setup_ms / npu_ms / avg_invocation_us)",
+    "command": [
+      "/home/asdf/projects/npunlock-work/llama.cpp/build/bin/ggml-shave-selftest"
+    ],
+    "llama_dir": "/home/asdf/projects/npunlock-work/llama.cpp",
+    "repeats": 3,
+    "runs": [
+      {
+        "repeat": 0,
+        "wall_s": 0.159,
+        "exit_code": 0,
+        "engine": "ready",
+        "ops": [
+          "add",
+          "mul",
+          "copy"
+        ],
+        "format": null,
+        "invocations": 15,
+        "offloaded": 15,
+        "declined": 5,
+        "unsupported": 0,
+        "elements_offloaded": 170248,
+        "tile_bytes": 131072,
+        "lanes": {
+          "add": 32768,
+          "mul": 32768,
+          "copy_bytes": 131072
+        },
+        "per_op_invocations": {
+          "add": 7,
+          "mul": 5,
+          "copy": 3
+        },
+        "setup_ms": 8.73,
+        "npu_ms": 114.56,
+        "avg_invocation_us": 7637.1,
+        "us_per_invocation_derived": 7637.3,
+        "elements_per_s": 1486103.4
+      },
+      {
+        "repeat": 1,
+        "wall_s": 0.163,
+        "exit_code": 0,
+        "engine": "ready",
+        "ops": [
+          "add",
+          "mul",
+          "copy"
+        ],
+        "format": null,
+        "invocations": 15,
+        "offloaded": 15,
+        "declined": 5,
+        "unsupported": 0,
+        "elements_offloaded": 170248,
+        "tile_bytes": 131072,
+        "lanes": {
+          "add": 32768,
+          "mul": 32768,
+          "copy_bytes": 131072
+        },
+        "per_op_invocations": {
+          "add": 7,
+          "mul": 5,
+          "copy": 3
+        },
+        "setup_ms": 7.34,
+        "npu_ms": 115.72,
+        "avg_invocation_us": 7714.7,
+        "us_per_invocation_derived": 7714.7,
+        "elements_per_s": 1471206.4
+      },
+      {
+        "repeat": 2,
+        "wall_s": 0.167,
+        "exit_code": 0,
+        "engine": "ready",
+        "ops": [
+          "add",
+          "mul",
+          "copy"
+        ],
+        "format": null,
+        "invocations": 15,
+        "offloaded": 15,
+        "declined": 5,
+        "unsupported": 0,
+        "elements_offloaded": 170248,
+        "tile_bytes": 131072,
+        "lanes": {
+          "add": 32768,
+          "mul": 32768,
+          "copy_bytes": 131072
+        },
+        "per_op_invocations": {
+          "add": 7,
+          "mul": 5,
+          "copy": 3
+        },
+        "setup_ms": 7.63,
+        "npu_ms": 114.31,
+        "avg_invocation_us": 7620.5,
+        "us_per_invocation_derived": 7620.7,
+        "elements_per_s": 1489353.5
+      }
+    ],
+    "summary": {
+      "invocations_median": 15,
+      "setup_ms_median": 7.63,
+      "npu_ms_median": 114.56,
+      "us_per_invocation_best": 7620.5,
+      "us_per_invocation_median": 7637.1,
+      "elements_per_s_best": 1489353.5,
+      "tile_bytes": 131072,
+      "lanes": {
+        "add": 32768,
+        "mul": 32768,
+        "copy_bytes": 131072
+      },
+      "ops": [
+        "add",
+        "mul",
+        "copy"
+      ]
+    }
+  },
+  "npu_cycle_cost": {
+    "schema": "npunlock.eval.npu-cycle-cost.v1",
+    "carrier": "/home/asdf/projects/npunlock-work/npunlock/tests/fixtures/npu3720/abs-add-1x16-tile1.blob",
+    "kernel_elf": "/home/asdf/projects/npunlock-work/our-add1-fp16.elf",
+    "repeats": 3,
+    "runs": [
+      {
+        "patch": 4.3,
+        "bundle_create": 116.6,
+        "bundle_verify": 90.3,
+        "probe_execute": 31.9,
+        "total": 243.4
+      },
+      {
+        "patch": 5.3,
+        "bundle_create": 136.7,
+        "bundle_verify": 175.8,
+        "probe_execute": 31.0,
+        "total": 349.2
+      },
+      {
+        "patch": 4.8,
+        "bundle_create": 131.4,
+        "bundle_verify": 102.7,
+        "probe_execute": 35.2,
+        "total": 274.3
+      }
+    ],
+    "summary": {
+      "per_phase_ms": {
+        "patch": {
+          "mean_ms": 4.8,
+          "min_ms": 4.3,
+          "max_ms": 5.3
+        },
+        "bundle_create": {
+          "mean_ms": 128.2,
+          "min_ms": 116.6,
+          "max_ms": 136.7
+        },
+        "bundle_verify": {
+          "mean_ms": 122.9,
+          "min_ms": 90.3,
+          "max_ms": 175.8
+        },
+        "probe_execute": {
+          "mean_ms": 32.7,
+          "min_ms": 31.0,
+          "max_ms": 35.2
+        },
+        "total": {
+          "mean_ms": 289.0,
+          "min_ms": 243.4,
+          "max_ms": 349.2
+        }
+      },
+      "invocations_per_s_probe_only": 32.3,
+      "invocations_per_s_full_cycle": 4.1
+    }
+  },
+  "verdict": {
+    "all_checks_pass": false,
+    "exact_matches": 14,
+    "divergences": [
+      {
+        "id": "explain",
+        "mode": "npu"
+      },
+      {
+        "id": "longctx",
+        "mode": "npu"
+      }
+    ]
+  }
+}

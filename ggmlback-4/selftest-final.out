@@ -1,0 +1,119 @@
+ggml-shave: engine status: ready
+ggml-shave: engine tile: 32768 f32 lanes, 131072 copy bytes
+  [ ok ] engine advertises a model-sized tile
+  [ ok ] add and mul share the tile geometry
+ggml-shave: f32 add of 32768 elements (one full tile)
+  [ ok ] add f32 tile: supports_op == true
+  [ ok ] add f32 tile: test data stays in the verified (non-denormal) domain
+  [ ok ] add f32 tile: SHAVE graph_compute returned success
+  [ ok ] add f32 tile: CPU graph_compute returned success
+  [ ok ] add f32 tile: CPU result matches the host reference
+  [ ok ] add f32 tile: NPU result is bit-exact with the CPU backend
+ggml-shave: f32 mul of 32768 elements (one full tile)
+  [ ok ] mul f32 tile: supports_op == true
+  [ ok ] mul f32 tile: test data stays in the verified (non-denormal) domain
+  [ ok ] mul f32 tile: SHAVE graph_compute returned success
+  [ ok ] mul f32 tile: CPU graph_compute returned success
+  [ ok ] mul f32 tile: CPU result matches the host reference
+  [ ok ] mul f32 tile: NPU result is bit-exact with the CPU backend
+  [ ok ] add f32 sub-tile: supports_op == true
+  [ ok ] add f32 sub-tile: test data stays in the verified (non-denormal) domain
+  [ ok ] add f32 sub-tile: SHAVE graph_compute returned success
+  [ ok ] add f32 sub-tile: CPU graph_compute returned success
+  [ ok ] add f32 sub-tile: CPU result matches the host reference
+  [ ok ] add f32 sub-tile: NPU result is bit-exact with the CPU backend
+  [ ok ] mul f32 single element: supports_op == true
+  [ ok ] mul f32 single element: test data stays in the verified (non-denormal) domain
+  [ ok ] mul f32 single element: SHAVE graph_compute returned success
+  [ ok ] mul f32 single element: CPU graph_compute returned success
+  [ ok ] mul f32 single element: CPU result matches the host reference
+  [ ok ] mul f32 single element: NPU result is bit-exact with the CPU backend
+ggml-shave: carrier ladder (right-sized tiles)
+  [ ok ] add f32 rung 16384 B: supports_op == true
+  [ ok ] add f32 rung 16384 B: test data stays in the verified (non-denormal) domain
+  [ ok ] add f32 rung 16384 B: SHAVE graph_compute returned success
+  [ ok ] add f32 rung 16384 B: CPU graph_compute returned success
+  [ ok ] add f32 rung 16384 B: CPU result matches the host reference
+  [ ok ] add f32 rung 16384 B: NPU result is bit-exact with the CPU backend
+  [ ok ] add f32 rung 32768 B: supports_op == true
+  [ ok ] add f32 rung 32768 B: test data stays in the verified (non-denormal) domain
+  [ ok ] add f32 rung 32768 B: SHAVE graph_compute returned success
+  [ ok ] add f32 rung 32768 B: CPU graph_compute returned success
+  [ ok ] add f32 rung 32768 B: CPU result matches the host reference
+  [ ok ] add f32 rung 32768 B: NPU result is bit-exact with the CPU backend
+  [ ok ] add f32 rung 65536 B: supports_op == true
+  [ ok ] add f32 rung 65536 B: test data stays in the verified (non-denormal) domain
+  [ ok ] add f32 rung 65536 B: SHAVE graph_compute returned success
+  [ ok ] add f32 rung 65536 B: CPU graph_compute returned success
+  [ ok ] add f32 rung 65536 B: CPU result matches the host reference
+  [ ok ] add f32 rung 65536 B: NPU result is bit-exact with the CPU backend
+  [ ok ] mul f32 within rung 32768 B: supports_op == true
+  [ ok ] mul f32 within rung 32768 B: test data stays in the verified (non-denormal) domain
+  [ ok ] mul f32 within rung 32768 B: SHAVE graph_compute returned success
+  [ ok ] mul f32 within rung 32768 B: CPU graph_compute returned success
+  [ ok ] mul f32 within rung 32768 B: CPU result matches the host reference
+  [ ok ] mul f32 within rung 32768 B: NPU result is bit-exact with the CPU backend
+  [ ok ] mul f32 within rung 131072 B: supports_op == true
+  [ ok ] mul f32 within rung 131072 B: test data stays in the verified (non-denormal) domain
+  [ ok ] mul f32 within rung 131072 B: SHAVE graph_compute returned success
+  [ ok ] mul f32 within rung 131072 B: CPU graph_compute returned success
+  [ ok ] mul f32 within rung 131072 B: CPU result matches the host reference
+  [ ok ] mul f32 within rung 131072 B: NPU result is bit-exact with the CPU backend
+ggml-shave: f32 silu (declared toleranceggml-shave-stats {"engine":"ready","ops":["add","mul","copy","silu"],"invocations":23,"offloaded":23,"declined":6,"unsupported":0,"elements_offloaded":270480,"tile_bytes":131072,"lanes":{"add":32768,"mul":32768,"copy_bytes":131072,"silu":32768},"per_op_invocations":{"add":10,"mul":7,"copy":3,"silu":3},"setup_ms":74.87,"npu_ms":171.05,"avg_invocation_us":7437.1,"tile_histogram":{"16384":13,"32768":3,"65536":1,"131072":6},"engine_id":"f3b0bb813f176979597d8516713fea51be9493d8c243344eb3515ee95e7bb542"}
+: 4 ULP vs the CPU backend)
+  [ ok ] silu f32 sub-tile: supports_op == true
+  [ ok ] silu f32 sub-tile: SHAVE graph_compute returned success
+  [ ok ] silu f32 sub-tile: CPU graph_compute returned success
+  [ ok ] silu f32 sub-tile: output was written
+  [ ok ] silu f32 sub-tile: same output size
+  [ ok ] silu f32 sub-tile: NPU within 4 ULP of the CPU backend (worst 3 ULP at element 45, 265 of 1024 differ)
+  [ ok ] silu f32 sub-tile: the tolerance is actually exercised (mlibm expf differs from host libm somewhere)
+  [ ok ] silu f32 8192: supports_op == true
+  [ ok ] silu f32 8192: SHAVE graph_compute returned success
+  [ ok ] silu f32 8192: CPU graph_compute returned success
+  [ ok ] silu f32 8192: output was written
+  [ ok ] silu f32 8192: same output size
+  [ ok ] silu f32 8192: NPU within 4 ULP of the CPU backend (worst 3 ULP at element 45, 2112 of 8192 differ)
+  [ ok ] silu f32 8192: the tolerance is actually exercised (mlibm expf differs from host libm somewhere)
+  [ ok ] silu f32 full tile: supports_op == true
+  [ ok ] silu f32 full tile: SHAVE graph_compute returned success
+  [ ok ] silu f32 full tile: CPU graph_compute returned success
+  [ ok ] silu f32 full tile: output was written
+  [ ok ] silu f32 full tile: same output size
+  [ ok ] silu f32 full tile: NPU within 4 ULP of the CPU backend (worst 3 ULP at element 45, 8383 of 32768 differ)
+  [ ok ] silu f32 full tile: the tolerance is actually exercised (mlibm expf differs from host libm somewhere)
+ggml-shave: byte-exact copy of 131072 bytes
+  [ ok ] copy f32: supports_op == true
+  [ ok ] copy f32: SHAVE graph_compute returned success
+  [ ok ] copy f32: CPU graph_compute returned success
+  [ ok ] copy f32: CPU result matches the host reference
+  [ ok ] copy f32: NPU result is bit-exact with the CPU backend
+  [ ok ] copy f16: supports_op == true
+  [ ok ] copy f16: SHAVE graph_compute returned success
+  [ ok ] copy f16: CPU graph_compute returned success
+  [ ok ] copy f16: CPU result matches the host reference
+  [ ok ] copy f16: NPU result is bit-exact with the CPU backend
+  [ ok ] copy f32 sub-tile: supports_op == true
+  [ ok ] copy f32 sub-tile: SHAVE graph_compute returned success
+  [ ok ] copy f32 sub-tile: CPU graph_compute returned success
+  [ ok ] copy f32 sub-tile: CPU result matches the host reference
+  [ ok ] copy f32 sub-tile: NPU result is bit-exact with the CPU backend
+ggml-shave: denormal rule (fp32 flush-to-zero)
+  [ ok ] ADD: denormal operand is read as zero
+  [ ok ] ADD: two denormal operands add to zero
+  [ ok ] ADD: denormal operand reads as zero (cancelling addend vanishes)
+  [ ok ] ADD: denormal sum is flushed to zero
+  [ ok ] MUL: denormal operand reads as zero
+  [ ok ] MUL: denormal product is flushed to zero
+ggml-shave: capability gate
+  [ ok ] f16 add is declined (no bit-exact f16 kernel)
+  [ ok ] f32 add larger than one tile is declined
+  [ ok ] broadcast f32 add is declined
+  [ ok ] copy of a non-dense source is declined
+  [ ok ] f16 silu is declined (the engine's silu is the f32 kernel)
+ggml-shave: scheduler placement
+  [ ok ] exactly the two supported nodes ran on the NPU
+  [ ok ] mixed (NPU+CPU) scheduler computed the graph
+  [ ok ] CPU-only scheduler computed the graph
+  [ ok ] mixed graph result is bit-exact with the CPU-only scheduler
+ggml-shave: PASS (NPU offloads: 23, 171.052 ms total NPU time)

@@ -1,0 +1,5 @@
+entry.c:10:16: warning: implicitly declaring library function 'expf' with type 'float (float)' [-Wimplicit-function-declaration]
+      out[i] = expf(in[i]);
+               ^
+entry.c:10:16: note: include the header <math.h> or explicitly provide a declaration for 'expf'
+fatal error: error in backend: SHAVE: unsupported condition code 20 in wave 1 (floating-point and signed compares are unsupported); see TARGET_NOTES.md

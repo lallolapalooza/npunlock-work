@@ -1,0 +1,45 @@
+SHAVE: stack spills are not supported yet (no stack-pointer register identified; see TARGET_NOTES.md)
+UNREACHABLE executed at /home/asdf/projects/llvm-14/llvm/lib/Target/SHAVE/SHAVEInstrInfo.cpp:41!
+PLEASE submit a bug report to https://github.com/llvm/llvm-project/issues/ and include the crash backtrace, preprocessed source, and associated run script.
+Stack dump:
+0.	Program arguments: /home/asdf/projects/llvm-14/build/bin/clang -cc1 -triple shave -target-cpu 3720xx -S -O2 -x c - -ffunction-sections -fdata-sections -I/home/asdf/projects/npunlock-work/corpus/include -o - -main-file-name entry.c
+1.	<eof> parser at end of file
+2.	Code generation
+3.	Running pass 'Function Pass Manager' on module 'entry.c'.
+4.	Running pass 'Greedy Register Allocator' on function '@controlled_act'
+ #0 0x0000612edf1fdbb4 llvm::sys::PrintStackTrace(llvm::raw_ostream&, int) (/home/asdf/projects/llvm-14/build/bin/clang+0x1facbb4)
+ #1 0x0000612edf1fb91e llvm::sys::RunSignalHandlers() (/home/asdf/projects/llvm-14/build/bin/clang+0x1faa91e)
+ #2 0x0000612edf1fe058 SignalHandler(int) Signals.cpp:0:0
+ #3 0x0000712ac8445cb0 (/usr/lib/x86_64-linux-gnu/libc.so.6+0x45cb0)
+ #4 0x0000712ac84a61ac __pthread_kill_implementation ./nptl/pthread_kill.c:44:76
+ #5 0x0000712ac84a61ac __pthread_kill_internal ./nptl/pthread_kill.c:89:10
+ #6 0x0000712ac84a61ac pthread_kill ./nptl/pthread_kill.c:100:10
+ #7 0x0000712ac8445b7e raise ./signal/../sysdeps/posix/raise.c:27:6
+ #8 0x0000712ac84288ec internal_signal_block_all ./stdlib/../sysdeps/unix/sysv/linux/internal-signals.h:81:3
+ #9 0x0000712ac84288ec __abort_lock_wrlock ./stdlib/abort.c:62:3
+#10 0x0000712ac84288ec abort ./stdlib/abort.c:85:3
+#11 0x0000612edf17e1cf (/home/asdf/projects/llvm-14/build/bin/clang+0x1f2d1cf)
+#12 0x0000612ede208a29 (/home/asdf/projects/llvm-14/build/bin/clang+0xfb7a29)
+#13 0x0000612ede936d3a (anonymous namespace)::InlineSpiller::spillAll() InlineSpiller.cpp:0:0
+#14 0x0000612ede933f1e (anonymous namespace)::InlineSpiller::spill(llvm::LiveRangeEdit&) InlineSpiller.cpp:0:0
+#15 0x0000612ede8ba931 llvm::RAGreedy::selectOrSplitImpl(llvm::LiveInterval&, llvm::SmallVectorImpl<llvm::Register>&, llvm::SmallSet<llvm::Register, 16u, std::less<llvm::Register>>&, unsigned int) (/home/asdf/projects/llvm-14/build/bin/clang+0x1669931)
+#16 0x0000612ede8bacac llvm::RAGreedy::selectOrSplit(llvm::LiveInterval&, llvm::SmallVectorImpl<llvm::Register>&) (/home/asdf/projects/llvm-14/build/bin/clang+0x1669cac)
+#17 0x0000612ede946f5a llvm::RegAllocBase::allocatePhysRegs() (/home/asdf/projects/llvm-14/build/bin/clang+0x16f5f5a)
+#18 0x0000612ede8bed73 llvm::RAGreedy::runOnMachineFunction(llvm::MachineFunction&) (/home/asdf/projects/llvm-14/build/bin/clang+0x166dd73)
+#19 0x0000612ede59704c llvm::MachineFunctionPass::runOnFunction(llvm::Function&) (/home/asdf/projects/llvm-14/build/bin/clang+0x134604c)
+#20 0x0000612edea81888 llvm::FPPassManager::runOnFunction(llvm::Function&) (/home/asdf/projects/llvm-14/build/bin/clang+0x1830888)
+#21 0x0000612edea89b12 llvm::FPPassManager::runOnModule(llvm::Module&) (/home/asdf/projects/llvm-14/build/bin/clang+0x1838b12)
+#22 0x0000612edea8237b llvm::legacy::PassManagerImpl::run(llvm::Module&) (/home/asdf/projects/llvm-14/build/bin/clang+0x183137b)
+#23 0x0000612edf4c964f clang::EmitBackendOutput(clang::DiagnosticsEngine&, clang::HeaderSearchOptions const&, clang::CodeGenOptions const&, clang::TargetOptions const&, clang::LangOptions const&, llvm::StringRef, llvm::Module*, clang::BackendAction, std::unique_ptr<llvm::raw_pwrite_stream, std::default_delete<llvm::raw_pwrite_stream>>) (/home/asdf/projects/llvm-14/build/bin/clang+0x227864f)
+#24 0x0000612ee00fd840 clang::BackendConsumer::HandleTranslationUnit(clang::ASTContext&) (/home/asdf/projects/llvm-14/build/bin/clang+0x2eac840)
+#25 0x0000612ee0c2ac15 clang::ParseAST(clang::Sema&, bool, bool) (/home/asdf/projects/llvm-14/build/bin/clang+0x39d9c15)
+#26 0x0000612edfb26a4f clang::FrontendAction::Execute() (/home/asdf/projects/llvm-14/build/bin/clang+0x28d5a4f)
+#27 0x0000612edfaa7edd clang::CompilerInstance::ExecuteAction(clang::FrontendAction&) (/home/asdf/projects/llvm-14/build/bin/clang+0x2856edd)
+#28 0x0000612edfbda240 clang::ExecuteCompilerInvocation(clang::CompilerInstance*) (/home/asdf/projects/llvm-14/build/bin/clang+0x2989240)
+#29 0x0000612eddede8e5 cc1_main(llvm::ArrayRef<char const*>, char const*, void*) (/home/asdf/projects/llvm-14/build/bin/clang+0xc8d8e5)
+#30 0x0000612eddedc620 ExecuteCC1Tool(llvm::SmallVectorImpl<char const*>&) driver.cpp:0:0
+#31 0x0000612eddedc39e main (/home/asdf/projects/llvm-14/build/bin/clang+0xc8b39e)
+#32 0x0000712ac842a601 __libc_start_call_main ./csu/../sysdeps/nptl/libc_start_call_main.h:83:3
+#33 0x0000712ac842a718 call_init ./csu/../csu/libc-start.c:128:20
+#34 0x0000712ac842a718 __libc_start_main ./csu/../csu/libc-start.c:347:5
+#35 0x0000612edded9535 _start (/home/asdf/projects/llvm-14/build/bin/clang+0xc88535)

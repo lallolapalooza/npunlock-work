@@ -1,0 +1,16 @@
+fatal error: error in backend: Cannot select: t116: i32 = mulhu t66, t106
+  t66: i32 = or t65, Constant:i32<1>
+    t65: i32,ch = load<(load (s32) from %ir.arrayidx7, !tbaa !5)> t0, t64, undef:i32
+      t64: i32 = add nuw t118, Constant:i32<8>
+        t118: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+          t1: i32 = Register $r18
+          t3: i32 = undef
+        t10: i32 = Constant<8>
+      t3: i32 = undef
+    t6: i32 = Constant<1>
+  t106: i32,ch = load<(load (s32) from %ir.5, !tbaa !5)> t0, t118, undef:i32
+    t118: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+      t1: i32 = Register $r18
+      t3: i32 = undef
+    t3: i32 = undef
+In function: controlled_act

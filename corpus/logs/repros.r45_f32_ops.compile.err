@@ -1,0 +1,51 @@
+fatal error: error in backend: Cannot select: t100: f32 = fabs t99
+  t99: f32 = fmul t98, t152
+    t98: f32 = fsub t96, t97
+      t96: f32 = fadd t92, t95
+        t92: f32 = fabs t91
+          t91: f32 = fmul t90, t152
+            t90: f32 = fsub t88, t89
+              t88: f32 = fadd t85, t87
+                t85: f32 = fabs t84
+                  t84: f32 = fmul t83, t152
+
+
+                t87: f32,ch = load<(load (s32) from %ir.arrayidx.6, !tbaa !5)> t0, t86, undef:i32
+                  t86: i32 = add nuw t150, Constant:i32<24>
+
+
+                  t3: i32 = undef
+              t89: f32 = fmul t87, t154
+                t87: f32,ch = load<(load (s32) from %ir.arrayidx.6, !tbaa !5)> t0, t86, undef:i32
+                  t86: i32 = add nuw t150, Constant:i32<24>
+
+
+                  t3: i32 = undef
+                t154: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float 5.000000e-01> 0, undef:i32
+                  t153: i32 = ConstantPool<float 5.000000e-01> 0
+                  t3: i32 = undef
+            t152: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float -1.250000e+00> 0, undef:i32
+              t151: i32 = ConstantPool<float -1.250000e+00> 0
+              t3: i32 = undef
+        t95: f32,ch = load<(load (s32) from %ir.arrayidx.7, !tbaa !5)> t0, t94, undef:i32
+          t94: i32 = add nuw t150, Constant:i32<28>
+            t150: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+              t1: i32 = Register $r18
+              t3: i32 = undef
+            t93: i32 = Constant<28>
+          t3: i32 = undef
+      t97: f32 = fmul t95, t154
+        t95: f32,ch = load<(load (s32) from %ir.arrayidx.7, !tbaa !5)> t0, t94, undef:i32
+          t94: i32 = add nuw t150, Constant:i32<28>
+            t150: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+              t1: i32 = Register $r18
+              t3: i32 = undef
+            t93: i32 = Constant<28>
+          t3: i32 = undef
+        t154: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float 5.000000e-01> 0, undef:i32
+          t153: i32 = ConstantPool<float 5.000000e-01> 0
+          t3: i32 = undef
+    t152: f32,ch = load<(load (s32) from constant-pool)> t0, ConstantPool:i32<float -1.250000e+00> 0, undef:i32
+      t151: i32 = ConstantPool<float -1.250000e+00> 0
+      t3: i32 = undef
+In function: controlled_act

@@ -1,0 +1,3 @@
+242755:  FUN_180c3ba60(&DAT_183c72780,"shave","Myriad SHAVE Processor","SHAVE",&LAB_180160d80,0);
+3245558:    FUN_181132a20(puVar1,"SHAVE::Assemble","moviAsm",param_1);
+3245576:    FUN_181132a20(puVar1,"SHAVE::Link","sparc-myriad-rtems-ld",param_1);

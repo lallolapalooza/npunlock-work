@@ -1,0 +1,5 @@
+fatal error: error in backend: Cannot select: t4: ch = br_jt t2:1, JumpTable:i32<0>, t2
+  t3: i32 = JumpTable<0>
+  t2: i32,ch = CopyFromReg t0, Register:i32 %33
+    t1: i32 = Register %33
+In function: controlled_act

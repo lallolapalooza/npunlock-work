@@ -1,0 +1,9 @@
+{
+  "schema": "npunlock.porting.inspect.v1",
+  "graph": {"path": "/home/asdf/projects/npunlock-work/npunlock/tests/fixtures/npu3720/abs-add-1x16-tile1.blob", "size": 42640, "sha256": "d4abc3c09cabdb14fd5090fa5d2e4d33f4aa755aad2bcad4f078acc891d26e07"},
+  "act": {"group_count": 1, "target_count": 2, "targets": [
+    {"group_index": 0, "invocation_index": 0, "range_index": 0, "input_count": 1, "element_count": 8, "span_bytes": 16, "contract_flags": 31, "precision": "fp16"},
+    {"group_index": 0, "invocation_index": 1, "range_index": 1, "input_count": 1, "element_count": 8, "span_bytes": 16, "contract_flags": 31, "precision": "fp16"}
+  ]},
+  "scope": "observed NPU3720/compiler-8.3 ACT contract; discovery is not proof of execution compatibility"
+}

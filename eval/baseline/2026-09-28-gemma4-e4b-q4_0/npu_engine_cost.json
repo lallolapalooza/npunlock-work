@@ -1,0 +1,129 @@
+{
+  "schema": "npunlock.eval.npu-engine-cost.v1",
+  "what": "per-invocation NPU cost reported by the shipped ggml-shave engine itself (setup_ms / npu_ms / avg_invocation_us)",
+  "command": [
+    "/home/asdf/projects/npunlock-work/llama.cpp/build/bin/ggml-shave-selftest"
+  ],
+  "llama_dir": "/home/asdf/projects/npunlock-work/llama.cpp",
+  "repeats": 3,
+  "runs": [
+    {
+      "repeat": 0,
+      "wall_s": 0.159,
+      "exit_code": 0,
+      "engine": "ready",
+      "ops": [
+        "add",
+        "mul",
+        "copy"
+      ],
+      "format": null,
+      "invocations": 15,
+      "offloaded": 15,
+      "declined": 5,
+      "unsupported": 0,
+      "elements_offloaded": 170248,
+      "tile_bytes": 131072,
+      "lanes": {
+        "add": 32768,
+        "mul": 32768,
+        "copy_bytes": 131072
+      },
+      "per_op_invocations": {
+        "add": 7,
+        "mul": 5,
+        "copy": 3
+      },
+      "setup_ms": 8.73,
+      "npu_ms": 114.56,
+      "avg_invocation_us": 7637.1,
+      "us_per_invocation_derived": 7637.3,
+      "elements_per_s": 1486103.4
+    },
+    {
+      "repeat": 1,
+      "wall_s": 0.163,
+      "exit_code": 0,
+      "engine": "ready",
+      "ops": [
+        "add",
+        "mul",
+        "copy"
+      ],
+      "format": null,
+      "invocations": 15,
+      "offloaded": 15,
+      "declined": 5,
+      "unsupported": 0,
+      "elements_offloaded": 170248,
+      "tile_bytes": 131072,
+      "lanes": {
+        "add": 32768,
+        "mul": 32768,
+        "copy_bytes": 131072
+      },
+      "per_op_invocations": {
+        "add": 7,
+        "mul": 5,
+        "copy": 3
+      },
+      "setup_ms": 7.34,
+      "npu_ms": 115.72,
+      "avg_invocation_us": 7714.7,
+      "us_per_invocation_derived": 7714.7,
+      "elements_per_s": 1471206.4
+    },
+    {
+      "repeat": 2,
+      "wall_s": 0.167,
+      "exit_code": 0,
+      "engine": "ready",
+      "ops": [
+        "add",
+        "mul",
+        "copy"
+      ],
+      "format": null,
+      "invocations": 15,
+      "offloaded": 15,
+      "declined": 5,
+      "unsupported": 0,
+      "elements_offloaded": 170248,
+      "tile_bytes": 131072,
+      "lanes": {
+        "add": 32768,
+        "mul": 32768,
+        "copy_bytes": 131072
+      },
+      "per_op_invocations": {
+        "add": 7,
+        "mul": 5,
+        "copy": 3
+      },
+      "setup_ms": 7.63,
+      "npu_ms": 114.31,
+      "avg_invocation_us": 7620.5,
+      "us_per_invocation_derived": 7620.7,
+      "elements_per_s": 1489353.5
+    }
+  ],
+  "summary": {
+    "invocations_median": 15,
+    "setup_ms_median": 7.63,
+    "npu_ms_median": 114.56,
+    "us_per_invocation_best": 7620.5,
+    "us_per_invocation_median": 7637.1,
+    "elements_per_s_best": 1489353.5,
+    "tile_bytes": 131072,
+    "lanes": {
+      "add": 32768,
+      "mul": 32768,
+      "copy_bytes": 131072
+    },
+    "ops": [
+      "add",
+      "mul",
+      "copy"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schema": "npunlock.porting.linux-execution.v1",
+  "mode": "in-process-bring-up",
+  "bundle_root": "/home/asdf/projects/npunlock-work/corpus/npu-smoke/bundle",
+  "stages": {
+    "loader": "passed",
+    "device_selection": "passed",
+    "graph_extension": "passed",
+    "graph_create": "passed",
+    "initialization": "passed",
+    "execution": "passed",
+    "oracle": "failed"
+  },
+  "result": {"status": "ok", "last_stage": "complete", "level_zero_result": "0x00000000", "driver_index": 0, "device_index": 0, "driver_version": 1789049548, "vendor_id": 32902, "device_id": 32029},
+  "diagnostic": "",
+  "scope": "Linux in-process compatibility probe; a passed graph-create stage alone does not establish execution or semantic compatibility"
+}

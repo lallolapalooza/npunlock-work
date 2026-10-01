@@ -1,0 +1,37 @@
+
+*.a
+*.bin
+# build output and binaries (regenerable from the sources)
+*.dll
+*.drv
+*.dylib
+*.exe
+*.lib
+/llama.cpp/
+llama.cpp/.git/objects/pack/pack-67e4752a1f9c18b5d8ec34a304093f0b243562ad.pack
+node_modules/
+/npunlock/
+*.o
+*.obj
+*.ocx
+omp-session-2026-09-27T17-12-00-875Z_01a0e3da-2a6b-75b4-b56a-052e2b1503cd.html
+*.pdb
+*.png
+*.pyc
+__pycache__/
+*.pyo
+*.res
+/sd.cpp/
+sd.cpp/.git/objects/pack/pack-068244ad43ba0bf7548d570d80e54532582346e2.pack
+sd.cpp/src/tokenizers/vocab/gemma_merges.hpp
+sd.cpp/src/tokenizers/vocab/gemma_vocab.hpp
+sd.cpp/src/tokenizers/vocab/umt5.hpp
+sd-demo/build-stock/bin/sd-cli
+sd-demo/build-stock/CMakeFiles/stable-diffusion.dir/src/tokenizers/vocab/vocab.cpp.o
+sd-demo/build-stock/libstable-diffusion.a
+sd-demo/models/stable-diffusion-v1-5-pruned-emaonly-Q4_0.gguf
+# single files larger than 20 MB (kept out of git; fetch or regenerate them)
+*.so
+*.sys
+venv/
+*-windows/

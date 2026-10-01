@@ -1,0 +1,16 @@
+fatal error: error in backend: Cannot select: t183: i32,i32 = umul_lohi t264, t56
+  t264: i32 = or t65, Constant:i32<3>
+    t65: i32,ch = load<(load (s32) from %ir.arrayidx7, !tbaa !5)> t0, t64, undef:i32
+      t64: i32 = add nuw t268, Constant:i32<8>
+        t268: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+          t1: i32 = Register $r18
+          t3: i32 = undef
+        t10: i32 = Constant<8>
+      t3: i32 = undef
+    t20: i32 = Constant<3>
+  t56: i32,ch = load<(load (s32) from %ir.5, !tbaa !5)> t0, t268, undef:i32
+    t268: i32,ch = load<(load (s32) from %ir.0, !tbaa !2)> t0, Register:i32 $r18, undef:i32
+      t1: i32 = Register $r18
+      t3: i32 = undef
+    t3: i32 = undef
+In function: controlled_act

@@ -1,0 +1,6 @@
+  run 0: 15 invocations, 7637.1 us/invocation, npu 114.6 ms, setup 8.73 ms, 1486103.4 elements/s
+  run 1: 15 invocations, 7714.7 us/invocation, npu 115.7 ms, setup 7.34 ms, 1471206.4 elements/s
+  run 2: 15 invocations, 7620.5 us/invocation, npu 114.3 ms, setup 7.63 ms, 1489353.5 elements/s
+
+BEST: 7620.5 us/invocation (131.2 invocations/s), tile 131072 B, ops ['add', 'mul', 'copy']
+wrote /home/asdf/projects/npunlock-work/eval/baseline/2026-09-28-gemma4-e4b-q4_0/npu_engine_cost.json

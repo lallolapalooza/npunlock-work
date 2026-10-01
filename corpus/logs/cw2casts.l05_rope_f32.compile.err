@@ -1,0 +1,4 @@
+fatal error: error in backend: Cannot select: t55: f32,f32 = fsincos t6
+  t6: f32,ch = CopyFromReg t0, Register:f32 %36
+    t5: f32 = Register %36
+In function: controlled_act

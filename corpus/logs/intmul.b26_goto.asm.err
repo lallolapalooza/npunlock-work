@@ -1,0 +1,5 @@
+legalize: WARNING: line 96: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.LD.8 d, [base+off]` or widen and mask
+legalize: WARNING: line 105: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.LD.8 d, [base+off]` or widen and mask
+legalize: WARNING: line 114: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.LD.8 d, [base+off]` or widen and mask
+legalize: WARNING: line 123: LSU0.LD.8: the 2-operand 0x42-class byte load is measured non-working on silicon (no delivery, both byte-3 variants; no corpus instance) - use the displacement form `LSUx.LD.8 d, [base+off]` or widen and mask
+legalize: 2 form rewrite(s) [LSU0.LDO.32 i0, i18, 0x0->LSU0.LD.32 i0, i18, LSU0.LDO.32 i1, i0, 0x0->LSU0.LD.32 i1, i0]

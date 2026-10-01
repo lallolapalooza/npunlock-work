@@ -1,0 +1,1575 @@
+{
+  "schema": "kernel-lib.manifest.v1",
+  "generated_by": "kernel-lib/build.sh + kernel-lib/tools/make_manifest.py",
+  "abi": {
+    "entry": "controlled_act",
+    "signature": "void controlled_act(unsigned layerParams)",
+    "header": "src/npunlock/npu3720_kernel.h",
+    "header_sha256": "d653045eb2323730cad1e33ec8504272d686ddeb5d00b44aab63898e910cbd35",
+    "linker_script": "src/shave_kernel.ld",
+    "linker_script_sha256": "4b7faf5233e425c6d75a63b18d7f8ea7e06b3b023cbf3b39731de64294f975da",
+    "invocation_fields": [
+      "params32 + 0x00 = input record 0 data pointer",
+      "params32 + 0x0c = rank",
+      "params32 + 0x10 = dims pointer",
+      "params32 + 0x28 * record = record data pointer (0x28-byte records)",
+      "element_count = product(dims[0..rank))"
+    ],
+    "target_triple": "shave / 3720xx"
+  },
+  "toolchain": [
+    "toolchain_root: /home/asdf/projects/npunlock-work/shave-toolchain-root",
+    "moviCompile: 4a02b58530667f070b577b795afa5b951e52fc9a8587a1be9ac444faccc7c73d",
+    "moviAsm: 688aa99463b7b77dc470819245013514a85340f8b488497b928bb1ee9e94cc74",
+    "moviLLD: d915d1f724c849cd23dbcd968a182845e76531b6267e16e14c971a6ad7efdc21",
+    "mlibm.a: 4769ac96201c3fbd4c974151a631a42b8339b30ea26d8f54072375092bda54a3",
+    "npu3720_kernel.h: d653045eb2323730cad1e33ec8504272d686ddeb5d00b44aab63898e910cbd35",
+    "shave_kernel.ld: 4b7faf5233e425c6d75a63b18d7f8ea7e06b3b023cbf3b39731de64294f975da"
+  ],
+  "carriers": {
+    "abs-abs-1x32": {
+      "path": "npunlock/tests/fixtures/npu3720/abs-abs-1x32.blob",
+      "sha256": "da8c205954f565c95845d9109558928d3c3e2c249c2c9942dc92b7ed60c4402c",
+      "source": "prebuilt fixture (vendor graph compiler)",
+      "ir_op": null,
+      "shape": [
+        1,
+        32
+      ],
+      "dtype": "f16",
+      "inputs": 1,
+      "act_groups": 2,
+      "act_targets": 8,
+      "elements_per_invocation": 16,
+      "load_bearing_ranges": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "notes": "two chained ACT groups; each window pairs lane i with i ^ 16"
+    },
+    "abs-add-1x16-tile1": {
+      "path": "npunlock/tests/fixtures/npu3720/abs-add-1x16-tile1.blob",
+      "sha256": "d4abc3c09cabdb14fd5090fa5d2e4d33f4aa755aad2bcad4f078acc891d26e07",
+      "source": "prebuilt fixture (vendor graph compiler)",
+      "ir_op": null,
+      "shape": [
+        1,
+        16
+      ],
+      "dtype": "f16",
+      "inputs": 1,
+      "act_groups": 1,
+      "act_targets": 2,
+      "elements_per_invocation": 8,
+      "load_bearing_ranges": [
+        0,
+        1
+      ],
+      "notes": "DPU pre-op adds the fixed fp16 ramp i/15-0.5 before the ACT"
+    },
+    "abs_1in_1x1024": {
+      "path": "carriers/abs_1in_1x1024.blob",
+      "sha256": "ccda06fb63a08a562df50f945a8b6a07b92d03fb50d8c3cff8e2916635910151",
+      "source": "IR-built on Linux (tools/make_carrier.py)",
+      "ir_op": "Abs",
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "f16",
+      "inputs": 1,
+      "act_groups": 1,
+      "act_targets": 4,
+      "elements_per_invocation": 512,
+      "load_bearing_ranges": [
+        0,
+        2
+      ],
+      "notes": "the ACT is the whole op; patching replaces it"
+    },
+    "abs_1in_1x16384": {
+      "path": "carriers/abs_1in_1x16384.blob",
+      "sha256": "93439177e9db0469993a08a0615f1971f3bcf90acae866399290c9ae73149ee6",
+      "source": "IR-built on Linux (tools/make_carrier.py)",
+      "ir_op": "Abs",
+      "shape": [
+        1,
+        16384
+      ],
+      "dtype": "f16",
+      "inputs": 1,
+      "act_groups": 1,
+      "act_targets": 4,
+      "elements_per_invocation": 8192,
+      "load_bearing_ranges": [
+        0,
+        2
+      ],
+      "notes": "the ACT is the whole op; patching replaces it"
+    },
+    "maximum_2in_1x1024": {
+      "path": "carriers/maximum_2in_1x1024.blob",
+      "sha256": "d50d4aaa3fb64945b1f134c093bf3607ec6e59f6fe4fecbfe4148ec3f310b93e",
+      "source": "IR-built on Linux (tools/make_carrier.py)",
+      "ir_op": "Maximum",
+      "shape": [
+        1,
+        1024
+      ],
+      "dtype": "f16",
+      "inputs": 2,
+      "act_groups": 1,
+      "act_targets": 4,
+      "elements_per_invocation": 256,
+      "load_bearing_ranges": [
+        0,
+        2
+      ],
+      "notes": "the ACT is the whole op; patching replaces it"
+    },
+    "maximum_2in_1x16384": {
+      "path": "carriers/maximum_2in_1x16384.blob",
+      "sha256": "7dc317db398a73227152498444599bdd04a9566bdd73aa9a72d89c56df06b9e3",
+      "source": "IR-built on Linux (tools/make_carrier.py)",
+      "ir_op": "Maximum",
+      "shape": [
+        1,
+        16384
+      ],
+      "dtype": "f16",
+      "inputs": 2,
+      "act_groups": 1,
+      "act_targets": 4,
+      "elements_per_invocation": 4096,
+      "load_bearing_ranges": [
+        0,
+        2
+      ],
+      "notes": "the ACT is the whole op; patching replaces it"
+    },
+    "shipped:maximum-1x1024": {
+      "path": "/home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-carrier/two-input/maximum-1x1024.blob",
+      "sha256": "d3ebcaf82edce48516b64840e2b9d28a121e8ad4599c2d9a50b035ec3370d492",
+      "source": "shipped npunlock path (PosixWorker npu_carrier_smoke.sh)",
+      "ir_op": "Maximum",
+      "shape": null,
+      "dtype": "f16",
+      "inputs": 2,
+      "act_groups": 1,
+      "act_targets": 4,
+      "elements_per_invocation": 256,
+      "load_bearing_ranges": [
+        0,
+        2
+      ],
+      "notes": "2 input records, output record 2"
+    },
+    "shipped:maximum-1x16384": {
+      "path": "/home/asdf/projects/npunlock-work/npunlock/build/fresh/npu-carrier/two-input/maximum-1x16384.blob",
+      "sha256": "727b7997bf659b906ec1b14d0fe84657382a8a9cf220d78b150fca712d3180b2",
+      "source": "shipped npunlock path (PosixWorker npu_carrier_smoke.sh)",
+      "ir_op": "Maximum",
+      "shape": null,
+      "dtype": "f16",
+      "inputs": 2,
+      "act_groups": 1,
+      "act_targets": 4,
+      "elements_per_invocation": 4096,
+      "load_bearing_ranges": [
+        0,
+        2
+      ],
+      "notes": "2 input records, output record 2"
+    }
+  },
+  "latency": {
+    "provenance": "Per-invocation cost with a *persistent* runtime session, measured by the npu-runtime workstream (/home/asdf/projects/npunlock-work/npu-runtime/README.md, build/npu-runtime-bench --runs 200); kernel-lib's own probe (tools/klib_probe, fresh process, one graph create per call) measures 26-76 ms per run, which is the graph-recreate class, not kernel time.",
+    "graph_execute_and_fence_wait_ms_per_invocation": 0.8,
+    "steady_state_ms_per_call_reused_session": [
+      1.0,
+      1.22
+    ],
+    "graph_recreate_per_call_ms": 46,
+    "kernel_lib_probe_wall_seconds": "see reports/npu-evidence.json verdict.mean_wall_seconds",
+    "note": "The numbers are per invocation of the whole patched graph, not per element: a 32-element tile costs the same as a 1-element tile, which is why larger carriers (graph compiler) are the lever, not kernel tuning."
+  },
+  "measured_toolchain_rules": [
+    {
+      "id": "D1",
+      "rule": "fp32 ADD/SUB with two *runtime* register operands is computed correctly only with the '; fmt=2' register-form asm hint",
+      "evidence": "add_f16_packed is byte-exact on the NPU with the hint and returns in[i] + <hardware constant> without it (reports/npu-evidence.json case add32_lib vs the unfixed build)"
+    },
+    {
+      "id": "D2",
+      "rule": "fp32 ADD/MUL whose operand is a hardware-selector literal (0.5, 1.0, 2.0, 3.0, 1.41494, 0.70604, pi, e, 10.0) is computed correctly only WITHOUT the hint (the compiler chooses the constant-selector encoding deliberately)",
+      "evidence": "silu_f16 (1.0f + expf(-x)) is bit-exact with FIXUP=off and wrong with FIXUP=on; x + 1.0f returns x+1 unfixed and x fixed"
+    },
+    {
+      "id": "D3",
+      "rule": "fp32 MUL of two runtime registers does not compute the product in either mode (returns one of the operands): x*x returns x, in[i]*in[i^16] returns the partner",
+      "evidence": "throwaway probes k_rrmul.c / k_mulrr.c, both fixup modes"
+    },
+    {
+      "id": "D4",
+      "rule": "mlibm CALLs work: expf and tanhf are bit-exact/1-ULP on the NPU",
+      "evidence": "silu_f16 executes bit-exact (mismatched_elements = 0) and the tanhf/expf probes return the correctly rounded values"
+    },
+    {
+      "id": "D5",
+      "rule": "the v1 porting-probe contract (npunlock-linux-probe and tmpdump dump_probe) only accepts 32-byte tensors, i.e. a 1x16 fp16 carrier",
+      "evidence": "src/linux_probe/main.c:248; tools/klib_probe.c exists to run any size"
+    }
+  ],
+  "engine_ops": [
+    {
+      "name": "add",
+      "cls": "binary",
+      "lanes": 16,
+      "tile_elements": 32,
+      "stage0": "add_f16_packed",
+      "stage1": "copy_f16",
+      "carrier": "abs-abs-1x32"
+    },
+    {
+      "name": "copy",
+      "cls": "unary",
+      "lanes": 32,
+      "tile_elements": 32,
+      "stage0": "copy_f16",
+      "stage1": "copy_f16",
+      "carrier": "abs-abs-1x32"
+    }
+  ],
+  "kernels": [
+    {
+      "name": "add_f16_packed",
+      "op": "add",
+      "ggml_ops": [
+        "GGML_OP_ADD"
+      ],
+      "dtype": "f16",
+      "abi_form": "packed_pair",
+      "abi_summary": "y[i] = in[i] + in[i ^ element_count]; host packs [a | b] into one tile",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": false,
+      "constraints": "dense, equal shapes; tile = [a | b], element_count = half tile",
+      "source": "src/add_f16_packed.c",
+      "source_sha256": "0c8a80567f1703d32ceca6942900e6c7e3dc2ef49c94407d24ecc5ced95f552a",
+      "elf": "elf/add_f16_packed.elf",
+      "elf_sha256": "2d393ab7cebdef96388d0c7a3575974ab5a06a9684c8d5868e43783671a8ee32",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i3, i0, 0x0->LSU0.LD.32 i3, i0, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18]"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "engine": {
+        "name": "add",
+        "cls": "binary",
+        "lanes": 16,
+        "tile_elements": 32,
+        "stage0": "add_f16_packed",
+        "stage1": "copy_f16",
+        "carrier": "abs-abs-1x32"
+      },
+      "execution": [
+        {
+          "case": "add32_lib",
+          "carrier": "abs-abs-1x32",
+          "plan": {
+            "0": {
+              "elf": "add_f16_packed",
+              "sha256": "2d393ab7cebdef96388d0c7a3575974ab5a06a9684c8d5868e43783671a8ee32"
+            },
+            "1": {
+              "elf": "copy_f16",
+              "sha256": "2819c99a2db0a048bc9213cda5aa746591438b5684c3e47c733b1324eca785c9"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 16,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0357,
+          "byte_identical_to": {
+            "case": "add32_backend_prebuilt",
+            "identical": true
+          },
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "add_packed_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "add_f16_packed",
+              "sha256": "2d393ab7cebdef96388d0c7a3575974ab5a06a9684c8d5868e43783671a8ee32"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 512,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.029,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "add_packed_abs16384",
+          "carrier": "abs_1in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "add_f16_packed",
+              "sha256": "2d393ab7cebdef96388d0c7a3575974ab5a06a9684c8d5868e43783671a8ee32"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 8192,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0505,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "multi4_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "multi4",
+              "sha256": "f034b6a28cf11a534ec2999ff4a9d933712b7c38e9a7deeae6f386e323b6500a"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0277,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "copy_f16",
+      "op": "copy",
+      "ggml_ops": [
+        "GGML_OP_DUP",
+        "GGML_OP_CPY"
+      ],
+      "dtype": "f16",
+      "abi_form": "unary",
+      "abi_summary": "y[i] = f(x[i]) over invocation.element_count elements",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": false,
+      "constraints": "dense; elementwise (second ACT stage of every engine blob)",
+      "source": "src/copy_f16.c",
+      "source_sha256": "bb4d5ee5edc20354e69d43c8fb3937bc8e1a622d4a0584183c127a52c441fde7",
+      "elf": "elf/copy_f16.elf",
+      "elf_sha256": "2819c99a2db0a048bc9213cda5aa746591438b5684c3e47c733b1324eca785c9",
+      "text_bytes": 496,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "engine": {
+        "name": "copy",
+        "cls": "unary",
+        "lanes": 32,
+        "tile_elements": 32,
+        "stage0": "copy_f16",
+        "stage1": "copy_f16",
+        "carrier": "abs-abs-1x32"
+      },
+      "execution": [
+        {
+          "case": "copy32",
+          "carrier": "abs-abs-1x32",
+          "plan": {
+            "0": {
+              "elf": "copy_f16",
+              "sha256": "2819c99a2db0a048bc9213cda5aa746591438b5684c3e47c733b1324eca785c9"
+            },
+            "1": {
+              "elf": "copy_f16",
+              "sha256": "2819c99a2db0a048bc9213cda5aa746591438b5684c3e47c733b1324eca785c9"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 32,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.064,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "copy_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "copy_f16",
+              "sha256": "2819c99a2db0a048bc9213cda5aa746591438b5684c3e47c733b1324eca785c9"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.1024,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "copy_abs16384",
+          "carrier": "abs_1in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "copy_f16",
+              "sha256": "2819c99a2db0a048bc9213cda5aa746591438b5684c3e47c733b1324eca785c9"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 16384,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.047,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "multi4_pair32",
+          "carrier": "abs-abs-1x32",
+          "plan": {
+            "0": {
+              "elf": "multi4",
+              "sha256": "f034b6a28cf11a534ec2999ff4a9d933712b7c38e9a7deeae6f386e323b6500a"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 32,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0558,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "add_f16",
+      "op": "add",
+      "ggml_ops": [
+        "GGML_OP_ADD"
+      ],
+      "dtype": "f16",
+      "abi_form": "binary",
+      "abi_summary": "y[i] = f(a[i], b[i]); both inputs must have identical static shapes",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "dense, equal shapes (no broadcast)",
+      "source": "src/add_f16.c",
+      "source_sha256": "22c7ace00ad99fdba08b6b839967928053a94726cdf5840c5ee318d7510c9e2d",
+      "elf": "elf/add_f16.elf",
+      "elf_sha256": "9ac83684e3afd2435804d0bb79085caf8afb220fe070464774963e6a9fe04eb5",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18]"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "execution": [
+        {
+          "case": "add_bin1024",
+          "carrier": "maximum_2in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "add_f16",
+              "sha256": "9ac83684e3afd2435804d0bb79085caf8afb220fe070464774963e6a9fe04eb5"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.039,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "add_bin16384",
+          "carrier": "maximum_2in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "add_f16",
+              "sha256": "9ac83684e3afd2435804d0bb79085caf8afb220fe070464774963e6a9fe04eb5"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 16384,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0397,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "add_f32",
+      "op": "add",
+      "ggml_ops": [
+        "GGML_OP_ADD"
+      ],
+      "dtype": "f32",
+      "abi_form": "binary",
+      "abi_summary": "y[i] = f(a[i], b[i]); both inputs must have identical static shapes",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "dense, equal shapes; FP32 *binary* carrier is not a validated npunlock path (wiki/LIMITATIONS.md)",
+      "source": "src/add_f32.c",
+      "source_sha256": "fcb969fadeb99280d07820042cc84b09b147c6ad54283fc7850ebe69a035e144",
+      "elf": "elf/add_f32.elf",
+      "elf_sha256": "29cb2881c6772a066e4cf777bc48177cca7b2195a4a4c180bcc950407611e40c",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 5 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18, LSU0.LDO.32 i2, i3, 0x0->LSU0.LD.32 i2, i3, LSU0.LDO.32 i5, i4, 0x0->LSU0.LD.32 i5, i4, LSU0.ST.32->L"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "mul_f16",
+      "op": "mul",
+      "ggml_ops": [
+        "GGML_OP_MUL"
+      ],
+      "dtype": "f16",
+      "abi_form": "binary",
+      "abi_summary": "y[i] = f(a[i], b[i]); both inputs must have identical static shapes",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "dense, equal shapes; fp32 multiply register form needs the asm fixup (see README)",
+      "source": "src/mul_f16.c",
+      "source_sha256": "49cbb3b4d42a7724dfbb257c5c50f6b5abd51f65c814f924f9a72b83938da037",
+      "elf": "elf/mul_f16.elf",
+      "elf_sha256": "d4e1b7543a17b7dfac120b57dc68e70b521fa87786dd8b755b9d07320693402d",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18]"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "execution": [
+        {
+          "case": "mul_bin1024",
+          "carrier": "maximum_2in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "mul_f16",
+              "sha256": "d4e1b7543a17b7dfac120b57dc68e70b521fa87786dd8b755b9d07320693402d"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0655,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "mul_bin16384",
+          "carrier": "maximum_2in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "mul_f16",
+              "sha256": "d4e1b7543a17b7dfac120b57dc68e70b521fa87786dd8b755b9d07320693402d"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 2555,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0411,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "mul_f32",
+      "op": "mul",
+      "ggml_ops": [
+        "GGML_OP_MUL"
+      ],
+      "dtype": "f32",
+      "abi_form": "binary",
+      "abi_summary": "y[i] = f(a[i], b[i]); both inputs must have identical static shapes",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "dense, equal shapes",
+      "source": "src/mul_f32.c",
+      "source_sha256": "5fa365f0b9fa8355b65ce45314244161348a27d1de0ba8dd551b62c64a186f06",
+      "elf": "elf/mul_f32.elf",
+      "elf_sha256": "e6b0e5f28c363f532754abf88090815269f6acb8cbddca6854af459bd6fd2bfa",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 5 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18, LSU0.LDO.32 i2, i3, 0x0->LSU0.LD.32 i2, i3, LSU0.LDO.32 i5, i4, 0x0->LSU0.LD.32 i5, i4, LSU0.ST.32->L"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "scale_f16",
+      "op": "scale",
+      "ggml_ops": [
+        "GGML_OP_SCALE"
+      ],
+      "dtype": "f16",
+      "abi_form": "unary_scalar",
+      "abi_summary": "y[i] = x[i] * a[0] (runtime factor travels in input record 1)",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "input 1 must be a 1-element f16 tensor holding the factor",
+      "source": "src/scale_f16.c",
+      "source_sha256": "c16dfe2d416e9d6f7939a6b574303dbba99e35b1f50b3e3e4fd58a52061b8eb1",
+      "elf": "elf/scale_f16.elf",
+      "elf_sha256": "db52055b8e2d9915f4c7cc10d622688d5bb337866a6ee1ddc63c05ed34b2ee24",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "execution": [
+        {
+          "case": "scale_bin1024",
+          "carrier": "maximum_2in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "scale_f16",
+              "sha256": "db52055b8e2d9915f4c7cc10d622688d5bb337866a6ee1ddc63c05ed34b2ee24"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0541,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "scale_bin16384",
+          "carrier": "maximum_2in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "scale_f16",
+              "sha256": "db52055b8e2d9915f4c7cc10d622688d5bb337866a6ee1ddc63c05ed34b2ee24"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 16384,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0613,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "scale_f32",
+      "op": "scale",
+      "ggml_ops": [
+        "GGML_OP_SCALE"
+      ],
+      "dtype": "f32",
+      "abi_form": "unary_scalar",
+      "abi_summary": "y[i] = x[i] * a[0] (runtime factor travels in input record 1)",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "input 1 must be a 1-element f32 tensor holding the factor; runtime scalar instead of ggml op_params",
+      "source": "src/scale_f32.c",
+      "source_sha256": "243f5c08a1382a57d8297fa0ea6742b4f559b8f5379ca72068f815a494d7ed59",
+      "elf": "elf/scale_f32.elf",
+      "elf_sha256": "a9a4102e7179c9546ce5872ddd8a66290af64f16016c67f4a2fa29711a78263f",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 5 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i4, i4, LSU0.LDO.32 i2, i3, 0x0->LSU0.LD.32 i2, i3, LSU0.ST.32->L"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "silu_f16",
+      "op": "silu",
+      "ggml_ops": [
+        "GGML_OP_SILU"
+      ],
+      "dtype": "f16",
+      "abi_form": "unary",
+      "abi_summary": "y[i] = f(x[i]) over invocation.element_count elements",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "dense; expf via mlibm (last bit may differ from host libm)",
+      "source": "src/silu_f16.c",
+      "source_sha256": "c3bf5ce94b566d5ef0e1b0555896154c2f6189a9d1ca4db1872baccccd109cf0",
+      "elf": "elf/silu_f16.elf",
+      "elf_sha256": "249131a3acc54efc10ffcc5d38fd423b565251134b624c6f06879a2994c6b89e",
+      "text_bytes": 976,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: WARNING: line 579: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 \u00a714 - the same regis"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "execution": [
+        {
+          "case": "silu16",
+          "carrier": "abs-add-1x16-tile1",
+          "plan": {
+            "0": {
+              "elf": "silu_f16",
+              "sha256": "249131a3acc54efc10ffcc5d38fd423b565251134b624c6f06879a2994c6b89e"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 8,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0488,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "silu_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "silu_f16",
+              "sha256": "249131a3acc54efc10ffcc5d38fd423b565251134b624c6f06879a2994c6b89e"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0324,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "silu_abs16384",
+          "carrier": "abs_1in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "silu_f16",
+              "sha256": "249131a3acc54efc10ffcc5d38fd423b565251134b624c6f06879a2994c6b89e"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 16384,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0407,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "silu_f32",
+      "op": "silu",
+      "ggml_ops": [
+        "GGML_OP_SILU"
+      ],
+      "dtype": "f32",
+      "abi_form": "unary",
+      "abi_summary": "y[i] = f(x[i]) over invocation.element_count elements",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "dense; FP32 unary accuracy carrier is a validated path",
+      "source": "src/silu_f32.c",
+      "source_sha256": "c3a4fc77f42197ff8aef6f7e6c54dc9733d698ad81d3809c6576a2a1b16eb137",
+      "elf": "elf/silu_f32.elf",
+      "elf_sha256": "fab865c5e69afd57f77a333c61bb1bd0095e27d5aaca81516f2e980843d25d3f",
+      "text_bytes": 976,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: WARNING: line 578: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 \u00a714 - the same regis"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "gelu_f16",
+      "op": "gelu",
+      "ggml_ops": [
+        "GGML_OP_GELU"
+      ],
+      "dtype": "f16",
+      "abi_form": "unary",
+      "abi_summary": "y[i] = f(x[i]) over invocation.element_count elements",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "dense; tanh-approximation GELU",
+      "source": "src/gelu_f16.c",
+      "source_sha256": "4c9fe80adbdc6f7be410af2272ab5de220f75e7442cbd1e722aac4302a10a186",
+      "elf": "elf/gelu_f16.elf",
+      "elf_sha256": "cf8350e9dae14359010491384b218208b485f50cef2a679268af44421edfaa1a",
+      "text_bytes": 1264,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "<stdin>:48:21: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]"
+      },
+      "status": "EXECUTED_VERIFIED_TOLERANT",
+      "execution": [
+        {
+          "case": "gelu16",
+          "carrier": "abs-add-1x16-tile1",
+          "plan": {
+            "0": {
+              "elf": "gelu_f16",
+              "sha256": "cf8350e9dae14359010491384b218208b485f50cef2a679268af44421edfaa1a"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": true,
+          "tolerance": 0.005,
+          "exact_match_compared_range": false,
+          "compared_elements": 8,
+          "mismatched_elements": 7,
+          "max_abs_error": 0.00048828125,
+          "mean_wall_seconds": 0.0419,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "gelu_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "gelu_f16",
+              "sha256": "cf8350e9dae14359010491384b218208b485f50cef2a679268af44421edfaa1a"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": true,
+          "tolerance": 0.005,
+          "exact_match_compared_range": false,
+          "compared_elements": 1024,
+          "mismatched_elements": 473,
+          "max_abs_error": 0.001953125,
+          "mean_wall_seconds": 0.0385,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "gelu_abs16384",
+          "carrier": "abs_1in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "gelu_f16",
+              "sha256": "cf8350e9dae14359010491384b218208b485f50cef2a679268af44421edfaa1a"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": true,
+          "tolerance": 0.005,
+          "exact_match_compared_range": false,
+          "compared_elements": 16384,
+          "mismatched_elements": 7969,
+          "max_abs_error": 0.001953125,
+          "mean_wall_seconds": 0.0714,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "gelu_f32",
+      "op": "gelu",
+      "ggml_ops": [
+        "GGML_OP_GELU"
+      ],
+      "dtype": "f32",
+      "abi_form": "unary",
+      "abi_summary": "y[i] = f(x[i]) over invocation.element_count elements",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "dense; tanh-approximation GELU",
+      "source": "src/gelu_f32.c",
+      "source_sha256": "0b66860b5feb93976f56581ba53997f0a9f4400c482c5b8f4b4a5dfa5377f981",
+      "elf": "elf/gelu_f32.elf",
+      "elf_sha256": "80d1da22fa55b52e7a0c34a64653662edfefe95fdd3f52de443b21883f78476e",
+      "text_bytes": 1232,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "<stdin>:30:9: warning: implicitly declaring library function 'tanhf' with type 'float (float)' [-Wimplicit-function-declaration]"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "rms_norm_f16",
+      "op": "rms_norm",
+      "ggml_ops": [
+        "GGML_OP_RMS_NORM"
+      ],
+      "dtype": "f16",
+      "abi_form": "reduce_rows",
+      "abi_summary": "one reduction per row of dims32[0] elements, rows walked to element_count",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "rows of dims32[0]; eps pinned to 1e-5f",
+      "source": "src/rms_norm_f16.c",
+      "source_sha256": "6aa16ef9f78f81bc6d714f49fba6525d47ea59ef3c2f9dbf1f4b5bfef9c96156",
+      "elf": "elf/rms_norm_f16.elf",
+      "elf_sha256": "d6082efac9f4b2806583fe50a1e87a6d90c4837228400790e78f5bf221991197",
+      "text_bytes": 1168,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: WARNING: line 674: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 \u00a714 - the same regis"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "rms_norm_f32",
+      "op": "rms_norm",
+      "ggml_ops": [
+        "GGML_OP_RMS_NORM"
+      ],
+      "dtype": "f32",
+      "abi_form": "reduce_rows",
+      "abi_summary": "one reduction per row of dims32[0] elements, rows walked to element_count",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "rows of dims32[0]; eps pinned to 1e-5f",
+      "source": "src/rms_norm_f32.c",
+      "source_sha256": "cbb595da9f47ce50fecc0cf833d7d107f6953291a5bd6d435c49ae95ca3aba7b",
+      "elf": "elf/rms_norm_f32.elf",
+      "elf_sha256": "b91c667c0081adb2d828103d6a6907258275bc84b9dac0ecf5a9b7076ef98355",
+      "text_bytes": 1168,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: WARNING: line 673: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 \u00a714 - the same regis"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "softmax_f16",
+      "op": "softmax",
+      "ggml_ops": [
+        "GGML_OP_SOFT_MAX"
+      ],
+      "dtype": "f16",
+      "abi_form": "reduce_rows",
+      "abi_summary": "one reduction per row of dims32[0] elements, rows walked to element_count",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "rows of dims32[0]; no logit scale / ALiBi (not carried by the ABI)",
+      "source": "src/softmax_f16.c",
+      "source_sha256": "dacde00d7fddd09256d95eed08a0f954f9a550cb72ea164b0c8057b64e266b03",
+      "elf": "elf/softmax_f16.elf",
+      "elf_sha256": "713fdcd445c894f69cb1d7e712db3c0d8ccf33b89ec0c494f3005a660c6ce4a4",
+      "text_bytes": 1520,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: WARNING: line 616: LSU0.LD.32.F16.F32: load destination i21 is > i15 (i21 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 \u00a714 - th"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "softmax_f32",
+      "op": "softmax",
+      "ggml_ops": [
+        "GGML_OP_SOFT_MAX"
+      ],
+      "dtype": "f32",
+      "abi_form": "reduce_rows",
+      "abi_summary": "one reduction per row of dims32[0] elements, rows walked to element_count",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "rows of dims32[0]; no logit scale / ALiBi",
+      "source": "src/softmax_f32.c",
+      "source_sha256": "ba2d5da8cd09dc4309d6c0a8d5591ee9e95f573559475a6f99f0e1b16aad226c",
+      "elf": "elf/softmax_f32.elf",
+      "elf_sha256": "7fc793a5646c060b0955522a5b1a9a6622cfca74d8c31476e292121d11f8b7b2",
+      "text_bytes": 1520,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: WARNING: line 616: LSU0.LDO.32: load destination i21 is > i15 (i21 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 \u00a714 - the same "
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "rope_f16",
+      "op": "rope",
+      "ggml_ops": [
+        "GGML_OP_ROPE"
+      ],
+      "dtype": "f16",
+      "abi_form": "rope",
+      "abi_summary": "NEOX rotary embedding, one row per dims32[0] elements",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": true,
+      "constraints": "NEOX layout; n_dims = dims32[0]; pos in input record 1",
+      "source": "src/rope_f16.c",
+      "source_sha256": "e11d2228166d53eef606b271b963c26080134f87c70525dffe81943d0cbd1a6d",
+      "elf": "elf/rope_f16.elf",
+      "elf_sha256": null,
+      "text_bytes": null,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "FAIL",
+        "validate": "SKIP",
+        "message": "ld.lld: error: output file too large: 18446744073692774968 bytes"
+      },
+      "status": "COMPILED_UNVALIDATED"
+    },
+    {
+      "name": "rope_f32",
+      "op": "rope",
+      "ggml_ops": [
+        "GGML_OP_ROPE"
+      ],
+      "dtype": "f32",
+      "abi_form": "rope",
+      "abi_summary": "NEOX rotary embedding, one row per dims32[0] elements",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": true,
+      "constraints": "NEOX layout; n_dims = dims32[0]; pos in input record 1",
+      "source": "src/rope_f32.c",
+      "source_sha256": "3c3ef51230cf8495021cc91dbb7879bfc27820ef296083a8b41d695822e60e2e",
+      "elf": "elf/rope_f32.elf",
+      "elf_sha256": null,
+      "text_bytes": null,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "FAIL",
+        "validate": "SKIP",
+        "message": "ld.lld: error: output file too large: 18446744073692774968 bytes"
+      },
+      "status": "COMPILED_UNVALIDATED"
+    },
+    {
+      "name": "vec_dot_f16",
+      "op": "vec_dot",
+      "ggml_ops": [
+        "GGML_OP_MUL_MAT"
+      ],
+      "dtype": "f16",
+      "abi_form": "reduce_all",
+      "abi_summary": "out[0] = reduce over the whole invocation chunk",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "full reduction over the invocation chunk; output record holds 1 element",
+      "source": "src/vec_dot_f16.c",
+      "source_sha256": "2d7684644afad4aeb6bf528d662163b71f7decd11de45c72bd87b7bb658b63ec",
+      "elf": "elf/vec_dot_f16.elf",
+      "elf_sha256": "85aa0cbcfbd653b0e4313bc2b04b617c494cb9c51bebb3061016e53bc9a78f08",
+      "text_bytes": 544,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i3, i3, 0x0->LSU0.LD.32 i3, i3, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18]"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "vec_dot_f32",
+      "op": "vec_dot",
+      "ggml_ops": [
+        "GGML_OP_MUL_MAT"
+      ],
+      "dtype": "f32",
+      "abi_form": "reduce_all",
+      "abi_summary": "out[0] = reduce over the whole invocation chunk",
+      "record_indices": {
+        "inputs": [
+          0,
+          1
+        ],
+        "output": 2
+      },
+      "links_mlibm": false,
+      "constraints": "full reduction over the invocation chunk; output record holds 1 element",
+      "source": "src/vec_dot_f32.c",
+      "source_sha256": "d815b5552c03a94812dc7886c05baddb4ec11b2b0b5d046b2237a1be412baf1e",
+      "elf": "elf/vec_dot_f32.elf",
+      "elf_sha256": "2ec8d2d3b1b2897e53d3318eebedc721cb0060ed557fc73baabeaf0bd609fffb",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 5 form rewrite(s) [LSU0.LDO.32 i3, i3, 0x0->LSU0.LD.32 i3, i3, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18, LSU0.LDO.32 i5, i5, 0x0->LSU0.LD.32 i5, i5, LSU0.LDO.32 i4, i4, 0x0->LSU0.LD.32 i4, i4, LSU0.ST.32->L"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "mul_f16_packed",
+      "op": "mul",
+      "ggml_ops": [
+        "GGML_OP_MUL"
+      ],
+      "dtype": "f16",
+      "abi_form": "packed_pair",
+      "abi_summary": "y[i] = in[i] + in[i ^ element_count]; host packs [a | b] into one tile",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": false,
+      "constraints": "dense, equal shapes; tile = [a | b]; fp16 arithmetic",
+      "source": "src/mul_f16_packed.c",
+      "source_sha256": "8ad3476b09cfba17c9e0b10e6eca92c4dd9b21514e56ae899c7c996354fe4971",
+      "elf": "elf/mul_f16_packed.elf",
+      "elf_sha256": "1895db8043ffe2f329306b33c6f50c49fa6e77627a410b0e02a65f78c8fcc89a",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i3, i0, 0x0->LSU0.LD.32 i3, i0, LSU0.LDO.32 i4, i18, 0x0->LSU0.LD.32 i4, i18]"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "execution": [
+        {
+          "case": "mul_packed_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "mul_f16_packed",
+              "sha256": "1895db8043ffe2f329306b33c6f50c49fa6e77627a410b0e02a65f78c8fcc89a"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 512,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0566,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "mul_packed_abs16384",
+          "carrier": "abs_1in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "mul_f16_packed",
+              "sha256": "1895db8043ffe2f329306b33c6f50c49fa6e77627a410b0e02a65f78c8fcc89a"
+            }
+          },
+          "executes": true,
+          "exact_match": false,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 8192,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0531,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "multi4_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "multi4",
+              "sha256": "f034b6a28cf11a534ec2999ff4a9d933712b7c38e9a7deeae6f386e323b6500a"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0277,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    },
+    {
+      "name": "scale_f16_packed",
+      "op": "scale",
+      "ggml_ops": [
+        "GGML_OP_SCALE"
+      ],
+      "dtype": "f16",
+      "abi_form": "packed_pair",
+      "abi_summary": "y[i] = in[i] + in[i ^ element_count]; host packs [a | b] into one tile",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": false,
+      "constraints": "tile = [x | factor], the factor in lane `element_count`",
+      "source": "src/scale_f16_packed.c",
+      "source_sha256": "b5d02345550b11fdb8660e667ff1b4a9c885194b8a4cc41aac2dd0a017251198",
+      "elf": "elf/scale_f16_packed.elf",
+      "elf_sha256": "f0fadd1f112a17f07430990db6fad4456f1d60f138694d0c4914c2b18fdc8bd3",
+      "text_bytes": 528,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: 1 latency slot(s) filled; 2 form rewrite(s) [LSU0.LDO.32 i2, i2, 0x0->LSU0.LD.32 i2, i2, LSU0.LDO.32 i3, i18, 0x0->LSU0.LD.32 i3, i18]"
+      },
+      "status": "VALIDATED"
+    },
+    {
+      "name": "multi4",
+      "op": "multi",
+      "ggml_ops": [
+        "GGML_OP_ADD",
+        "GGML_OP_MUL",
+        "GGML_OP_DUP",
+        "GGML_OP_SILU"
+      ],
+      "dtype": "f16",
+      "abi_form": "multi_entry",
+      "abi_summary": "one image, several named entries 0x400 apart; a range runs one entry",
+      "record_indices": {
+        "inputs": [
+          0
+        ],
+        "output": 0
+      },
+      "links_mlibm": true,
+      "constraints": "one image, four entries 0x400 apart (copy/add/mul/silu); one ACT range runs one entry via tools/patch_ranges.py",
+      "source": "src/multi4.c",
+      "source_sha256": "ef61edcf81649753fa32424a58026fcc4eae0dd9c797ac3c0a528a61cac704b5",
+      "elf": "elf/multi4.elf",
+      "elf_sha256": "f034b6a28cf11a534ec2999ff4a9d933712b7c38e9a7deeae6f386e323b6500a",
+      "text_bytes": 4486,
+      "build": {
+        "compile": "OK",
+        "assemble": "OK",
+        "link": "OK",
+        "validate": "OK",
+        "message": "legalize: WARNING: line 1479: LSU1.STO.32: store value i30 is > i15 (i30 is in the measured imm=0 LDO fault set (19, 21, 24, 30)); trap legality is a (register, immediate) PATTERN property (VendorRE2 \u00a714 - the same regi"
+      },
+      "status": "EXECUTED_VERIFIED",
+      "execution": [
+        {
+          "case": "multi4_pair32",
+          "carrier": "abs-abs-1x32",
+          "plan": {
+            "0": {
+              "elf": "multi4",
+              "sha256": "f034b6a28cf11a534ec2999ff4a9d933712b7c38e9a7deeae6f386e323b6500a"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 32,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0558,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "multi4_abs1024",
+          "carrier": "abs_1in_1x1024",
+          "plan": {
+            "0": {
+              "elf": "multi4",
+              "sha256": "f034b6a28cf11a534ec2999ff4a9d933712b7c38e9a7deeae6f386e323b6500a"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 1024,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0277,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        },
+        {
+          "case": "multi4_abs16384",
+          "carrier": "abs_1in_1x16384",
+          "plan": {
+            "0": {
+              "elf": "multi4",
+              "sha256": "f034b6a28cf11a534ec2999ff4a9d933712b7c38e9a7deeae6f386e323b6500a"
+            }
+          },
+          "executes": true,
+          "exact_match": true,
+          "within_tolerance": null,
+          "tolerance": null,
+          "exact_match_compared_range": true,
+          "compared_elements": 16384,
+          "mismatched_elements": 0,
+          "max_abs_error": 0.0,
+          "mean_wall_seconds": 0.0453,
+          "byte_identical_to": null,
+          "evidence": "reports/npu-evidence.json"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "kernels": 23,
+    "compiled_and_validated": 12,
+    "executed_verified_tolerant": 1,
+    "executed_verified": 8,
+    "executed_mismatch": 0,
+    "compile_fail": 0
+  }
+}

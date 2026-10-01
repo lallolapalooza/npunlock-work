@@ -1,0 +1,69 @@
+{
+  "id": "explain",
+  "device": "SHAVE0",
+  "n_predict": 96,
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_s": 225.909,
+  "prompt_tps": 6.9,
+  "gen_tps": 0.5,
+  "generated_text": "[Start thinking]\n\n1.  **Analyze the Request:** The user wants a two-sentence explanation of why the sky is blue, specifically mentioning light scattering.\n2.  **Identify Key Concepts:**\n    *   Sky color (blue).\n    *   Mechanism (light scattering).\n    *   Specific type of scattering (Rayleigh scattering - though not strictly required, it's the scientific basis).\n    *   The role of the atmosphere (air molecules).",
+  "error_lines": [],
+  "shave_stats": {
+    "engine": "ready",
+    "ops": [
+      "add",
+      "mul",
+      "copy"
+    ],
+    "invocations": 36647,
+    "offloaded": 36647,
+    "declined": 65357,
+    "unsupported": 0,
+    "elements_offloaded": 88893440,
+    "tile_bytes": 131072,
+    "lanes": {
+      "add": 32768,
+      "mul": 32768,
+      "copy_bytes": 131072
+    },
+    "per_op_invocations": {
+      "add": 12444,
+      "mul": 24203,
+      "copy": 0
+    },
+    "setup_ms": 7.72,
+    "npu_ms": 184544.95,
+    "avg_invocation_us": 5035.7
+  },
+  "argv": [
+    "/home/asdf/projects/npunlock-work/llama.cpp/build/bin/llama-cli",
+    "-m",
+    "../models/gemma-4-E4B-it-Q4_0.gguf",
+    "-p",
+    "In two sentences, explain why the sky appears blue. Mention light scattering.",
+    "-n",
+    "96",
+    "-c",
+    "4096",
+    "-t",
+    "8",
+    "--temp",
+    "0",
+    "-s",
+    "1234",
+    "-co",
+    "off",
+    "-st",
+    "--no-warmup",
+    "-fit",
+    "off",
+    "-dev",
+    "SHAVE0",
+    "-b",
+    "2048",
+    "-ub",
+    "512"
+  ],
+  "ok": true
+}

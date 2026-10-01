@@ -1,0 +1,69 @@
+{
+  "id": "count10",
+  "device": "SHAVE0",
+  "n_predict": 32,
+  "exit_code": 0,
+  "timed_out": false,
+  "wall_s": 65.515,
+  "prompt_tps": 6.4,
+  "gen_tps": 0.4,
+  "generated_text": "1 2 3 4 5 6 7 8 9 10",
+  "error_lines": [],
+  "shave_stats": {
+    "engine": "ready",
+    "ops": [
+      "add",
+      "mul",
+      "copy"
+    ],
+    "invocations": 8147,
+    "offloaded": 8147,
+    "declined": 65357,
+    "unsupported": 0,
+    "elements_offloaded": 22587392,
+    "tile_bytes": 131072,
+    "lanes": {
+      "add": 32768,
+      "mul": 32768,
+      "copy_bytes": 131072
+    },
+    "per_op_invocations": {
+      "add": 2919,
+      "mul": 5228,
+      "copy": 0
+    },
+    "setup_ms": 9.18,
+    "npu_ms": 47736.81,
+    "avg_invocation_us": 5859.4
+  },
+  "argv": [
+    "/home/asdf/projects/npunlock-work/llama.cpp/build/bin/llama-cli",
+    "-m",
+    "../models/gemma-4-E4B-it-Q4_0.gguf",
+    "-p",
+    "Count from 1 to 10. Separate the numbers with single spaces.",
+    "-n",
+    "32",
+    "-c",
+    "4096",
+    "-t",
+    "8",
+    "--temp",
+    "0",
+    "-s",
+    "1234",
+    "-co",
+    "off",
+    "-st",
+    "--no-warmup",
+    "-fit",
+    "off",
+    "-dev",
+    "SHAVE0",
+    "-b",
+    "2048",
+    "-ub",
+    "512"
+  ],
+  "ok": true
+}
